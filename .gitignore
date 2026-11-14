@@ -12,9 +12,11 @@ __pycache__/
 .ui-*/
 dist/
 
-# Generated presentation tooling (final PPTX/PDF are kept)
+# Presentation build artifacts (deliverables live outside this app repository)
 路演PPT_才证/.ppt-tools/
 路演PPT_才证/.python-tools/
+/路演PPT_才证/*.pptx
+/路演PPT_才证/*.pdf
 
 # Intermediate training artifacts (reproducible from JSONL sources)
 training_data/teacher/vectors.npy
