@@ -37,9 +37,6 @@ function assessExperience({
       .map((item) => item.toLocaleLowerCase()),
   );
   const matches = uniqueMatches(knowledgeMatches);
-  const corroborationScore = matches.length
-    ? clamp((matches.length / 5) * 100)
-    : null;
   const matchedCriteria = (evaluation?.criteriaResults || [])
     .filter((result) => result.level !== "none");
   const completeness = evaluation?.totalCriteria
@@ -83,13 +80,13 @@ function assessExperience({
     },
     {
       key: "externalCorroboration",
-      label: "知识库命中",
-      score: corroborationScore,
+      label: "知识库背景",
+      score: null,
       displayValue: `${matches.length} 条`,
-      barPercent: corroborationScore || 0,
+      barPercent: 0,
       note: matches.length
-        ? `命中 ${matches.length} 条相关本地知识片段；只作背景线索`
-        : "没有相关本地知识片段；这不代表候选人不匹配",
+        ? `命中 ${matches.length} 条候选人经历关联资料；不计入指数`
+        : "没有与候选人经历直接关联的资料；不影响指数",
     },
   ];
 
@@ -100,7 +97,6 @@ function assessExperience({
     responsibilityDepth: 0.16,
     complexity: 0.14,
     evidenceCompleteness: 0.12,
-    externalCorroboration: 0.1,
   };
   const weightTotal = weightedDimensions.reduce(
     (sum, dimension) => sum + (weightMap[dimension.key] || 0),
@@ -134,15 +130,13 @@ function assessExperience({
       ...(evaluation?.criteriaResults || [])
         .filter((result) => ["strong", "medium"].includes(result.level))
         .map((result) => result.name),
-      ...matches.slice(0, 2).map((match) => `${match.entityName || match.title} 知识库背景`),
     ].slice(0, 5),
     gaps: [
       ...(evaluation?.criteriaResults || [])
         .filter((result) => result.level === "none")
         .map((result) => `${result.name}未发现证据`),
-      ...(matches.length ? [] : ["未发现相关本地知识背景"]),
     ].slice(0, 5),
-    disclaimer: "知识库命中表示相关本地资料数量，不代表资料真实性、个人价值或录用结论。",
+    disclaimer: "知识库背景只展示与候选人本人经历实体关联的资料数量，不参与指数计算，也不代表个人价值或录用结论。",
   };
 }
 

@@ -73,9 +73,8 @@ function filterKnowledgeMatchesForCandidate(entities, knowledgeMatches) {
   return (knowledgeMatches || []).filter((match) => {
     const documentType = String(match?.documentType || "").toLocaleLowerCase();
     const entityName = normalizeEntityName(match?.entityName);
-    if (!ENTITY_LINKED_DOCUMENT_TYPES.has(documentType)) return true;
+    if (!ENTITY_LINKED_DOCUMENT_TYPES.has(documentType)) return false;
     if (documentType === "education") return Boolean(entityName && schoolNames.has(entityName));
-    if (documentType === "technology" && match?.entityName === "才证招聘知识中心") return true;
     return Boolean(entityName && companyNames.has(entityName));
   });
 }

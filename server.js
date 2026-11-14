@@ -260,6 +260,67 @@ function appendCandidateAudit(candidate, { actor = "system", action, summary, de
   });
 }
 
+function refreshStoredCandidateKnowledge(candidate, job) {
+  const intelligence = candidate.intelligence;
+  if (!intelligence || !Array.isArray(intelligence.knowledgeMatches)) return false;
+  const entities = Array.isArray(intelligence.entities) ? intelligence.entities : [];
+  const knowledgeMatches = filterKnowledgeMatchesForCandidate(
+    entities,
+    intelligence.knowledgeMatches,
+  );
+  const allowedSourceIds = new Set(
+    knowledgeMatches.map((match) => match.sourceId).filter(Boolean),
+  );
+  const interviewQuestions = (Array.isArray(intelligence.interviewQuestions)
+    ? intelligence.interviewQuestions
+    : [])
+    .map((question) => {
+      const originalSourceIds = Array.isArray(question.sourceIds) ? question.sourceIds : [];
+      return {
+        ...question,
+        sourceIds: originalSourceIds.filter((sourceId) => allowedSourceIds.has(sourceId)),
+        remove: originalSourceIds.length > 0
+          && !originalSourceIds.some((sourceId) => allowedSourceIds.has(sourceId)),
+      };
+    })
+    .filter((question) => !question.remove)
+    .map(({ remove, ...question }) => question);
+  const before = JSON.stringify({
+    knowledgeMatches: intelligence.knowledgeMatches,
+    valueAssessment: intelligence.valueAssessment,
+    interviewQuestions: intelligence.interviewQuestions,
+    interviewQuestionSource: intelligence.interviewQuestionSource,
+  });
+  const evaluation = evaluateCandidate(candidate, job.criteria);
+  const valueAssessment = assessExperience({
+    candidate,
+    evaluation,
+    criteria: job.criteria,
+    entities,
+    knowledgeMatches,
+    knowledgeRetrievalMode: intelligence.knowledgeRetrievalMode,
+  });
+  const fallback = interviewQuestions.length
+    ? null
+    : fallbackQuestions({
+        criteriaResults: evaluation.criteriaResults,
+        valueAssessment,
+        knowledgeMatches,
+        candidateText: candidate.text,
+      });
+  intelligence.knowledgeMatches = knowledgeMatches;
+  intelligence.valueAssessment = valueAssessment;
+  intelligence.interviewQuestions = fallback || interviewQuestions;
+  if (fallback) intelligence.interviewQuestionSource = "rules";
+  const after = JSON.stringify({
+    knowledgeMatches: intelligence.knowledgeMatches,
+    valueAssessment: intelligence.valueAssessment,
+    interviewQuestions: intelligence.interviewQuestions,
+    interviewQuestionSource: intelligence.interviewQuestionSource,
+  });
+  return before !== after;
+}
+
 function normalizeStoredAiStatuses(store) {
   let changed = false;
   for (const candidate of store.state.candidates) {
@@ -279,9 +340,10 @@ function normalizeStoredAiStatuses(store) {
       candidate.webInterviews = [];
       changed = true;
     }
-    if (!candidate.aiAnalysis || !["complete", "error"].includes(candidate.aiStatus)) continue;
     const job = store.getJob(candidate.jobId);
     if (!job) continue;
+    if (refreshStoredCandidateKnowledge(candidate, job)) changed = true;
+    if (!candidate.aiAnalysis || !["complete", "error"].includes(candidate.aiStatus)) continue;
     if (
       candidate.aiAnalysis.pipelineVersion !== AGENT_PIPELINE_VERSION
       || candidate.aiAnalysis.criteriaSignature !== criteriaSignature(job.criteria)

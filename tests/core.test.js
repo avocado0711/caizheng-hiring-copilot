@@ -487,7 +487,7 @@ test("entity taxonomy distinguishes roles and skills from organizations", () => 
   assert.equal(knowledgeEntityType({ entityName: "数据工程师", documentType: "resume-screening" }), "role");
 });
 
-test("knowledge matches keep role guidance but reject unrelated organization evidence", () => {
+test("candidate knowledge matches keep only evidence linked to resume entities", () => {
   const entities = [
     { type: "company", name: "远岚数据" },
     { type: "school", name: "武汉大学" },
@@ -505,15 +505,12 @@ test("knowledge matches keep role guidance but reject unrelated organization evi
   const filtered = filterKnowledgeMatchesForCandidate(entities, matches);
   assert.deepEqual(filtered.map((item) => item.id), [
     "own-company",
-    "role-standard",
     "own-school",
-    "resume-pattern",
-    "method",
   ]);
 });
 
-test("knowledge hit count is displayed as a count instead of a public-evidence score", () => {
-  const value = assessExperience({
+test("knowledge background is displayed without changing the candidate evidence index", () => {
+  const input = {
     candidate: { text: "负责数据平台建设，降低延迟 30%" },
     evaluation: {
       score: 80,
@@ -523,6 +520,13 @@ test("knowledge hit count is displayed as a count instead of a public-evidence s
     },
     criteria: [],
     entities: [],
+  };
+  const withoutKnowledge = assessExperience({
+    ...input,
+    knowledgeMatches: [],
+  });
+  const value = assessExperience({
+    ...input,
     knowledgeMatches: Array.from({ length: 5 }, (_, index) => ({
       sourceId: `source-${index}`,
       entityName: "数据工程师",
@@ -530,11 +534,14 @@ test("knowledge hit count is displayed as a count instead of a public-evidence s
     })),
   });
   const dimension = value.dimensions.find((item) => item.key === "externalCorroboration");
-  assert.equal(dimension.label, "知识库命中");
+  assert.equal(dimension.label, "知识库背景");
   assert.equal(dimension.displayValue, "5 条");
-  assert.equal(dimension.score, 100);
-  assert.equal(dimension.barPercent, 100);
-  assert.match(dimension.note, /背景线索/);
+  assert.equal(dimension.score, null);
+  assert.equal(dimension.barPercent, 0);
+  assert.match(dimension.note, /不计入指数/);
+  assert.equal(value.index, withoutKnowledge.index);
+  assert.deepEqual(value.strengths, withoutKnowledge.strengths);
+  assert.deepEqual(value.gaps, withoutKnowledge.gaps);
 });
 
 test("HTTP API supports create, import, ranking, review and CSV export", async (context) => {

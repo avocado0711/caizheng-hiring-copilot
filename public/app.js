@@ -1003,7 +1003,7 @@ const KNOWLEDGE_TYPE_LABELS = {
   patent: "专利",
   education: "教育背景",
   "role-standard": "岗位标准",
-  "resume-screening": "简历样本",
+  "resume-screening": "合成训练语料",
 };
 
 const ENTITY_TYPE_LABELS = {
