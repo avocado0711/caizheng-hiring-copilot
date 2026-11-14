@@ -388,6 +388,17 @@ async function searchKnowledgeHybrid(query, limit = 8, options = {}) {
     const embedded = await postVectorService("/embed", { texts: [query] }, 30_000);
     const denseResults = searchDenseKnowledge(embedded.vectors[0], documents, 50);
     const documentById = new Map(documents.map((document) => [document.id, document]));
+    const queryText = String(query || "").toLocaleLowerCase();
+    const exactEntityNames = new Set(
+      documents
+        .map((document) => String(document.entityName || "").trim().toLocaleLowerCase())
+        .filter((name) => name.length >= 2 && queryText.includes(name)),
+    );
+    const exactEntityBoost = (item) => (
+      exactEntityNames.has(String(item.document.entityName || "").trim().toLocaleLowerCase())
+        ? 0.08
+        : 0
+    );
     const candidates = new Map();
     const addCandidate = (id, score, rank, source) => {
       if (!id || !documentById.has(id)) return;
@@ -406,7 +417,10 @@ async function searchKnowledgeHybrid(query, limit = 8, options = {}) {
       addCandidate(result.id, result.score, index + 1, "dense");
     });
     const ranked = [...candidates.values()]
-      .sort((left, right) => right.rrf - left.rrf)
+      .sort((left, right) => (
+        exactEntityBoost(right) - exactEntityBoost(left)
+        || right.rrf - left.rrf
+      ))
       .slice(0, 30);
     if (!ranked.length) return { results: bm25Results.slice(0, limit), mode: "bm25" };
     const toResult = (item, score, index, extra = {}) => ({
@@ -452,7 +466,7 @@ async function searchKnowledgeHybrid(query, limit = 8, options = {}) {
     const finalRanked = ranked
       .map((item) => ({
         item,
-        score: item.rrf + 1 / (60 + (rerankRank.get(item.id) || 60)),
+        score: exactEntityBoost(item) + item.rrf + 1 / (60 + (rerankRank.get(item.id) || 60)),
       }))
       .sort((left, right) => right.score - left.score)
       .slice(0, limit);

@@ -120,8 +120,14 @@ function retrieveKnowledge(documents, query, options = {}) {
   const limit = Math.max(1, Math.min(12, Number(options.limit) || 6));
   const k1 = 1.45;
   const b = 0.72;
-  const entityNames = (options.entityNames || []).map((name) => clean(name).toLocaleLowerCase());
   const queryText = String(query || "").toLocaleLowerCase();
+  const knownEntityNames = new Set([
+    ...(options.entityNames || []),
+    ...(documents || []).map((document) => document.entityName),
+  ].map((name) => clean(name).toLocaleLowerCase()).filter((name) => name.length >= 2));
+  const matchedEntityNames = new Set(
+    [...knownEntityNames].filter((name) => queryText.includes(name)),
+  );
 
   const scored = corpus.chunks.map((chunk) => {
     const frequencies = new Map();
@@ -136,7 +142,7 @@ function retrieveKnowledge(documents, query, options = {}) {
       score += idf * ((tf * (k1 + 1)) / denominator);
     }
     if (chunk.title && queryText.includes(chunk.title.toLocaleLowerCase())) score += 3;
-    if (chunk.entityName && entityNames.includes(chunk.entityName.toLocaleLowerCase())) score += 4;
+    if (chunk.entityName && matchedEntityNames.has(chunk.entityName.toLocaleLowerCase())) score += 8;
     if (chunk.synthetic) score *= 0.98;
     return { ...chunk, score };
   });

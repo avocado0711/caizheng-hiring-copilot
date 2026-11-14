@@ -10,6 +10,7 @@
     "check": "node --check server.js && node --check public/app.js && node --test",
     "eval:screening": "node scripts/evaluate_screening.js",
     "eval:ocr": "node scripts/evaluate_ocr.js",
+    "knowledge:build-demo": "node knowledge/build_demo_corpus.js",
     "knowledge:build-resumes": "node scripts/build_resume_knowledge.js",
     "package:submission": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package_submission.ps1",
     "demo:seed": "node scripts/demo_seed.js",

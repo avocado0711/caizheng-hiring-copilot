@@ -356,6 +356,51 @@ test("knowledge retriever returns cited synthetic company evidence", () => {
   assert.match(results[0].title, /星桥|岗位能力/);
 });
 
+test("knowledge retriever prioritizes an exact entity named in the query", () => {
+  const documents = [
+    {
+      id: "cloud",
+      title: "云帆智算 · 技术架构概览",
+      entityName: "云帆智算",
+      documentType: "technology",
+      sourceLabel: "demo",
+      content: "云帆智算使用 RAG、Milvus 和 FastAPI 建设企业检索平台。",
+      synthetic: true,
+    },
+    {
+      id: "similar",
+      title: "清栈智算科技合作教育项目",
+      entityName: "清栈智算科技",
+      documentType: "education",
+      sourceLabel: "demo",
+      content: "清栈智算科技开展 RAG 技术培训和合作教育项目。",
+      synthetic: true,
+    },
+  ];
+  const results = retrieveKnowledge(documents, "云帆智算的 RAG 技术栈是什么", { limit: 2 });
+  assert.equal(results[0].entityName, "云帆智算");
+});
+
+test("demo knowledge corpus covers diverse synthetic recruiting evidence", () => {
+  const pack = JSON.parse(fs.readFileSync(
+    path.join(__dirname, "..", "knowledge", "demo", "星桥智能科技.json"),
+    "utf8",
+  ));
+  const documents = pack.documents;
+  assert.ok(documents.length >= 140);
+  assert.equal(new Set(documents.map((document) => document.id)).size, documents.length);
+  assert.equal(new Set(documents.map((document) => document.content)).size, documents.length);
+  assert.ok(new Set(documents.map((document) => document.entityName)).size >= 40);
+  assert.ok(documents.every((document) => document.synthetic));
+  assert.ok(documents.every((document) => document.content.length >= 100));
+  for (const type of ["company", "organization", "technology", "annual-report", "education", "role-standard", "paper", "patent"]) {
+    assert.ok(documents.some((document) => document.documentType === type), `missing ${type}`);
+  }
+  const searchable = JSON.stringify(documents);
+  assert.equal((searchable.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi) || []).length, 0);
+  assert.equal((searchable.match(/138-0000-\d{4}/g) || []).length, 0);
+});
+
 test("resume screening knowledge pack covers 100 sanitized samples", () => {
   const packPath = path.join(__dirname, "..", "knowledge", "demo", "resume-screening-knowledge.json");
   const raw = fs.readFileSync(packPath, "utf8");
