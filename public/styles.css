@@ -6553,3 +6553,227 @@ body.is-intro-revealing .intro-progress {
     font-size: 17px;
   }
 }
+
+/* First-paint loading gate */
+body.is-booting {
+  overflow: hidden;
+}
+
+body.is-booting .app-shell {
+  visibility: hidden;
+}
+
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 280;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding:
+    max(42px, env(safe-area-inset-top))
+    max(24px, env(safe-area-inset-right))
+    max(42px, env(safe-area-inset-bottom))
+    max(24px, env(safe-area-inset-left));
+  background:
+    radial-gradient(circle at 50% 42%, rgba(73, 108, 244, 0.2), transparent 30rem),
+    linear-gradient(155deg, #080b12, #0d111a 58%, #090c12);
+  color: #f7f6f2;
+  opacity: 1;
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.boot-screen::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.boot-screen.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.boot-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.boot-glow-left {
+  top: 5%;
+  left: -15rem;
+  width: 37rem;
+  height: 37rem;
+  background: radial-gradient(circle, rgba(63, 107, 255, 0.22), transparent 68%);
+}
+
+.boot-glow-right {
+  right: -13rem;
+  bottom: -17rem;
+  width: 40rem;
+  height: 40rem;
+  background: radial-gradient(circle, rgba(53, 185, 127, 0.13), transparent 68%);
+}
+
+.boot-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(620px, 100%);
+  justify-items: center;
+  text-align: center;
+}
+
+.boot-logo-plate {
+  width: clamp(120px, 18vw, 176px);
+  aspect-ratio: 465 / 408;
+  display: grid;
+  place-items: center;
+  padding: 14px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 25px;
+  background: #f7f6f2;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.36),
+    0 0 0 9px rgba(255, 255, 255, 0.035);
+  animation: boot-logo-float 2.2s ease-in-out infinite;
+}
+
+.boot-logo-plate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.boot-kicker {
+  margin: 25px 0 0;
+  color: #92a1c1;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+}
+
+.boot-panel h1 {
+  margin: 24px 0 0;
+  color: #fff;
+  font-size: clamp(34px, 6vw, 58px);
+  font-weight: 580;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.boot-panel h1 span {
+  color: #7899ff;
+  font-weight: 430;
+}
+
+.boot-copy {
+  margin: 18px 0 0;
+  color: #9da7b8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.boot-progress {
+  width: min(260px, 64vw);
+  height: 3px;
+  margin-top: 28px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.boot-progress i {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #496cff, #9cb4ff);
+  animation: boot-progress 1.35s ease-in-out infinite;
+}
+
+.boot-panel > small {
+  margin-top: 13px;
+  color: #68758e;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.boot-noscript {
+  position: fixed;
+  inset: auto 20px 20px;
+  z-index: 290;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff;
+  color: #181a1f;
+  text-align: center;
+}
+
+@keyframes boot-progress {
+  0% {
+    transform: translateX(-115%);
+  }
+  55% {
+    transform: translateX(82%);
+  }
+  100% {
+    transform: translateX(245%);
+  }
+}
+
+@keyframes boot-logo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 640px) {
+  .boot-screen::after {
+    inset: 10px;
+    border-radius: 18px;
+  }
+
+  .boot-logo-plate {
+    width: 118px;
+    padding: 11px 9px;
+    border-radius: 20px;
+  }
+
+  .boot-kicker {
+    margin-top: 20px;
+    font-size: 9px;
+  }
+
+  .boot-panel h1 {
+    margin-top: 18px;
+    font-size: clamp(31px, 10vw, 44px);
+  }
+
+  .boot-copy {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-logo-plate,
+  .boot-progress i {
+    animation: none;
+  }
+
+  .boot-progress i {
+    width: 72%;
+  }
+}

@@ -9,11 +9,36 @@
   <link rel="icon" type="image/png" href="/assets/logo-mark.png">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="is-booting" aria-busy="true">
+  <div
+    class="boot-screen"
+    id="boot-screen"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="boot-title"
+  >
+    <div class="boot-glow boot-glow-left" aria-hidden="true"></div>
+    <div class="boot-glow boot-glow-right" aria-hidden="true"></div>
+    <div class="boot-panel">
+      <div class="boot-logo-plate">
+        <img src="/assets/logo-mark.png" alt="才证">
+      </div>
+      <p class="boot-kicker">TALENT EVIDENCE · 招聘决策台</p>
+      <h1 id="boot-title">加载中<span>，请稍候</span></h1>
+      <p class="boot-copy">正在准备本地招聘数据、知识库与检索模型。</p>
+      <div class="boot-progress" role="progressbar" aria-label="正在加载工作台">
+        <i></i>
+      </div>
+      <small>全部准备完成后将自动播放入场动画</small>
+    </div>
+  </div>
+  <noscript>
+    <div class="boot-noscript">该应用需要启用 JavaScript 才能加载。</div>
+  </noscript>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
 
-  <div class="app-shell">
+  <div class="app-shell" inert>
     <aside class="sidebar">
       <a class="brand" href="#job" aria-label="才证 招聘决策台">
         <span class="brand-mark" aria-hidden="true">

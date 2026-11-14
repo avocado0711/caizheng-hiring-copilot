@@ -263,6 +263,48 @@ function setAppInert(inert) {
   if (appShell) appShell.inert = inert;
 }
 
+function wait(milliseconds) {
+  return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+}
+
+async function waitForStartupAssets() {
+  const minimumVisibleTime = wait(420);
+  const documentReady = document.readyState === "complete"
+    ? Promise.resolve()
+    : new Promise((resolve) => {
+      window.addEventListener("load", resolve, { once: true });
+      window.setTimeout(resolve, 4_000);
+    });
+  const imagesReady = Promise.all(
+    [...document.images].filter((image) => !image.complete).map((image) => new Promise((resolve) => {
+      image.addEventListener("load", resolve, { once: true });
+      image.addEventListener("error", resolve, { once: true });
+    })),
+  );
+  const fontsReady = document.fonts?.ready || Promise.resolve();
+
+  await Promise.all([
+    minimumVisibleTime,
+    documentReady,
+    Promise.race([imagesReady, wait(4_000)]),
+    Promise.race([fontsReady, wait(4_000)]),
+  ]);
+  await nextFrame();
+}
+
+function finishBootLoading() {
+  const bootScreen = $("#boot-screen");
+  if (!bootScreen || bootScreen.hidden) return;
+  document.body.classList.remove("is-booting");
+  document.body.removeAttribute("aria-busy");
+  setAppInert(false);
+  bootScreen.classList.add("is-leaving");
+  bootScreen.setAttribute("aria-hidden", "true");
+  window.setTimeout(() => {
+    bootScreen.hidden = true;
+  }, 440);
+}
+
 function hasCompletedIntro() {
   try {
     return window.localStorage.getItem(INTRO_STORAGE_KEY) === "true";
@@ -3497,6 +3539,8 @@ async function init() {
       const cleanUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ""}${window.location.hash}`;
       history.replaceState(null, "", cleanUrl);
     }
+    await waitForStartupAssets();
+    finishBootLoading();
     if (shouldPlayIntro) {
       await playIntroSequence({ force: freshDemo });
       if (shouldTour) {
@@ -3510,6 +3554,7 @@ async function init() {
       }, 650);
     }
   } catch (error) {
+    finishBootLoading();
     toast(`无法读取本地数据：${error.message}`, true);
   }
 }
