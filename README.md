@@ -73,7 +73,7 @@ npm.cmd start
 
 `npm.cmd run demo:reset` 与 `demo:seed` 等价。
 
-页面左下角状态卡内也提供低干扰的“重置演示数据”按钮。它会在当前进程中恢复同一套演示数据，并先将原 `data/state.json` 备份到 `data/backups/`。
+页面左下角状态卡内也提供低干扰的“重置演示数据”按钮。它会清空全部候选人、恢复 6 个标准岗位和知识库，并先将原 `data/state.json` 备份到 `data/backups/`。命令行 `npm.cmd run demo:seed` 仍会生成包含 4 位标准候选人的完整路演数据。
 
 ## 使用流程
 

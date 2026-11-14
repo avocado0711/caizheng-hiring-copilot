@@ -763,6 +763,23 @@ test("demo reset restores the standard presentation dataset", async (context) =>
   assert.ok(state.jobs.some((job) => job.title === "MLOps / AI 平台工程师"));
   assert.equal(state.candidates.length, 4);
   assert.ok(fs.existsSync(path.join(tempDir, "backups")));
+
+  response = await fetch(`${app.url}/api/demo/reset`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ mode: "empty" }),
+  });
+  assert.equal(response.status, 200);
+  const emptyReset = await response.json();
+  assert.equal(emptyReset.mode, "empty");
+  assert.equal(emptyReset.jobCount, 6);
+  assert.equal(emptyReset.candidateCount, 0);
+  assert.equal(emptyReset.state.candidates.length, 0);
+  assert.equal(emptyReset.state.counts.total, 0);
+
+  const clearedState = await fetch(`${app.url}/api/state`).then((item) => item.json());
+  assert.equal(clearedState.jobs.length, 6);
+  assert.equal(clearedState.candidates.length, 0);
 });
 
 test("LLM evidence must exist verbatim in the resume", () => {

@@ -3001,7 +3001,7 @@ async function resetDemoWorkspaceFromUi() {
     return;
   }
   const confirmed = window.confirm(
-    "将清除当前活动记录，并恢复标准演示岗位、候选人、审核状态和知识库。原数据会先备份到 data/backups。是否继续？",
+    "将清空比较与排序中的全部候选人，并恢复标准演示岗位和知识库。原数据会先备份到 data/backups。是否继续？",
   );
   if (!confirmed) return;
 
@@ -3025,7 +3025,7 @@ async function resetDemoWorkspaceFromUi() {
     });
     const result = await api("/api/demo/reset", {
       method: "POST",
-      body: "{}",
+      body: JSON.stringify({ mode: "empty" }),
     });
     state.pendingFiles = [];
     state.jobDirty = false;
@@ -3037,8 +3037,8 @@ async function resetDemoWorkspaceFromUi() {
     switchView("job", false);
     toast(
       result.backupPath
-        ? `演示数据已重置，原数据已备份至 ${result.backupPath}`
-        : "演示数据已重置",
+        ? `演示候选人已清空，原数据已备份至 ${result.backupPath}`
+        : "演示候选人已清空",
     );
   } catch (error) {
     scheduleAiPolling();

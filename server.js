@@ -796,7 +796,7 @@ function backupStateBeforeDemo(store) {
   return path.relative(ROOT_DIR, backupPath);
 }
 
-async function buildDemoWorkspaceState() {
+async function buildDemoWorkspaceState({ includeCandidates = true } = {}) {
   const stagingDir = fs.mkdtempSync(path.join(os.tmpdir(), "caizheng-demo-reset-"));
   try {
     const stagingStore = new JsonStore(path.join(stagingDir, "state.json"));
@@ -807,21 +807,24 @@ async function buildDemoWorkspaceState() {
       createJob(card, stagingStore);
     }
     const job = createJob(primaryJobCard, stagingStore);
-    const imported = await importCandidates(job, {
-      files: DEMO_RESUMES.map(toDemoFilePayload),
-    }, stagingStore, null);
-    const byFile = new Map(
-      stagingStore.jobCandidates(job.id).map((candidate) => [candidate.fileName, candidate]),
-    );
-    for (const decision of DEMO_DECISIONS) {
-      const candidate = byFile.get(decision.fileName);
-      if (!candidate) continue;
-      updateCandidate(candidate, {
-        reviewer: "演示 HR",
-        reviewStatus: decision.reviewStatus,
-        reviewNote: decision.reviewNote,
-        overrides: decision.overrides,
-      }, stagingStore);
+    let imported = { errors: [] };
+    if (includeCandidates) {
+      imported = await importCandidates(job, {
+        files: DEMO_RESUMES.map(toDemoFilePayload),
+      }, stagingStore, null);
+      const byFile = new Map(
+        stagingStore.jobCandidates(job.id).map((candidate) => [candidate.fileName, candidate]),
+      );
+      for (const decision of DEMO_DECISIONS) {
+        const candidate = byFile.get(decision.fileName);
+        if (!candidate) continue;
+        updateCandidate(candidate, {
+          reviewer: "演示 HR",
+          reviewStatus: decision.reviewStatus,
+          reviewNote: decision.reviewNote,
+          overrides: decision.overrides,
+        }, stagingStore);
+      }
     }
     stagingStore.save();
     return {
@@ -834,9 +837,12 @@ async function buildDemoWorkspaceState() {
   }
 }
 
-async function resetDemoWorkspace(store) {
+async function resetDemoWorkspace(store, options = {}) {
   const backupPath = backupStateBeforeDemo(store);
-  const demo = await buildDemoWorkspaceState();
+  const mode = options.mode === "empty" ? "empty" : "standard";
+  const demo = await buildDemoWorkspaceState({
+    includeCandidates: mode === "standard",
+  });
 
   // Swap only after the complete demo dataset is ready, so readers never
   // observe a partially reset workspace.
@@ -852,6 +858,7 @@ async function resetDemoWorkspace(store) {
   }
   store.save();
   return {
+    mode,
     jobId: demo.jobId,
     jobCount: store.state.jobs.length,
     candidateCount: store.jobCandidates(demo.jobId).length,
@@ -1461,7 +1468,8 @@ async function handleApi(request, response, url) {
     }
     demoResetInProgress = true;
     try {
-      const result = await resetDemoWorkspace(activeStore);
+      const input = await readJson(request);
+      const result = await resetDemoWorkspace(activeStore, { mode: input.mode });
       jsonResponse(response, 200, {
         ok: true,
         ...result,
