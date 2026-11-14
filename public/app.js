@@ -1007,6 +1007,15 @@ function renderKnowledgePage() {
   `).join("");
 }
 
+function knowledgeSearchSourceLabels(result, mode) {
+  const labels = [];
+  const sources = new Set(result.retrievalSources || []);
+  if (sources.has("bm25") || mode.startsWith("bm25")) labels.push("BM25");
+  if (sources.has("dense")) labels.push("LoRA 向量");
+  if (mode === "hybrid-rerank") labels.push("重排");
+  return labels.length ? labels : ["检索"];
+}
+
 function renderKnowledgeSearchResults(results, mode = "bm25") {
   const container = $("#knowledge-search-results");
   if (!results.length) {
@@ -1020,11 +1029,33 @@ function renderKnowledgeSearchResults(results, mode = "bm25") {
     : mode === "bm25-fallback"
       ? "BM25 回退（向量服务未就绪）"
       : "BM25 检索";
-  container.innerHTML = `<div class="knowledge-result-meta"><span>${escapeHtml(modeLabel)}</span></div>` + results.map((result) => `
+  const topScore = Math.max(0, ...results.map((result) => Number(result.score) || 0));
+  container.innerHTML = `
+    <div class="knowledge-result-meta knowledge-result-guide">
+      <span>${escapeHtml(modeLabel)}</span>
+      <span>相对相关度以本次第 1 条结果为 100%，仅用于比较本次召回顺序，不代表命中概率。</span>
+    </div>
+  ` + results.map((result, index) => {
+    const relativeMatch = topScore > 0
+      ? Math.max(1, Math.round(((Number(result.score) || 0) / topScore) * 100))
+      : 0;
+    const rawScore = Number(result.score || 0).toFixed(4);
+    const sourceLabels = knowledgeSearchSourceLabels(result, mode);
+    return `
     <div class="knowledge-result">
       <div class="knowledge-result-head">
-        <strong>${escapeHtml(result.title)}</strong>
-        <span class="knowledge-result-score">相关度 ${Math.round(result.score * 100) / 100}</span>
+        <span class="knowledge-result-rank">${String(index + 1).padStart(2, "0")}</span>
+        <div class="knowledge-result-title">
+          <strong>${escapeHtml(result.title)}</strong>
+          <small>${sourceLabels.map((label) => `<span>${escapeHtml(label)}</span>`).join("")}</small>
+        </div>
+        <span
+          class="knowledge-result-score"
+          title="原始排序分 ${escapeAttr(rawScore)}，不是百分比"
+        >
+          <b>${relativeMatch}%</b>
+          <small>相对相关度</small>
+        </span>
       </div>
       <p>${escapeHtml(result.snippet)}</p>
       <div class="knowledge-result-meta">
@@ -1038,7 +1069,8 @@ function renderKnowledgeSearchResults(results, mode = "bm25") {
         ${safeExternalUrl(result.sourceUrl) ? `<a href="${escapeAttr(safeExternalUrl(result.sourceUrl))}" target="_blank" rel="noreferrer">查看原文 ↗</a>` : ""}
       </div>
     </div>
-  `).join("");
+  `;
+  }).join("");
 }
 
 async function searchKnowledge() {
