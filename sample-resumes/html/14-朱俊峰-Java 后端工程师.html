@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>朱俊峰 - Java 后端工程师</title>
+  <style>
+    @page { size: A4; margin: 11mm 14mm 12mm; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      color: #1c2936;
+      background: #fff;
+      padding: 11mm 14mm 12mm;
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .resume {
+      position: relative;
+      width: 100%;
+      min-height: 265mm;
+      overflow: visible;
+      background: #fff;
+    }
+    .resume::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 48mm;
+      height: 40mm;
+      border-radius: 0 0 0 48mm;
+      background: #e8eff6;
+      content: "";
+    }
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 3mm 0 7mm;
+      border-bottom: 1.2px solid #234d78;
+    }
+    .identity { display: flex; align-items: center; gap: 5mm; }
+    .avatar {
+      display: grid;
+      width: 17mm;
+      height: 17mm;
+      flex: 0 0 17mm;
+      place-items: center;
+      border-radius: 4mm;
+      color: #fff;
+      background: #234d78;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .name-row { display: flex; align-items: baseline; gap: 4mm; }
+    h1 { margin: 0; font-size: 25px; letter-spacing: 2px; }
+    .target {
+      color: #234d78;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .contact { margin: 2.5mm 0 0; color: #5d6963; font-size: 9.5px; }
+    .summary {
+      margin: 5mm 0 0;
+      max-width: 180mm;
+      color: #4d5b54;
+      font-size: 10px;
+      line-height: 1.72;
+    }
+    .content { padding-top: 6mm; }
+    .block { margin-bottom: 6mm; }
+    .block h2, .side-block h2 {
+      margin: 0 0 4mm;
+      padding-bottom: 1.6mm;
+      border-bottom: 1px solid #e3e9e5;
+      color: #234d78;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .block h2 span {
+      margin-right: 2mm;
+      color: #9eaaa3;
+      font-size: 9px;
+    }
+    .entry, .project {
+      break-inside: avoid;
+      margin-bottom: 5mm;
+    }
+    .entry-head, .project-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 4mm;
+    }
+    .entry h3, .project h3, .education-row h3 {
+      margin: 0;
+      color: #1c2936;
+      font-size: 11.5px;
+    }
+    .role {
+      margin: 1mm 0 0;
+      color: #234d78;
+      font-size: 9.5px;
+      font-weight: 700;
+    }
+    .entry-meta, .education-meta {
+      display: flex;
+      min-width: 38mm;
+      flex-direction: column;
+      gap: 1mm;
+      color: #66726c;
+      font-size: 8.5px;
+      text-align: right;
+    }
+    .project-head > span { color: #66726c; font-size: 8.5px; white-space: nowrap; }
+    .tech {
+      margin: 1.5mm 0 1mm;
+      padding: 1.5mm 2.5mm;
+      border-radius: 2mm;
+      color: #234d78;
+      background: #e8eff6;
+      font-size: 8.3px;
+    }
+    ul { margin: 1.5mm 0 0; padding-left: 4mm; }
+    li {
+      margin: 0 0 1.4mm;
+      color: #39463f;
+      font-size: 9.4px;
+      line-height: 1.75;
+    }
+    .education-row {
+      display: flex;
+      break-inside: avoid;
+      justify-content: space-between;
+      gap: 4mm;
+      margin-bottom: 3mm;
+    }
+    .education-row p { margin: 1mm 0 0; color: #5f6b65; font-size: 9px; }
+    .lower-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 8mm;
+      margin-top: 1mm;
+      break-inside: avoid;
+    }
+    .side-block { margin-bottom: 6mm; }
+    .skill-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5mm; }
+    .skill-row {
+      margin-bottom: 3.2mm;
+      padding-bottom: 3mm;
+      border-bottom: 1px solid #edf0ee;
+    }
+    .skill-row:last-child { border-bottom: 0; }
+    .skill-row strong {
+      display: block;
+      margin-bottom: 1mm;
+      color: #1c2936;
+      font-size: 9px;
+    }
+    .skill-row span { color: #59665f; font-size: 8.6px; line-height: 1.55; }
+    .extras { padding-left: 3.5mm; }
+    .extras li { font-size: 8.6px; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 7mm;
+      padding-top: 2mm;
+      border-top: 1px solid #e9edeb;
+      color: #a1aaa5;
+      font-size: 7px;
+    }
+    .layout-1::before { border-radius: 0 0 0 0; width: 100%; height: 34mm; }
+    .layout-1 .hero { padding-top: 6mm; }
+    .layout-2 .avatar { border-radius: 50%; background: #fff; color: #234d78; border: 1px solid #234d78; }
+    .layout-2 .target { padding: 1.2mm 2.5mm; border-radius: 5mm; background: #e8eff6; }
+    .layout-3::before { width: 5mm; height: 40mm; border-radius: 0 0 5mm 0; background: #e8eff6; }
+    @media print {
+      body { padding: 0; }
+      .resume { min-height: 0; }
+      .hero, .entry-head, .project-head, .lower-grid, footer { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+    <main class="resume layout-1">
+      <header class="hero">
+        <div class="identity">
+          <div class="avatar">俊峰</div>
+          <div>
+            <div class="name-row">
+              <h1>朱俊峰</h1>
+              <span class="target">Java 后端工程师</span>
+            </div>
+            <p class="contact">
+              成都 · 138-0000-0014 ·
+              candidate14@example.com
+            </p>
+          </div>
+        </div>
+        <p class="summary">5 年 Java 微服务研发经验，参与过搜索、工单和智能客服系统建设，具备良好的工程基础和开源协作习惯。 在过往项目中参与了需求理解、技术方案、开发验证和上线复盘等环节，能够围绕业务目标主动梳理约束、拆解任务，并与产品、算法、测试和运维等角色保持协作。面对不完整的需求和试运行阶段的反馈，习惯先验证关键假设，再逐步收敛方案。</p>
+      </header>
+
+      <div class="content">
+        <section class="block">
+          <h2><span>01</span> 工作经历</h2>
+          
+        <section class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>青杉科技</h3>
+              <p class="role">Java 后端工程师</p>
+            </div>
+            <div class="entry-meta">
+              <span>2020.07—至今</span>
+              <span>成都</span>
+            </div>
+          </div>
+          <ul><li>负责客服工单与搜索服务，设计异步事件和权限数据模型。</li><li>与产品、测试和上下游服务团队协作完成需求澄清、接口联调和灰度验证，上线后持续跟进日志、监控和用户反馈，处理试运行阶段出现的数据和配置问题。</li><li>参与智能客服项目后端接入，调用 Python 模型服务并处理超时降级。</li><li>维护开源 Java 工具库，持续参与 Issue 和 Code Review。</li><li>参与约 10 人项目组的代码审查、方案讨论和故障排查；习惯把关键决策、风险和后续动作同步到项目文档，并把可复用的处理方式整理到团队文档中。</li></ul>
+        </section>
+      
+        </section>
+
+        <section class="block">
+          <h2><span>02</span> 项目经历</h2>
+          
+        <section class="project">
+          <div class="project-head">
+            <div>
+              <h3>客服工单搜索</h3>
+              <p class="role">后端核心开发</p>
+            </div>
+            <span>2023.02—2024.04</span>
+          </div>
+          <p class="tech">技术栈：Java、Elasticsearch、Kafka</p>
+          <ul><li>项目背景：业务处于持续推进和需求变化较快的阶段，需要在交付速度、使用效果和维护成本之间做平衡。</li><li>实现工单索引、增量同步和权限过滤，支持 1,500 万条历史工单。</li><li>优化热点查询缓存，P95 查询耗时降低约 42%。</li><li>个人工作：结合Java、Elasticsearch、Kafka参与方案设计和核心实现，重点关注数据边界、异常场景和上线风险；与相关角色协作完成联调、验收和问题复盘。</li></ul>
+        </section>
+      
+        </section>
+
+        <div class="lower-grid">
+          <section class="side-block">
+            <h2>专业技能</h2>
+            <div class="skill-list">
+        <div class="skill-row">
+          <strong>编程</strong>
+          <span>Java、Kotlin、SQL、少量 Python</span>
+        </div>
+      
+        <div class="skill-row">
+          <strong>框架</strong>
+          <span>Spring Cloud、MyBatis、Kafka、Redis、Elasticsearch</span>
+        </div>
+      
+        <div class="skill-row">
+          <strong>工程</strong>
+          <span>Linux、Docker、GitHub Actions、Prometheus</span>
+        </div>
+      </div>
+          </section>
+          <section class="side-block">
+            <h2>教育背景</h2>
+            
+        <section class="education-row">
+          <div>
+            <h3>四川大学</h3>
+            <p>软件工程 · 本科</p>
+          </div>
+          <div class="education-meta">
+            <span>2016.09—2020.06</span>
+            <span>主修软件设计、数据库、分布式系统</span>
+          </div>
+        </section>
+      
+          </section>
+        </div>
+
+        <section class="side-block">
+          <h2>补充信息</h2>
+          <ul class="extras"><li>GitHub 开源项目 1.4k Star；目前主要使用 Java，Python 仅项目联调使用</li><li>工作偏好：愿意承担跨团队协作、复杂问题拆解和阶段性交付压力</li></ul>
+        </section>
+      </div>
+
+      <footer>
+        <span>虚构简历样本 · 仅供 才证 招聘筛选系统测试</span>
+        <span>14 / 16</span>
+      </footer>
+    </main>
+  </body>
+</html>

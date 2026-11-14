@@ -1,7 +1,7 @@
 [
   {
     "sequence": "17",
-    "name": "王天佑",
+    "name": "何嘉豪",
     "target_role": "AI 应用工程师",
     "city": "深圳",
     "years": 0,
@@ -12,12 +12,12 @@
       "leadership": false,
       "openSource": true
     },
-    "html_file": "17-王天佑-AI 应用工程师.html",
-    "pdf_file": "17-王天佑-AI 应用工程师.pdf"
+    "html_file": "17-何嘉豪-AI 应用工程师.html",
+    "pdf_file": "17-何嘉豪-AI 应用工程师.pdf"
   },
   {
     "sequence": "18",
-    "name": "李天佑",
+    "name": "高一凡",
     "target_role": "AI 应用工程师",
     "city": "苏州",
     "years": 0,
@@ -28,12 +28,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "18-李天佑-AI 应用工程师.html",
-    "pdf_file": "18-李天佑-AI 应用工程师.pdf"
+    "html_file": "18-高一凡-AI 应用工程师.html",
+    "pdf_file": "18-高一凡-AI 应用工程师.pdf"
   },
   {
     "sequence": "19",
-    "name": "张天佑",
+    "name": "林晨曦",
     "target_role": "AI 应用工程师",
     "city": "长沙",
     "years": 0,
@@ -44,12 +44,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "19-张天佑-AI 应用工程师.html",
-    "pdf_file": "19-张天佑-AI 应用工程师.pdf"
+    "html_file": "19-林晨曦-AI 应用工程师.html",
+    "pdf_file": "19-林晨曦-AI 应用工程师.pdf"
   },
   {
     "sequence": "20",
-    "name": "刘天佑",
+    "name": "罗心怡",
     "target_role": "AI 应用工程师",
     "city": "天津",
     "years": 0,
@@ -60,12 +60,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "20-刘天佑-AI 应用工程师.html",
-    "pdf_file": "20-刘天佑-AI 应用工程师.pdf"
+    "html_file": "20-罗心怡-AI 应用工程师.html",
+    "pdf_file": "20-罗心怡-AI 应用工程师.pdf"
   },
   {
     "sequence": "21",
-    "name": "杨天佑",
+    "name": "郑欣怡",
     "target_role": "AI 应用工程师",
     "city": "深圳",
     "years": 0,
@@ -76,12 +76,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "21-杨天佑-AI 应用工程师.html",
-    "pdf_file": "21-杨天佑-AI 应用工程师.pdf"
+    "html_file": "21-郑欣怡-AI 应用工程师.html",
+    "pdf_file": "21-郑欣怡-AI 应用工程师.pdf"
   },
   {
     "sequence": "22",
-    "name": "黄天佑",
+    "name": "梁可馨",
     "target_role": "AI 应用工程师",
     "city": "苏州",
     "years": 0,
@@ -92,12 +92,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "22-黄天佑-AI 应用工程师.html",
-    "pdf_file": "22-黄天佑-AI 应用工程师.pdf"
+    "html_file": "22-梁可馨-AI 应用工程师.html",
+    "pdf_file": "22-梁可馨-AI 应用工程师.pdf"
   },
   {
     "sequence": "23",
-    "name": "赵天佑",
+    "name": "谢梓萱",
     "target_role": "NLP 算法工程师 / LLM 应用",
     "city": "成都",
     "years": 0,
@@ -108,12 +108,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "23-赵天佑-NLP 算法工程师 - LLM 应用.html",
-    "pdf_file": "23-赵天佑-NLP 算法工程师 - LLM 应用.pdf"
+    "html_file": "23-谢梓萱-NLP 算法工程师 - LLM 应用.html",
+    "pdf_file": "23-谢梓萱-NLP 算法工程师 - LLM 应用.pdf"
   },
   {
     "sequence": "24",
-    "name": "吴天佑",
+    "name": "宋梦瑶",
     "target_role": "NLP 算法工程师 / LLM 应用",
     "city": "西安",
     "years": 0,
@@ -124,12 +124,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "24-吴天佑-NLP 算法工程师 - LLM 应用.html",
-    "pdf_file": "24-吴天佑-NLP 算法工程师 - LLM 应用.pdf"
+    "html_file": "24-宋梦瑶-NLP 算法工程师 - LLM 应用.html",
+    "pdf_file": "24-宋梦瑶-NLP 算法工程师 - LLM 应用.pdf"
   },
   {
     "sequence": "25",
-    "name": "周天佑",
+    "name": "唐雨欣",
     "target_role": "NLP 算法工程师 / LLM 应用",
     "city": "厦门",
     "years": 0,
@@ -140,12 +140,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "25-周天佑-NLP 算法工程师 - LLM 应用.html",
-    "pdf_file": "25-周天佑-NLP 算法工程师 - LLM 应用.pdf"
+    "html_file": "25-唐雨欣-NLP 算法工程师 - LLM 应用.html",
+    "pdf_file": "25-唐雨欣-NLP 算法工程师 - LLM 应用.pdf"
   },
   {
     "sequence": "26",
-    "name": "徐天佑",
+    "name": "许佳琪",
     "target_role": "NLP 算法工程师 / LLM 应用",
     "city": "北京",
     "years": 0,
@@ -156,12 +156,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "26-徐天佑-NLP 算法工程师 - LLM 应用.html",
-    "pdf_file": "26-徐天佑-NLP 算法工程师 - LLM 应用.pdf"
+    "html_file": "26-许佳琪-NLP 算法工程师 - LLM 应用.html",
+    "pdf_file": "26-许佳琪-NLP 算法工程师 - LLM 应用.pdf"
   },
   {
     "sequence": "27",
-    "name": "孙天佑",
+    "name": "韩诗琪",
     "target_role": "NLP 算法工程师 / LLM 应用",
     "city": "成都",
     "years": 0,
@@ -172,12 +172,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "27-孙天佑-NLP 算法工程师 - LLM 应用.html",
-    "pdf_file": "27-孙天佑-NLP 算法工程师 - LLM 应用.pdf"
+    "html_file": "27-韩诗琪-NLP 算法工程师 - LLM 应用.html",
+    "pdf_file": "27-韩诗琪-NLP 算法工程师 - LLM 应用.pdf"
   },
   {
     "sequence": "28",
-    "name": "马天佑",
+    "name": "冯雅静",
     "target_role": "NLP 算法工程师 / LLM 应用",
     "city": "西安",
     "years": 0,
@@ -188,12 +188,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "28-马天佑-NLP 算法工程师 - LLM 应用.html",
-    "pdf_file": "28-马天佑-NLP 算法工程师 - LLM 应用.pdf"
+    "html_file": "28-冯雅静-NLP 算法工程师 - LLM 应用.html",
+    "pdf_file": "28-冯雅静-NLP 算法工程师 - LLM 应用.pdf"
   },
   {
     "sequence": "29",
-    "name": "朱天佑",
+    "name": "邓晓燕",
     "target_role": "高级后端工程师",
     "city": "苏州",
     "years": 0,
@@ -204,12 +204,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "29-朱天佑-高级后端工程师.html",
-    "pdf_file": "29-朱天佑-高级后端工程师.pdf"
+    "html_file": "29-邓晓燕-高级后端工程师.html",
+    "pdf_file": "29-邓晓燕-高级后端工程师.pdf"
   },
   {
     "sequence": "30",
-    "name": "胡天佑",
+    "name": "曹海燕",
     "target_role": "高级后端工程师",
     "city": "长沙",
     "years": 0,
@@ -220,12 +220,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "30-胡天佑-高级后端工程师.html",
-    "pdf_file": "30-胡天佑-高级后端工程师.pdf"
+    "html_file": "30-曹海燕-高级后端工程师.html",
+    "pdf_file": "30-曹海燕-高级后端工程师.pdf"
   },
   {
     "sequence": "31",
-    "name": "郭天佑",
+    "name": "彭春霞",
     "target_role": "高级后端工程师",
     "city": "天津",
     "years": 0,
@@ -236,12 +236,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "31-郭天佑-高级后端工程师.html",
-    "pdf_file": "31-郭天佑-高级后端工程师.pdf"
+    "html_file": "31-彭春霞-高级后端工程师.html",
+    "pdf_file": "31-彭春霞-高级后端工程师.pdf"
   },
   {
     "sequence": "32",
-    "name": "何天佑",
+    "name": "曾丽娟",
     "target_role": "高级后端工程师",
     "city": "深圳",
     "years": 0,
@@ -252,12 +252,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "32-何天佑-高级后端工程师.html",
-    "pdf_file": "32-何天佑-高级后端工程师.pdf"
+    "html_file": "32-曾丽娟-高级后端工程师.html",
+    "pdf_file": "32-曾丽娟-高级后端工程师.pdf"
   },
   {
     "sequence": "33",
-    "name": "高天佑",
+    "name": "田秀兰",
     "target_role": "高级后端工程师",
     "city": "苏州",
     "years": 0,
@@ -268,12 +268,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "33-高天佑-高级后端工程师.html",
-    "pdf_file": "33-高天佑-高级后端工程师.pdf"
+    "html_file": "33-田秀兰-高级后端工程师.html",
+    "pdf_file": "33-田秀兰-高级后端工程师.pdf"
   },
   {
     "sequence": "34",
-    "name": "林天佑",
+    "name": "董桂芳",
     "target_role": "高级后端工程师",
     "city": "长沙",
     "years": 0,
@@ -284,12 +284,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "34-林天佑-高级后端工程师.html",
-    "pdf_file": "34-林天佑-高级后端工程师.pdf"
+    "html_file": "34-董桂芳-高级后端工程师.html",
+    "pdf_file": "34-董桂芳-高级后端工程师.pdf"
   },
   {
     "sequence": "35",
-    "name": "罗天佑",
+    "name": "潘玉梅",
     "target_role": "AI 产品经理",
     "city": "西安",
     "years": 0,
@@ -300,12 +300,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "35-罗天佑-AI 产品经理.html",
-    "pdf_file": "35-罗天佑-AI 产品经理.pdf"
+    "html_file": "35-潘玉梅-AI 产品经理.html",
+    "pdf_file": "35-潘玉梅-AI 产品经理.pdf"
   },
   {
     "sequence": "36",
-    "name": "郑天佑",
+    "name": "袁秋菊",
     "target_role": "AI 产品经理",
     "city": "厦门",
     "years": 0,
@@ -316,12 +316,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "36-郑天佑-AI 产品经理.html",
-    "pdf_file": "36-郑天佑-AI 产品经理.pdf"
+    "html_file": "36-袁秋菊-AI 产品经理.html",
+    "pdf_file": "36-袁秋菊-AI 产品经理.pdf"
   },
   {
     "sequence": "37",
-    "name": "梁天佑",
+    "name": "蔡冬梅",
     "target_role": "AI 产品经理",
     "city": "北京",
     "years": 0,
@@ -332,12 +332,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "37-梁天佑-AI 产品经理.html",
-    "pdf_file": "37-梁天佑-AI 产品经理.pdf"
+    "html_file": "37-蔡冬梅-AI 产品经理.html",
+    "pdf_file": "37-蔡冬梅-AI 产品经理.pdf"
   },
   {
     "sequence": "38",
-    "name": "谢天佑",
+    "name": "蒋淑芬",
     "target_role": "AI 产品经理",
     "city": "成都",
     "years": 0,
@@ -348,12 +348,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "38-谢天佑-AI 产品经理.html",
-    "pdf_file": "38-谢天佑-AI 产品经理.pdf"
+    "html_file": "38-蒋淑芬-AI 产品经理.html",
+    "pdf_file": "38-蒋淑芬-AI 产品经理.pdf"
   },
   {
     "sequence": "39",
-    "name": "宋天佑",
+    "name": "余淑珍",
     "target_role": "AI 产品经理",
     "city": "西安",
     "years": 0,
@@ -364,12 +364,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "39-宋天佑-AI 产品经理.html",
-    "pdf_file": "39-宋天佑-AI 产品经理.pdf"
+    "html_file": "39-余淑珍-AI 产品经理.html",
+    "pdf_file": "39-余淑珍-AI 产品经理.pdf"
   },
   {
     "sequence": "40",
-    "name": "唐天佑",
+    "name": "于惠芳",
     "target_role": "AI 产品经理",
     "city": "厦门",
     "years": 0,
@@ -380,12 +380,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "40-唐天佑-AI 产品经理.html",
-    "pdf_file": "40-唐天佑-AI 产品经理.pdf"
+    "html_file": "40-于惠芳-AI 产品经理.html",
+    "pdf_file": "40-于惠芳-AI 产品经理.pdf"
   },
   {
     "sequence": "41",
-    "name": "许天佑",
+    "name": "王丽华",
     "target_role": "数据工程师",
     "city": "长沙",
     "years": 0,
@@ -396,12 +396,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "41-许天佑-数据工程师.html",
-    "pdf_file": "41-许天佑-数据工程师.pdf"
+    "html_file": "41-王丽华-数据工程师.html",
+    "pdf_file": "41-王丽华-数据工程师.pdf"
   },
   {
     "sequence": "42",
-    "name": "韩天佑",
+    "name": "李秀华",
     "target_role": "数据工程师",
     "city": "天津",
     "years": 0,
@@ -412,12 +412,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "42-韩天佑-数据工程师.html",
-    "pdf_file": "42-韩天佑-数据工程师.pdf"
+    "html_file": "42-李秀华-数据工程师.html",
+    "pdf_file": "42-李秀华-数据工程师.pdf"
   },
   {
     "sequence": "43",
-    "name": "邓天佑",
+    "name": "张玉珍",
     "target_role": "数据工程师",
     "city": "深圳",
     "years": 0,
@@ -428,12 +428,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "43-邓天佑-数据工程师.html",
-    "pdf_file": "43-邓天佑-数据工程师.pdf"
+    "html_file": "43-张玉珍-数据工程师.html",
+    "pdf_file": "43-张玉珍-数据工程师.pdf"
   },
   {
     "sequence": "44",
-    "name": "曹天佑",
+    "name": "刘金凤",
     "target_role": "数据工程师",
     "city": "苏州",
     "years": 0,
@@ -444,12 +444,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "44-曹天佑-数据工程师.html",
-    "pdf_file": "44-曹天佑-数据工程师.pdf"
+    "html_file": "44-刘金凤-数据工程师.html",
+    "pdf_file": "44-刘金凤-数据工程师.pdf"
   },
   {
     "sequence": "45",
-    "name": "彭天佑",
+    "name": "陈凤英",
     "target_role": "数据工程师",
     "city": "长沙",
     "years": 0,
@@ -460,12 +460,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "45-彭天佑-数据工程师.html",
-    "pdf_file": "45-彭天佑-数据工程师.pdf"
+    "html_file": "45-陈凤英-数据工程师.html",
+    "pdf_file": "45-陈凤英-数据工程师.pdf"
   },
   {
     "sequence": "46",
-    "name": "曾天佑",
+    "name": "杨兰英",
     "target_role": "全栈工程师",
     "city": "合肥",
     "years": 0,
@@ -476,12 +476,12 @@
       "leadership": false,
       "openSource": true
     },
-    "html_file": "46-曾天佑-全栈工程师.html",
-    "pdf_file": "46-曾天佑-全栈工程师.pdf"
+    "html_file": "46-杨兰英-全栈工程师.html",
+    "pdf_file": "46-杨兰英-全栈工程师.pdf"
   },
   {
     "sequence": "47",
-    "name": "王芷晴",
+    "name": "黄秀珍",
     "target_role": "全栈工程师",
     "city": "重庆",
     "years": 0,
@@ -492,12 +492,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "47-王芷晴-全栈工程师.html",
-    "pdf_file": "47-王芷晴-全栈工程师.pdf"
+    "html_file": "47-黄秀珍-全栈工程师.html",
+    "pdf_file": "47-黄秀珍-全栈工程师.pdf"
   },
   {
     "sequence": "48",
-    "name": "李芷晴",
+    "name": "赵志伟",
     "target_role": "全栈工程师",
     "city": "杭州",
     "years": 0,
@@ -508,12 +508,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "48-李芷晴-全栈工程师.html",
-    "pdf_file": "48-李芷晴-全栈工程师.pdf"
+    "html_file": "48-赵志伟-全栈工程师.html",
+    "pdf_file": "48-赵志伟-全栈工程师.pdf"
   },
   {
     "sequence": "49",
-    "name": "张芷晴",
+    "name": "吴春生",
     "target_role": "全栈工程师",
     "city": "南京",
     "years": 0,
@@ -524,12 +524,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "49-张芷晴-全栈工程师.html",
-    "pdf_file": "49-张芷晴-全栈工程师.pdf"
+    "html_file": "49-吴春生-全栈工程师.html",
+    "pdf_file": "49-吴春生-全栈工程师.pdf"
   },
   {
     "sequence": "50",
-    "name": "刘芷晴",
+    "name": "周学军",
     "target_role": "全栈工程师",
     "city": "合肥",
     "years": 0,
@@ -540,12 +540,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "50-刘芷晴-全栈工程师.html",
-    "pdf_file": "50-刘芷晴-全栈工程师.pdf"
+    "html_file": "50-周学军-全栈工程师.html",
+    "pdf_file": "50-周学军-全栈工程师.pdf"
   },
   {
     "sequence": "51",
-    "name": "杨芷晴",
+    "name": "徐卫军",
     "target_role": "机器学习工程师",
     "city": "西安",
     "years": 0,
@@ -556,12 +556,12 @@
       "leadership": false,
       "openSource": true
     },
-    "html_file": "51-杨芷晴-机器学习工程师.html",
-    "pdf_file": "51-杨芷晴-机器学习工程师.pdf"
+    "html_file": "51-徐卫军-机器学习工程师.html",
+    "pdf_file": "51-徐卫军-机器学习工程师.pdf"
   },
   {
     "sequence": "52",
-    "name": "黄芷晴",
+    "name": "孙明亮",
     "target_role": "机器学习工程师",
     "city": "厦门",
     "years": 0,
@@ -572,12 +572,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "52-黄芷晴-机器学习工程师.html",
-    "pdf_file": "52-黄芷晴-机器学习工程师.pdf"
+    "html_file": "52-孙明亮-机器学习工程师.html",
+    "pdf_file": "52-孙明亮-机器学习工程师.pdf"
   },
   {
     "sequence": "53",
-    "name": "赵芷晴",
+    "name": "马国华",
     "target_role": "机器学习工程师",
     "city": "北京",
     "years": 0,
@@ -588,12 +588,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "53-赵芷晴-机器学习工程师.html",
-    "pdf_file": "53-赵芷晴-机器学习工程师.pdf"
+    "html_file": "53-马国华-机器学习工程师.html",
+    "pdf_file": "53-马国华-机器学习工程师.pdf"
   },
   {
     "sequence": "54",
-    "name": "吴芷晴",
+    "name": "朱永刚",
     "target_role": "机器学习工程师",
     "city": "成都",
     "years": 0,
@@ -604,12 +604,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "54-吴芷晴-机器学习工程师.html",
-    "pdf_file": "54-吴芷晴-机器学习工程师.pdf"
+    "html_file": "54-朱永刚-机器学习工程师.html",
+    "pdf_file": "54-朱永刚-机器学习工程师.pdf"
   },
   {
     "sequence": "55",
-    "name": "周芷晴",
+    "name": "胡文涛",
     "target_role": "机器学习工程师",
     "city": "西安",
     "years": 0,
@@ -620,12 +620,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "55-周芷晴-机器学习工程师.html",
-    "pdf_file": "55-周芷晴-机器学习工程师.pdf"
+    "html_file": "55-胡文涛-机器学习工程师.html",
+    "pdf_file": "55-胡文涛-机器学习工程师.pdf"
   },
   {
     "sequence": "56",
-    "name": "徐芷晴",
+    "name": "郭志刚",
     "target_role": "后端架构师",
     "city": "武汉",
     "years": 0,
@@ -636,12 +636,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "56-徐芷晴-后端架构师.html",
-    "pdf_file": "56-徐芷晴-后端架构师.pdf"
+    "html_file": "56-郭志刚-后端架构师.html",
+    "pdf_file": "56-郭志刚-后端架构师.pdf"
   },
   {
     "sequence": "57",
-    "name": "孙芷晴",
+    "name": "何海峰",
     "target_role": "后端架构师",
     "city": "青岛",
     "years": 0,
@@ -652,12 +652,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "57-孙芷晴-后端架构师.html",
-    "pdf_file": "57-孙芷晴-后端架构师.pdf"
+    "html_file": "57-何海峰-后端架构师.html",
+    "pdf_file": "57-何海峰-后端架构师.pdf"
   },
   {
     "sequence": "58",
-    "name": "马芷晴",
+    "name": "高立新",
     "target_role": "后端架构师",
     "city": "上海",
     "years": 0,
@@ -668,12 +668,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "58-马芷晴-后端架构师.html",
-    "pdf_file": "58-马芷晴-后端架构师.pdf"
+    "html_file": "58-高立新-后端架构师.html",
+    "pdf_file": "58-高立新-后端架构师.pdf"
   },
   {
     "sequence": "59",
-    "name": "朱芷晴",
+    "name": "林卫东",
     "target_role": "后端架构师",
     "city": "广州",
     "years": 0,
@@ -684,12 +684,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "59-朱芷晴-后端架构师.html",
-    "pdf_file": "59-朱芷晴-后端架构师.pdf"
+    "html_file": "59-林卫东-后端架构师.html",
+    "pdf_file": "59-林卫东-后端架构师.pdf"
   },
   {
     "sequence": "60",
-    "name": "胡芷晴",
+    "name": "罗长江",
     "target_role": "后端架构师",
     "city": "武汉",
     "years": 0,
@@ -700,12 +700,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "60-胡芷晴-后端架构师.html",
-    "pdf_file": "60-胡芷晴-后端架构师.pdf"
+    "html_file": "60-罗长江-后端架构师.html",
+    "pdf_file": "60-罗长江-后端架构师.pdf"
   },
   {
     "sequence": "61",
-    "name": "郭芷晴",
+    "name": "郑德明",
     "target_role": "前端工程师 / AI 产品体验",
     "city": "苏州",
     "years": 0,
@@ -716,12 +716,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "61-郭芷晴-前端工程师 - AI 产品体验.html",
-    "pdf_file": "61-郭芷晴-前端工程师 - AI 产品体验.pdf"
+    "html_file": "61-郑德明-前端工程师 - AI 产品体验.html",
+    "pdf_file": "61-郑德明-前端工程师 - AI 产品体验.pdf"
   },
   {
     "sequence": "62",
-    "name": "何芷晴",
+    "name": "梁晓东",
     "target_role": "前端工程师 / AI 产品体验",
     "city": "长沙",
     "years": 0,
@@ -732,12 +732,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "62-何芷晴-前端工程师 - AI 产品体验.html",
-    "pdf_file": "62-何芷晴-前端工程师 - AI 产品体验.pdf"
+    "html_file": "62-梁晓东-前端工程师 - AI 产品体验.html",
+    "pdf_file": "62-梁晓东-前端工程师 - AI 产品体验.pdf"
   },
   {
     "sequence": "63",
-    "name": "高芷晴",
+    "name": "谢文轩",
     "target_role": "前端工程师 / AI 产品体验",
     "city": "天津",
     "years": 0,
@@ -748,12 +748,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "63-高芷晴-前端工程师 - AI 产品体验.html",
-    "pdf_file": "63-高芷晴-前端工程师 - AI 产品体验.pdf"
+    "html_file": "63-谢文轩-前端工程师 - AI 产品体验.html",
+    "pdf_file": "63-谢文轩-前端工程师 - AI 产品体验.pdf"
   },
   {
     "sequence": "64",
-    "name": "林芷晴",
+    "name": "宋心妍",
     "target_role": "前端工程师 / AI 产品体验",
     "city": "深圳",
     "years": 0,
@@ -764,12 +764,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "64-林芷晴-前端工程师 - AI 产品体验.html",
-    "pdf_file": "64-林芷晴-前端工程师 - AI 产品体验.pdf"
+    "html_file": "64-宋心妍-前端工程师 - AI 产品体验.html",
+    "pdf_file": "64-宋心妍-前端工程师 - AI 产品体验.pdf"
   },
   {
     "sequence": "65",
-    "name": "罗芷晴",
+    "name": "唐梦琪",
     "target_role": "前端工程师 / AI 产品体验",
     "city": "苏州",
     "years": 0,
@@ -780,12 +780,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "65-罗芷晴-前端工程师 - AI 产品体验.html",
-    "pdf_file": "65-罗芷晴-前端工程师 - AI 产品体验.pdf"
+    "html_file": "65-唐梦琪-前端工程师 - AI 产品体验.html",
+    "pdf_file": "65-唐梦琪-前端工程师 - AI 产品体验.pdf"
   },
   {
     "sequence": "66",
-    "name": "郑芷晴",
+    "name": "许子航",
     "target_role": "Python 开发工程师",
     "city": "南京",
     "years": 0,
@@ -796,12 +796,12 @@
       "leadership": false,
       "openSource": true
     },
-    "html_file": "66-郑芷晴-Python 开发工程师.html",
-    "pdf_file": "66-郑芷晴-Python 开发工程师.pdf"
+    "html_file": "66-许子航-Python 开发工程师.html",
+    "pdf_file": "66-许子航-Python 开发工程师.pdf"
   },
   {
     "sequence": "67",
-    "name": "梁芷晴",
+    "name": "韩思雨",
     "target_role": "Python 开发工程师",
     "city": "合肥",
     "years": 0,
@@ -812,12 +812,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "67-梁芷晴-Python 开发工程师.html",
-    "pdf_file": "67-梁芷晴-Python 开发工程师.pdf"
+    "html_file": "67-韩思雨-Python 开发工程师.html",
+    "pdf_file": "67-韩思雨-Python 开发工程师.pdf"
   },
   {
     "sequence": "68",
-    "name": "谢芷晴",
+    "name": "冯佳慧",
     "target_role": "Python 开发工程师",
     "city": "重庆",
     "years": 0,
@@ -828,12 +828,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "68-谢芷晴-Python 开发工程师.html",
-    "pdf_file": "68-谢芷晴-Python 开发工程师.pdf"
+    "html_file": "68-冯佳慧-Python 开发工程师.html",
+    "pdf_file": "68-冯佳慧-Python 开发工程师.pdf"
   },
   {
     "sequence": "69",
-    "name": "宋芷晴",
+    "name": "邓雨婷",
     "target_role": "Python 开发工程师",
     "city": "杭州",
     "years": 0,
@@ -844,12 +844,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "69-宋芷晴-Python 开发工程师.html",
-    "pdf_file": "69-宋芷晴-Python 开发工程师.pdf"
+    "html_file": "69-邓雨婷-Python 开发工程师.html",
+    "pdf_file": "69-邓雨婷-Python 开发工程师.pdf"
   },
   {
     "sequence": "70",
-    "name": "唐芷晴",
+    "name": "曹雅琪",
     "target_role": "Python 开发工程师",
     "city": "南京",
     "years": 0,
@@ -860,12 +860,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "70-唐芷晴-Python 开发工程师.html",
-    "pdf_file": "70-唐芷晴-Python 开发工程师.pdf"
+    "html_file": "70-曹雅琪-Python 开发工程师.html",
+    "pdf_file": "70-曹雅琪-Python 开发工程师.pdf"
   },
   {
     "sequence": "71",
-    "name": "许芷晴",
+    "name": "彭欣妍",
     "target_role": "企业软件产品经理",
     "city": "成都",
     "years": 0,
@@ -876,12 +876,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "71-许芷晴-企业软件产品经理.html",
-    "pdf_file": "71-许芷晴-企业软件产品经理.pdf"
+    "html_file": "71-彭欣妍-企业软件产品经理.html",
+    "pdf_file": "71-彭欣妍-企业软件产品经理.pdf"
   },
   {
     "sequence": "72",
-    "name": "韩芷晴",
+    "name": "曾梦洁",
     "target_role": "企业软件产品经理",
     "city": "西安",
     "years": 0,
@@ -892,12 +892,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "72-韩芷晴-企业软件产品经理.html",
-    "pdf_file": "72-韩芷晴-企业软件产品经理.pdf"
+    "html_file": "72-曾梦洁-企业软件产品经理.html",
+    "pdf_file": "72-曾梦洁-企业软件产品经理.pdf"
   },
   {
     "sequence": "73",
-    "name": "邓芷晴",
+    "name": "田佳敏",
     "target_role": "企业软件产品经理",
     "city": "厦门",
     "years": 0,
@@ -908,12 +908,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "73-邓芷晴-企业软件产品经理.html",
-    "pdf_file": "73-邓芷晴-企业软件产品经理.pdf"
+    "html_file": "73-田佳敏-企业软件产品经理.html",
+    "pdf_file": "73-田佳敏-企业软件产品经理.pdf"
   },
   {
     "sequence": "74",
-    "name": "曹芷晴",
+    "name": "董志鹏",
     "target_role": "企业软件产品经理",
     "city": "北京",
     "years": 0,
@@ -924,12 +924,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "74-曹芷晴-企业软件产品经理.html",
-    "pdf_file": "74-曹芷晴-企业软件产品经理.pdf"
+    "html_file": "74-董志鹏-企业软件产品经理.html",
+    "pdf_file": "74-董志鹏-企业软件产品经理.pdf"
   },
   {
     "sequence": "75",
-    "name": "彭芷晴",
+    "name": "潘俊豪",
     "target_role": "企业软件产品经理",
     "city": "成都",
     "years": 0,
@@ -940,12 +940,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "75-彭芷晴-企业软件产品经理.html",
-    "pdf_file": "75-彭芷晴-企业软件产品经理.pdf"
+    "html_file": "75-潘俊豪-企业软件产品经理.html",
+    "pdf_file": "75-潘俊豪-企业软件产品经理.pdf"
   },
   {
     "sequence": "76",
-    "name": "曾芷晴",
+    "name": "袁文浩",
     "target_role": "计算机视觉工程师",
     "city": "广州",
     "years": 0,
@@ -956,12 +956,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "76-曾芷晴-计算机视觉工程师.html",
-    "pdf_file": "76-曾芷晴-计算机视觉工程师.pdf"
+    "html_file": "76-袁文浩-计算机视觉工程师.html",
+    "pdf_file": "76-袁文浩-计算机视觉工程师.pdf"
   },
   {
     "sequence": "77",
-    "name": "王静姝",
+    "name": "蔡宇轩",
     "target_role": "计算机视觉工程师",
     "city": "武汉",
     "years": 0,
@@ -972,12 +972,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "77-王静姝-计算机视觉工程师.html",
-    "pdf_file": "77-王静姝-计算机视觉工程师.pdf"
+    "html_file": "77-蔡宇轩-计算机视觉工程师.html",
+    "pdf_file": "77-蔡宇轩-计算机视觉工程师.pdf"
   },
   {
     "sequence": "78",
-    "name": "李静姝",
+    "name": "蒋俊宇",
     "target_role": "计算机视觉工程师",
     "city": "青岛",
     "years": 0,
@@ -988,12 +988,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "78-李静姝-计算机视觉工程师.html",
-    "pdf_file": "78-李静姝-计算机视觉工程师.pdf"
+    "html_file": "78-蒋俊宇-计算机视觉工程师.html",
+    "pdf_file": "78-蒋俊宇-计算机视觉工程师.pdf"
   },
   {
     "sequence": "79",
-    "name": "张静姝",
+    "name": "余明宇",
     "target_role": "计算机视觉工程师",
     "city": "上海",
     "years": 0,
@@ -1004,12 +1004,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "79-张静姝-计算机视觉工程师.html",
-    "pdf_file": "79-张静姝-计算机视觉工程师.pdf"
+    "html_file": "79-余明宇-计算机视觉工程师.html",
+    "pdf_file": "79-余明宇-计算机视觉工程师.pdf"
   },
   {
     "sequence": "80",
-    "name": "刘静姝",
+    "name": "于泽轩",
     "target_role": "计算机视觉工程师",
     "city": "广州",
     "years": 0,
@@ -1020,12 +1020,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "80-刘静姝-计算机视觉工程师.html",
-    "pdf_file": "80-刘静姝-计算机视觉工程师.pdf"
+    "html_file": "80-于泽轩-计算机视觉工程师.html",
+    "pdf_file": "80-于泽轩-计算机视觉工程师.pdf"
   },
   {
     "sequence": "81",
-    "name": "杨静姝",
+    "name": "王嘉诚",
     "target_role": "推荐算法工程师",
     "city": "深圳",
     "years": 0,
@@ -1036,12 +1036,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "81-杨静姝-推荐算法工程师.html",
-    "pdf_file": "81-杨静姝-推荐算法工程师.pdf"
+    "html_file": "81-王嘉诚-推荐算法工程师.html",
+    "pdf_file": "81-王嘉诚-推荐算法工程师.pdf"
   },
   {
     "sequence": "82",
-    "name": "黄静姝",
+    "name": "李志诚",
     "target_role": "推荐算法工程师",
     "city": "苏州",
     "years": 0,
@@ -1052,12 +1052,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "82-黄静姝-推荐算法工程师.html",
-    "pdf_file": "82-黄静姝-推荐算法工程师.pdf"
+    "html_file": "82-李志诚-推荐算法工程师.html",
+    "pdf_file": "82-李志诚-推荐算法工程师.pdf"
   },
   {
     "sequence": "83",
-    "name": "赵静姝",
+    "name": "张金龙",
     "target_role": "推荐算法工程师",
     "city": "长沙",
     "years": 0,
@@ -1068,12 +1068,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "83-赵静姝-推荐算法工程师.html",
-    "pdf_file": "83-赵静姝-推荐算法工程师.pdf"
+    "html_file": "83-张金龙-推荐算法工程师.html",
+    "pdf_file": "83-张金龙-推荐算法工程师.pdf"
   },
   {
     "sequence": "84",
-    "name": "吴静姝",
+    "name": "刘玉龙",
     "target_role": "推荐算法工程师",
     "city": "天津",
     "years": 0,
@@ -1084,12 +1084,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "84-吴静姝-推荐算法工程师.html",
-    "pdf_file": "84-吴静姝-推荐算法工程师.pdf"
+    "html_file": "84-刘玉龙-推荐算法工程师.html",
+    "pdf_file": "84-刘玉龙-推荐算法工程师.pdf"
   },
   {
     "sequence": "85",
-    "name": "周静姝",
+    "name": "陈春玲",
     "target_role": "推荐算法工程师",
     "city": "深圳",
     "years": 0,
@@ -1100,12 +1100,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "85-周静姝-推荐算法工程师.html",
-    "pdf_file": "85-周静姝-推荐算法工程师.pdf"
+    "html_file": "85-陈春玲-推荐算法工程师.html",
+    "pdf_file": "85-陈春玲-推荐算法工程师.pdf"
   },
   {
     "sequence": "86",
-    "name": "徐静姝",
+    "name": "杨丽娜",
     "target_role": "Java 后端工程师",
     "city": "杭州",
     "years": 0,
@@ -1116,12 +1116,12 @@
       "leadership": false,
       "openSource": true
     },
-    "html_file": "86-徐静姝-Java 后端工程师.html",
-    "pdf_file": "86-徐静姝-Java 后端工程师.pdf"
+    "html_file": "86-杨丽娜-Java 后端工程师.html",
+    "pdf_file": "86-杨丽娜-Java 后端工程师.pdf"
   },
   {
     "sequence": "87",
-    "name": "孙静姝",
+    "name": "黄晓红",
     "target_role": "Java 后端工程师",
     "city": "南京",
     "years": 0,
@@ -1132,12 +1132,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "87-孙静姝-Java 后端工程师.html",
-    "pdf_file": "87-孙静姝-Java 后端工程师.pdf"
+    "html_file": "87-黄晓红-Java 后端工程师.html",
+    "pdf_file": "87-黄晓红-Java 后端工程师.pdf"
   },
   {
     "sequence": "88",
-    "name": "马静姝",
+    "name": "赵芳芳",
     "target_role": "Java 后端工程师",
     "city": "合肥",
     "years": 0,
@@ -1148,12 +1148,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "88-马静姝-Java 后端工程师.html",
-    "pdf_file": "88-马静姝-Java 后端工程师.pdf"
+    "html_file": "88-赵芳芳-Java 后端工程师.html",
+    "pdf_file": "88-赵芳芳-Java 后端工程师.pdf"
   },
   {
     "sequence": "89",
-    "name": "朱静姝",
+    "name": "吴婷婷",
     "target_role": "Java 后端工程师",
     "city": "重庆",
     "years": 0,
@@ -1164,12 +1164,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "89-朱静姝-Java 后端工程师.html",
-    "pdf_file": "89-朱静姝-Java 后端工程师.pdf"
+    "html_file": "89-吴婷婷-Java 后端工程师.html",
+    "pdf_file": "89-吴婷婷-Java 后端工程师.pdf"
   },
   {
     "sequence": "90",
-    "name": "胡静姝",
+    "name": "周丹丹",
     "target_role": "Java 后端工程师",
     "city": "杭州",
     "years": 0,
@@ -1180,12 +1180,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "90-胡静姝-Java 后端工程师.html",
-    "pdf_file": "90-胡静姝-Java 后端工程师.pdf"
+    "html_file": "90-周丹丹-Java 后端工程师.html",
+    "pdf_file": "90-周丹丹-Java 后端工程师.pdf"
   },
   {
     "sequence": "91",
-    "name": "郭静姝",
+    "name": "徐倩倩",
     "target_role": "大模型算法研究员",
     "city": "北京",
     "years": 0,
@@ -1196,12 +1196,12 @@
       "leadership": false,
       "openSource": true
     },
-    "html_file": "91-郭静姝-大模型算法研究员.html",
-    "pdf_file": "91-郭静姝-大模型算法研究员.pdf"
+    "html_file": "91-徐倩倩-大模型算法研究员.html",
+    "pdf_file": "91-徐倩倩-大模型算法研究员.pdf"
   },
   {
     "sequence": "92",
-    "name": "何静姝",
+    "name": "孙晨阳",
     "target_role": "大模型算法研究员",
     "city": "成都",
     "years": 0,
@@ -1212,12 +1212,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "92-何静姝-大模型算法研究员.html",
-    "pdf_file": "92-何静姝-大模型算法研究员.pdf"
+    "html_file": "92-孙晨阳-大模型算法研究员.html",
+    "pdf_file": "92-孙晨阳-大模型算法研究员.pdf"
   },
   {
     "sequence": "93",
-    "name": "高静姝",
+    "name": "马子健",
     "target_role": "大模型算法研究员",
     "city": "西安",
     "years": 0,
@@ -1228,12 +1228,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "93-高静姝-大模型算法研究员.html",
-    "pdf_file": "93-高静姝-大模型算法研究员.pdf"
+    "html_file": "93-马子健-大模型算法研究员.html",
+    "pdf_file": "93-马子健-大模型算法研究员.pdf"
   },
   {
     "sequence": "94",
-    "name": "林静姝",
+    "name": "朱嘉乐",
     "target_role": "大模型算法研究员",
     "city": "厦门",
     "years": 0,
@@ -1244,12 +1244,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "94-林静姝-大模型算法研究员.html",
-    "pdf_file": "94-林静姝-大模型算法研究员.pdf"
+    "html_file": "94-朱嘉乐-大模型算法研究员.html",
+    "pdf_file": "94-朱嘉乐-大模型算法研究员.pdf"
   },
   {
     "sequence": "95",
-    "name": "罗静姝",
+    "name": "胡雨琪",
     "target_role": "大模型算法研究员",
     "city": "北京",
     "years": 0,
@@ -1260,12 +1260,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "95-罗静姝-大模型算法研究员.html",
-    "pdf_file": "95-罗静姝-大模型算法研究员.pdf"
+    "html_file": "95-胡雨琪-大模型算法研究员.html",
+    "pdf_file": "95-胡雨琪-大模型算法研究员.pdf"
   },
   {
     "sequence": "96",
-    "name": "郑静姝",
+    "name": "郭思敏",
     "target_role": "MLOps / AI 平台工程师",
     "city": "上海",
     "years": 0,
@@ -1276,12 +1276,12 @@
       "leadership": true,
       "openSource": true
     },
-    "html_file": "96-郑静姝-MLOps - AI 平台工程师.html",
-    "pdf_file": "96-郑静姝-MLOps - AI 平台工程师.pdf"
+    "html_file": "96-郭思敏-MLOps - AI 平台工程师.html",
+    "pdf_file": "96-郭思敏-MLOps - AI 平台工程师.pdf"
   },
   {
     "sequence": "97",
-    "name": "梁静姝",
+    "name": "何欣桐",
     "target_role": "MLOps / AI 平台工程师",
     "city": "广州",
     "years": 0,
@@ -1292,12 +1292,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "97-梁静姝-MLOps - AI 平台工程师.html",
-    "pdf_file": "97-梁静姝-MLOps - AI 平台工程师.pdf"
+    "html_file": "97-何欣桐-MLOps - AI 平台工程师.html",
+    "pdf_file": "97-何欣桐-MLOps - AI 平台工程师.pdf"
   },
   {
     "sequence": "98",
-    "name": "谢静姝",
+    "name": "高文静",
     "target_role": "MLOps / AI 平台工程师",
     "city": "武汉",
     "years": 0,
@@ -1308,12 +1308,12 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "98-谢静姝-MLOps - AI 平台工程师.html",
-    "pdf_file": "98-谢静姝-MLOps - AI 平台工程师.pdf"
+    "html_file": "98-高文静-MLOps - AI 平台工程师.html",
+    "pdf_file": "98-高文静-MLOps - AI 平台工程师.pdf"
   },
   {
     "sequence": "99",
-    "name": "宋静姝",
+    "name": "林佳丽",
     "target_role": "MLOps / AI 平台工程师",
     "city": "青岛",
     "years": 0,
@@ -1324,12 +1324,12 @@
       "leadership": true,
       "openSource": false
     },
-    "html_file": "99-宋静姝-MLOps - AI 平台工程师.html",
-    "pdf_file": "99-宋静姝-MLOps - AI 平台工程师.pdf"
+    "html_file": "99-林佳丽-MLOps - AI 平台工程师.html",
+    "pdf_file": "99-林佳丽-MLOps - AI 平台工程师.pdf"
   },
   {
     "sequence": "100",
-    "name": "唐静姝",
+    "name": "罗海波",
     "target_role": "MLOps / AI 平台工程师",
     "city": "上海",
     "years": 0,
@@ -1340,7 +1340,7 @@
       "leadership": false,
       "openSource": false
     },
-    "html_file": "100-唐静姝-MLOps - AI 平台工程师.html",
-    "pdf_file": "100-唐静姝-MLOps - AI 平台工程师.pdf"
+    "html_file": "100-罗海波-MLOps - AI 平台工程师.html",
+    "pdf_file": "100-罗海波-MLOps - AI 平台工程师.pdf"
   }
 ]

@@ -2,30 +2,10 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { RESUME_NAMES, candidateEmail } = require("./names");
 
 const OUTPUT_DIR = path.join(__dirname, "more-html");
 const MANIFEST_PATH = path.join(__dirname, "manifest-more.json");
-
-const surnames = [
-  "王", "李", "张", "刘", "杨", "黄", "赵", "吴", "周", "徐",
-  "孙", "马", "朱", "胡", "郭", "何", "高", "林", "罗", "郑",
-  "梁", "谢", "宋", "唐", "许", "韩", "邓", "曹", "彭", "曾",
-];
-
-const givenNames = [
-  "景行", "若溪", "明轩", "予安", "星河", "书瑶", "天佑", "语晨",
-  "皓然", "清越", "远航", "知远", "南星", "芷晴", "奕辰", "思齐",
-  "瑾瑜", "云舟", "安澜", "文昊", "静姝", "承泽", "佳禾", "沐阳",
-  "子涵", "立恒", "嘉琪", "以宁", "皓宁", "若川", "景尧", "雅楠",
-  "启航", "锦程", "明泽", "澜心", "予晨", "嘉树", "修远", "亭宇",
-  "柏舟", "瑾萱", "泽宇", "清和", "星野", "南乔", "宜修", "朝闻",
-];
-
-const existingNames = new Set([
-  "陈思远", "林雨桐", "周嘉宁", "王浩宇", "赵可欣", "许博文", "刘一诺",
-  "孙明哲", "唐诗涵", "郑子墨", "何安然", "高远", "罗佳怡", "梁泽宇",
-  "沈知夏", "蒋文博",
-]);
 
 const cities = [
   "上海", "北京", "杭州", "深圳", "广州", "成都", "南京", "苏州",
@@ -853,24 +833,6 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
-function makeNames(count) {
-  const names = [];
-  const used = new Set(existingNames);
-  const start = Math.floor(random() * givenNames.length);
-
-  for (let offset = 0; names.length < count; offset += 1) {
-    const surname = surnames[offset % surnames.length];
-    const given = givenNames[(start + Math.floor(offset / surnames.length) * 7) % givenNames.length];
-    const name = `${surname}${given}`;
-    if (!used.has(name)) {
-      used.add(name);
-      names.push(name);
-    }
-  }
-
-  return names;
-}
-
 function monthLabel(totalMonths) {
   const year = Math.floor(totalMonths / 12);
   const month = totalMonths % 12 || 12;
@@ -1078,7 +1040,7 @@ function generateCandidate(sequence, roleIndex, variant, name) {
     role: spec.title,
     city,
     phone: `138-0000-${String(sequence).padStart(4, "0")}`,
-    email: `candidate${sequence}@example.com`,
+    email: candidateEmail(sequence),
     summary: `约 ${roundedYears} 年相关经验。${variantData.summary}过往工作覆盖需求理解、方案设计、开发验证和上线复盘等环节，能够在业务目标不够清晰时主动补充信息、拆解问题并推动相关角色形成一致方案。${variant % 2 === 1 ? "更偏好在真实业务约束下持续迭代，而不是只追求短期功能交付。" : "重视文档沉淀、工程质量与后续维护，也会在项目结束后整理问题和方法供团队复用。"}`,
     skills: skillGroupsFor(spec, variant),
     education: [
@@ -1327,7 +1289,7 @@ function renderResume(candidate, index) {
 }
 
 const roleCounts = roleSpecs.map((_, index) => (index < 4 ? 6 : 5));
-const names = makeNames(roleCounts.reduce((sum, value) => sum + value, 0));
+const names = RESUME_NAMES.slice(16);
 const candidates = [];
 let nameIndex = 0;
 let sequence = 17;
@@ -1342,6 +1304,11 @@ roleCounts.forEach((count, roleIndex) => {
 });
 
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+for (const entry of fs.readdirSync(OUTPUT_DIR)) {
+  if (entry.toLocaleLowerCase().endsWith(".html")) {
+    fs.rmSync(path.join(OUTPUT_DIR, entry), { force: true });
+  }
+}
 
 const manifest = candidates.map((candidate, index) => {
   const filename = `${candidate.sequence}-${candidate.name}-${candidate.role.replaceAll("/", "-")}`;

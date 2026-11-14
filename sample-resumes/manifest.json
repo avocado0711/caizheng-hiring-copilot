@@ -1,130 +1,130 @@
 [
   {
     "sequence": "01",
-    "name": "陈思远",
+    "name": "王子轩",
     "target_role": "AI 应用工程师",
     "city": "上海",
-    "html_file": "01-陈思远-AI 应用工程师.html",
-    "pdf_file": "01-陈思远-AI 应用工程师.pdf"
+    "html_file": "01-王子轩-AI 应用工程师.html",
+    "pdf_file": "01-王子轩-AI 应用工程师.pdf"
   },
   {
     "sequence": "02",
-    "name": "林雨桐",
+    "name": "李雨泽",
     "target_role": "NLP 算法工程师 / LLM 应用",
     "city": "北京",
-    "html_file": "02-林雨桐-NLP 算法工程师 - LLM 应用.html",
-    "pdf_file": "02-林雨桐-NLP 算法工程师 - LLM 应用.pdf"
+    "html_file": "02-李雨泽-NLP 算法工程师 - LLM 应用.html",
+    "pdf_file": "02-李雨泽-NLP 算法工程师 - LLM 应用.pdf"
   },
   {
     "sequence": "03",
-    "name": "周嘉宁",
+    "name": "张宇航",
     "target_role": "高级后端工程师",
     "city": "上海",
-    "html_file": "03-周嘉宁-高级后端工程师.html",
-    "pdf_file": "03-周嘉宁-高级后端工程师.pdf"
+    "html_file": "03-张宇航-高级后端工程师.html",
+    "pdf_file": "03-张宇航-高级后端工程师.pdf"
   },
   {
     "sequence": "04",
-    "name": "王浩宇",
+    "name": "刘浩然",
     "target_role": "AI 产品经理",
     "city": "杭州",
-    "html_file": "04-王浩宇-AI 产品经理.html",
-    "pdf_file": "04-王浩宇-AI 产品经理.pdf"
+    "html_file": "04-刘浩然-AI 产品经理.html",
+    "pdf_file": "04-刘浩然-AI 产品经理.pdf"
   },
   {
     "sequence": "05",
-    "name": "赵可欣",
+    "name": "陈俊杰",
     "target_role": "数据工程师",
     "city": "上海",
-    "html_file": "05-赵可欣-数据工程师.html",
-    "pdf_file": "05-赵可欣-数据工程师.pdf"
+    "html_file": "05-陈俊杰-数据工程师.html",
+    "pdf_file": "05-陈俊杰-数据工程师.pdf"
   },
   {
     "sequence": "06",
-    "name": "许博文",
+    "name": "杨志强",
     "target_role": "全栈工程师",
     "city": "深圳",
-    "html_file": "06-许博文-全栈工程师.html",
-    "pdf_file": "06-许博文-全栈工程师.pdf"
+    "html_file": "06-杨志强-全栈工程师.html",
+    "pdf_file": "06-杨志强-全栈工程师.pdf"
   },
   {
     "sequence": "07",
-    "name": "刘一诺",
+    "name": "黄建华",
     "target_role": "机器学习工程师",
     "city": "上海",
-    "html_file": "07-刘一诺-机器学习工程师.html",
-    "pdf_file": "07-刘一诺-机器学习工程师.pdf"
+    "html_file": "07-黄建华-机器学习工程师.html",
+    "pdf_file": "07-黄建华-机器学习工程师.pdf"
   },
   {
     "sequence": "08",
-    "name": "孙明哲",
+    "name": "赵国庆",
     "target_role": "后端架构师",
     "city": "上海",
-    "html_file": "08-孙明哲-后端架构师.html",
-    "pdf_file": "08-孙明哲-后端架构师.pdf"
+    "html_file": "08-赵国庆-后端架构师.html",
+    "pdf_file": "08-赵国庆-后端架构师.pdf"
   },
   {
     "sequence": "09",
-    "name": "唐诗涵",
+    "name": "吴永强",
     "target_role": "前端工程师 / AI 产品体验",
     "city": "上海",
-    "html_file": "09-唐诗涵-前端工程师 - AI 产品体验.html",
-    "pdf_file": "09-唐诗涵-前端工程师 - AI 产品体验.pdf"
+    "html_file": "09-吴永强-前端工程师 - AI 产品体验.html",
+    "pdf_file": "09-吴永强-前端工程师 - AI 产品体验.pdf"
   },
   {
     "sequence": "10",
-    "name": "郑子墨",
+    "name": "周海涛",
     "target_role": "Python 开发工程师",
     "city": "苏州",
-    "html_file": "10-郑子墨-Python 开发工程师.html",
-    "pdf_file": "10-郑子墨-Python 开发工程师.pdf"
+    "html_file": "10-周海涛-Python 开发工程师.html",
+    "pdf_file": "10-周海涛-Python 开发工程师.pdf"
   },
   {
     "sequence": "11",
-    "name": "何安然",
+    "name": "徐晓峰",
     "target_role": "企业软件产品经理",
     "city": "广州",
-    "html_file": "11-何安然-企业软件产品经理.html",
-    "pdf_file": "11-何安然-企业软件产品经理.pdf"
+    "html_file": "11-徐晓峰-企业软件产品经理.html",
+    "pdf_file": "11-徐晓峰-企业软件产品经理.pdf"
   },
   {
     "sequence": "12",
-    "name": "高远",
+    "name": "孙明辉",
     "target_role": "计算机视觉工程师",
     "city": "北京",
-    "html_file": "12-高远-计算机视觉工程师.html",
-    "pdf_file": "12-高远-计算机视觉工程师.pdf"
+    "html_file": "12-孙明辉-计算机视觉工程师.html",
+    "pdf_file": "12-孙明辉-计算机视觉工程师.pdf"
   },
   {
     "sequence": "13",
-    "name": "罗佳怡",
+    "name": "马振华",
     "target_role": "推荐算法工程师",
     "city": "上海",
-    "html_file": "13-罗佳怡-推荐算法工程师.html",
-    "pdf_file": "13-罗佳怡-推荐算法工程师.pdf"
+    "html_file": "13-马振华-推荐算法工程师.html",
+    "pdf_file": "13-马振华-推荐算法工程师.pdf"
   },
   {
     "sequence": "14",
-    "name": "梁泽宇",
+    "name": "朱俊峰",
     "target_role": "Java 后端工程师",
     "city": "成都",
-    "html_file": "14-梁泽宇-Java 后端工程师.html",
-    "pdf_file": "14-梁泽宇-Java 后端工程师.pdf"
+    "html_file": "14-朱俊峰-Java 后端工程师.html",
+    "pdf_file": "14-朱俊峰-Java 后端工程师.pdf"
   },
   {
     "sequence": "15",
-    "name": "沈知夏",
+    "name": "胡文杰",
     "target_role": "大模型算法研究员",
     "city": "上海",
-    "html_file": "15-沈知夏-大模型算法研究员.html",
-    "pdf_file": "15-沈知夏-大模型算法研究员.pdf"
+    "html_file": "15-胡文杰-大模型算法研究员.html",
+    "pdf_file": "15-胡文杰-大模型算法研究员.pdf"
   },
   {
     "sequence": "16",
-    "name": "蒋文博",
+    "name": "郭子豪",
     "target_role": "MLOps / AI 平台工程师",
     "city": "上海",
-    "html_file": "16-蒋文博-MLOps - AI 平台工程师.html",
-    "pdf_file": "16-蒋文博-MLOps - AI 平台工程师.pdf"
+    "html_file": "16-郭子豪-MLOps - AI 平台工程师.html",
+    "pdf_file": "16-郭子豪-MLOps - AI 平台工程师.pdf"
   }
 ]

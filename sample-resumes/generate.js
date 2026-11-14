@@ -2,17 +2,18 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { RESUME_NAMES, candidateEmail } = require("./names");
 
 const OUTPUT_DIR = path.join(__dirname, "html");
 
 const candidates = [
   {
-    slug: "chen-siyuan-ai",
-    name: "陈思远",
+    slug: "ai-app-01",
+    name: RESUME_NAMES[0],
     role: "AI 应用工程师",
     city: "上海",
     phone: "138-0000-0001",
-    email: "chen.siyuan@example.com",
+    email: candidateEmail(1),
     summary:
       "4 年半 Python 与 AI 应用开发经验，长期负责企业知识库、RAG 检索链路和 Agent 工作流落地，熟悉从需求拆解、原型验证到生产部署的完整流程。",
     skills: [
@@ -69,12 +70,12 @@ const candidates = [
     extras: ["开源项目 RAG-Workbench 维护者；内部技术分享讲师；英语 CET-6"],
   },
   {
-    slug: "lin-yutong-nlp",
-    name: "林雨桐",
+    slug: "nlp-02",
+    name: RESUME_NAMES[1],
     role: "NLP 算法工程师 / LLM 应用",
     city: "北京",
     phone: "138-0000-0002",
-    email: "lin.yutong@example.com",
+    email: candidateEmail(2),
     summary:
       "硕士毕业后从事 NLP 与 LLM 算法研发，具备数据构建、模型微调、评测分析和推理优化经验，正在转向面向业务的 AI 应用工程。",
     skills: [
@@ -121,12 +122,12 @@ const candidates = [
     extras: ["发表 ACL Findings 论文 1 篇（第二作者）；熟练掌握英文技术文档阅读"],
   },
   {
-    slug: "zhou-jianing-backend",
-    name: "周嘉宁",
+    slug: "backend-03",
+    name: RESUME_NAMES[2],
     role: "高级后端工程师",
     city: "上海",
     phone: "138-0000-0003",
-    email: "zhou.jianing@example.com",
+    email: candidateEmail(3),
     summary:
       "7 年互联网后端研发经验，主要技术方向为 Java、Go 与高并发交易系统，近两年参与 AI 应用平台的工程化建设。",
     skills: [
@@ -172,12 +173,12 @@ const candidates = [
     extras: ["开源 Spring 网关插件作者；具备团队技术评审和新人培养经验"],
   },
   {
-    slug: "wang-haoyu-pm",
-    name: "王浩宇",
+    slug: "product-04",
+    name: RESUME_NAMES[3],
     role: "AI 产品经理",
     city: "杭州",
     phone: "138-0000-0004",
-    email: "wang.haoyu@example.com",
+    email: candidateEmail(4),
     summary:
       "2 年 B 端产品经验，参与 AI 客服和知识库产品从需求分析到试点交付，能够独立完成用户研究、指标设计和跨团队推进。",
     skills: [
@@ -223,12 +224,12 @@ const candidates = [
     extras: ["PMP 在学；有客户访谈和技术方案评审经验"],
   },
   {
-    slug: "zhao-kexin-data",
-    name: "赵可欣",
+    slug: "data-05",
+    name: RESUME_NAMES[4],
     role: "数据工程师",
     city: "上海",
     phone: "138-0000-0005",
-    email: "zhao.kexin@example.com",
+    email: candidateEmail(5),
     summary:
       "4 年数据工程经验，负责数据管道、指标体系与检索数据治理，熟悉 Python、Spark 和向量数据处理，参与过两个 RAG 项目的数据侧建设。",
     skills: [
@@ -268,12 +269,12 @@ const candidates = [
     extras: ["阿里云大数据认证；具备跨团队数据口径协调经验"],
   },
   {
-    slug: "xu-bowen-fullstack",
-    name: "许博文",
+    slug: "fullstack-06",
+    name: RESUME_NAMES[5],
     role: "全栈工程师",
     city: "深圳",
     phone: "138-0000-0006",
-    email: "xu.bowen@example.com",
+    email: candidateEmail(6),
     summary:
       "6 年全栈开发经验，近两年独立完成多个 LLM 工具和 Agent 原型，能够快速从需求走到可演示产品。",
     skills: [
@@ -320,12 +321,12 @@ const candidates = [
     extras: ["作品集：portfolio.example.com；自驱学习能力较强"],
   },
   {
-    slug: "liu-yinuo-algorithm",
-    name: "刘一诺",
+    slug: "ml-07",
+    name: RESUME_NAMES[6],
     role: "机器学习工程师",
     city: "上海",
     phone: "138-0000-0007",
-    email: "liu.yinuo@example.com",
+    email: candidateEmail(7),
     summary:
       "3 年半机器学习工程经验，专注搜索、推荐与生成式检索，具备从数据构建到线上服务的完整经验。",
     skills: [
@@ -365,12 +366,12 @@ const candidates = [
     extras: ["发表中文信息处理会议论文 1 篇；熟悉英文论文复现"],
   },
   {
-    slug: "sun-mingzhe-architect",
-    name: "孙明哲",
+    slug: "architect-08",
+    name: RESUME_NAMES[7],
     role: "后端架构师",
     city: "上海",
     phone: "138-0000-0008",
-    email: "sun.mingzhe@example.com",
+    email: candidateEmail(8),
     summary:
       "7 年平台研发和架构经验，负责过智能文档处理、搜索服务和 AI 工作流平台，重视可维护性、稳定性和交付效率。",
     skills: [
@@ -417,12 +418,12 @@ const candidates = [
     extras: ["内部架构委员会成员；有 5 人团队管理经验"],
   },
   {
-    slug: "tang-shihan-frontend",
-    name: "唐诗涵",
+    slug: "frontend-09",
+    name: RESUME_NAMES[8],
     role: "前端工程师 / AI 产品体验",
     city: "上海",
     phone: "138-0000-0009",
-    email: "tang.shihan@example.com",
+    email: candidateEmail(9),
     summary:
       "2 年半前端开发经验，主要负责 AI 对话产品的交互与工程实现，参与流式输出、会话管理和可观测体验建设。",
     skills: [
@@ -468,12 +469,12 @@ const candidates = [
     extras: ["个人技术博客；重视交互细节与可访问性"],
   },
   {
-    slug: "zheng-zimo-python",
-    name: "郑子墨",
+    slug: "python-10",
+    name: RESUME_NAMES[9],
     role: "Python 开发工程师",
     city: "苏州",
     phone: "138-0000-0010",
-    email: "zheng.zimo@example.com",
+    email: candidateEmail(10),
     summary:
       "4 年 Python 和企业自动化经验，负责数据处理、RPA、内部工具和轻量 AI 功能集成，擅长快速定位业务重复流程。",
     skills: [
@@ -513,12 +514,12 @@ const candidates = [
     extras: ["有 Linux 运维和脚本编写经验；目前主要工作地点为苏州"],
   },
   {
-    slug: "he-anran-product",
-    name: "何安然",
+    slug: "product-11",
+    name: RESUME_NAMES[10],
     role: "企业软件产品经理",
     city: "广州",
     phone: "138-0000-0011",
-    email: "he.anran@example.com",
+    email: candidateEmail(11),
     summary:
       "5 年企业软件产品经验，负责招聘、协同和数据分析产品，具备较强的业务抽象和跨团队推进能力。",
     skills: [
@@ -564,12 +565,12 @@ const candidates = [
     extras: ["具备招聘业务理解；非算法研发背景"],
   },
   {
-    slug: "gao-yuan-cv",
-    name: "高远",
+    slug: "vision-12",
+    name: RESUME_NAMES[11],
     role: "计算机视觉工程师",
     city: "北京",
     phone: "138-0000-0012",
-    email: "gao.yuan@example.com",
+    email: candidateEmail(12),
     summary:
       "3 年计算机视觉与模型部署经验，负责图像分类、目标检测和边缘设备推理优化，具备完整的数据和工程闭环能力。",
     skills: [
@@ -609,12 +610,12 @@ const candidates = [
     extras: ["全国大学生智能车竞赛国赛二等奖；英语 CET-6"],
   },
   {
-    slug: "luo-jiayi-recsys",
-    name: "罗佳怡",
+    slug: "recommendation-13",
+    name: RESUME_NAMES[12],
     role: "推荐算法工程师",
     city: "上海",
     phone: "138-0000-0013",
-    email: "luo.jiayi@example.com",
+    email: candidateEmail(13),
     summary:
       "4 年推荐系统经验，负责召回、排序、冷启动和线上实验，具备从 0 到 1 建设推荐能力的完整实践。",
     skills: [
@@ -653,12 +654,12 @@ const candidates = [
     extras: ["有推荐系统线上实验经验；工作稳定，技术表达清晰"],
   },
   {
-    slug: "liang-zeyu-java",
-    name: "梁泽宇",
+    slug: "java-14",
+    name: RESUME_NAMES[13],
     role: "Java 后端工程师",
     city: "成都",
     phone: "138-0000-0014",
-    email: "liang.zeyu@example.com",
+    email: candidateEmail(14),
     summary:
       "5 年 Java 微服务研发经验，参与过搜索、工单和智能客服系统建设，具备良好的工程基础和开源协作习惯。",
     skills: [
@@ -697,12 +698,12 @@ const candidates = [
     extras: ["GitHub 开源项目 1.4k Star；目前主要使用 Java，Python 仅项目联调使用"],
   },
   {
-    slug: "shen-zhixia-research",
-    name: "沈知夏",
+    slug: "research-15",
+    name: RESUME_NAMES[14],
     role: "大模型算法研究员",
     city: "上海",
     phone: "138-0000-0015",
-    email: "shen.zhixia@example.com",
+    email: candidateEmail(15),
     summary:
       "硕士毕业后从事大模型对齐与评测研究，具备论文复现、数据构造和实验分析能力，希望转向更贴近实际产品的 AI 应用研发。",
     skills: [
@@ -742,12 +743,12 @@ const candidates = [
     extras: ["发表论文 2 篇；英语读写流利；偏研究型，业务工程经验较少"],
   },
   {
-    slug: "jiang-wenbo-mlops",
-    name: "蒋文博",
+    slug: "mlops-16",
+    name: RESUME_NAMES[15],
     role: "MLOps / AI 平台工程师",
     city: "上海",
     phone: "138-0000-0016",
-    email: "jiang.wenbo@example.com",
+    email: candidateEmail(16),
     summary:
       "4 年 AI 平台与 MLOps 经验，负责模型部署、推理服务、GPU 资源管理和实验平台建设，关注稳定性与成本。",
     skills: [
@@ -1166,6 +1167,11 @@ function renderResume(candidate, index) {
 }
 
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+for (const entry of fs.readdirSync(OUTPUT_DIR)) {
+  if (entry.toLocaleLowerCase().endsWith(".html")) {
+    fs.rmSync(path.join(OUTPUT_DIR, entry), { force: true });
+  }
+}
 
 const manifest = candidates.map((candidate, index) => {
   const sequence = String(index + 1).padStart(2, "0");

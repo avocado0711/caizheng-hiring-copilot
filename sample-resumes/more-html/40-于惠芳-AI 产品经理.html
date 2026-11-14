@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>于惠芳 - AI 产品经理</title>
+  <style>
+    @page { size: A4; margin: 11mm 14mm 12mm; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      color: #2d263e;
+      background: #fff;
+      padding: 11mm 14mm 12mm;
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .resume {
+      position: relative;
+      width: 100%;
+      min-height: 265mm;
+      overflow: visible;
+      background: #fff;
+    }
+    .resume::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 48mm;
+      height: 40mm;
+      border-radius: 0 0 0 48mm;
+      background: #f0edf7;
+      content: "";
+    }
+    .hero { position: relative; padding: 3mm 0 7mm; border-bottom: 1.2px solid #5b4a87; }
+    .identity { display: flex; align-items: center; gap: 5mm; }
+    .avatar {
+      display: grid;
+      width: 17mm;
+      height: 17mm;
+      flex: 0 0 17mm;
+      place-items: center;
+      border-radius: 4mm;
+      color: #fff;
+      background: #5b4a87;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .name-row { display: flex; align-items: baseline; gap: 4mm; }
+    h1 { margin: 0; font-size: 25px; letter-spacing: 2px; }
+    .target { color: #5b4a87; font-size: 12px; font-weight: 700; }
+    .contact { margin: 2.5mm 0 0; color: #5d6963; font-size: 9.5px; }
+    .summary { margin: 5mm 0 0; max-width: 174mm; color: #4d5b54; font-size: 10px; line-height: 1.72; }
+    .content { padding-top: 6mm; }
+    .block { margin-bottom: 6mm; }
+    .block h2, .side-block h2 {
+      margin: 0 0 4mm;
+      padding-bottom: 1.6mm;
+      border-bottom: 1px solid #e3e9e5;
+      color: #5b4a87;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .block h2 span { margin-right: 2mm; color: #9eaaa3; font-size: 9px; }
+    .entry, .project { margin-bottom: 5mm; break-inside: avoid; }
+    .entry-head, .project-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 4mm; }
+    .entry h3, .project h3, .education-row h3 { margin: 0; font-size: 11.4px; }
+    .role { margin: 1mm 0 0; color: #5b4a87; font-size: 9.4px; font-weight: 700; }
+    .entry-meta, .education-meta {
+      display: flex; min-width: 37mm; flex-direction: column; gap: 1mm;
+      color: #66726c; font-size: 8.4px; text-align: right;
+    }
+    .project-head > span { color: #66726c; font-size: 8.4px; white-space: nowrap; }
+    .tech { margin: 1.5mm 0 1mm; padding: 1.4mm 2.4mm; border-radius: 2mm; color: #5b4a87; background: #f0edf7; font-size: 8.2px; }
+    ul { margin: 1.4mm 0 0; padding-left: 4mm; }
+    li { margin-bottom: 1.4mm; color: #39463f; font-size: 9.4px; line-height: 1.75; }
+    .education-row { display: flex; justify-content: space-between; gap: 4mm; }
+    .education-row p { margin: 1mm 0 0; color: #5f6b65; font-size: 9px; }
+    .lower-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 8mm;
+      margin-top: 1mm;
+      break-inside: avoid;
+    }
+    .side-block { margin-bottom: 6mm; }
+    .skill-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5mm; }
+    .skill-row { margin-bottom: 3mm; padding-bottom: 2.8mm; border-bottom: 1px solid #edf0ee; }
+    .skill-row:last-child { border-bottom: 0; }
+    .skill-row strong { display: block; margin-bottom: 1mm; font-size: 9px; }
+    .skill-row span { color: #59665f; font-size: 8.5px; line-height: 1.5; }
+    .extras { padding-left: 3.5mm; }
+    .extras li { font-size: 8.5px; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 7mm;
+      padding-top: 2mm;
+      border-top: 1px solid #e9edeb;
+      color: #a1aaa5;
+      font-size: 7px;
+    }
+    .layout-1::before { width: 100%; height: 34mm; border-radius: 0; }
+    .layout-2 .avatar { border-radius: 50%; color: #5b4a87; background: #fff; border: 1px solid #5b4a87; }
+    .layout-2 .target { padding: 1.2mm 2.5mm; border-radius: 5mm; background: #f0edf7; }
+    .layout-3::before { width: 5mm; height: 40mm; border-radius: 0 0 5mm 0; }
+    @media print {
+      body { padding: 0; }
+      .resume { min-height: 0; }
+      .hero, .entry-head, .project-head, .lower-grid, footer { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume layout-3">
+    <header class="hero">
+      <div class="identity">
+        <div class="avatar">惠芳</div>
+        <div>
+          <div class="name-row"><h1>于惠芳</h1><span class="target">AI 产品经理</span></div>
+          <p class="contact">厦门 · 138-0000-0040 · candidate40@example.com</p>
+        </div>
+      </div>
+      <p class="summary">约 NaN 年相关经验。关注 AI 产品的模型能力边界，擅长把不确定性转化为明确的用户提示与人工接管。过往工作覆盖需求理解、方案设计、开发验证和上线复盘等环节，能够在业务目标不够清晰时主动补充信息、拆解问题并推动相关角色形成一致方案。更偏好在真实业务约束下持续迭代，而不是只追求短期功能交付。</p>
+    </header>
+    <div class="content">
+      <section class="block"><h2><span>01</span> 工作经历</h2>
+        <section class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>青岚数据</h3>
+              <p class="role">AI 产品经理</p>
+            </div>
+            <div class="entry-meta">
+              <span>NaN.12—至今</span>
+              <span>厦门</span>
+            </div>
+          </div>
+          <ul><li>参与AI 客服体验升级从场景调研、需求梳理到上线复盘的完整过程，结合平台重构期的实际约束拆分版本目标，维护需求池、验收标准和迭代节奏。</li><li>与研发、算法、设计、销售和客户成功团队保持日常协作，将模型能力边界转化为用户可以理解的产品规则，重点处理权限、引用、低置信度提示和人工接管等细节。</li><li>通过客户访谈、行为数据和一线反馈识别高频问题，结合业务收益与实现成本调整优先级；注重与上下游团队提前对齐接口边界和验收口径，避免只在演示环境里验证功能。</li><li>参与11人左右的跨职能项目组，长期跟进试点客户的配置、培训和问题反馈，协助把单点需求沉淀为可复用的产品方案。</li></ul>
+        </section>
+      </section>
+      <section class="block"><h2><span>02</span> 项目经历</h2>
+        <section class="project">
+          <div class="project-head">
+            <div>
+              <h3>AI 客服体验升级</h3>
+              <p class="role">核心产品经理</p>
+            </div>
+            <span>NaN.12—至今</span>
+          </div>
+          <p class="tech">技术栈：LLM 应用、A/B 测试、SQL</p>
+          <ul><li>项目背景：项目需要在不完全确定的模型能力上设计可用流程，并同时兼顾业务效率、结果可解释性和人工复核成本。</li><li>设计拒答、引用和转人工策略，降低错误回答带来的用户困扰。</li><li>个人工作：结合LLM 应用、A/B 测试、SQL完成方案设计与核心实现，过程中重点检查数据边界、异常场景和后续扩展方式；与4个相关角色协作推进联调和验收。</li><li>建立分场景体验指标与周度复盘机制，推动版本持续迭代。</li></ul>
+        </section>
+      
+        <section class="project">
+          <div class="project-head">
+            <div>
+              <h3>招聘流程智能助手</h3>
+              <p class="role">高级产品经理</p>
+            </div>
+            <span>NaN.12—NaN.12</span>
+          </div>
+          <p class="tech">技术栈：B 端产品、SQL、流程设计</p>
+          <ul><li>参与招聘流程智能助手的前期调研和模块建设，负责高级产品经理相关任务，配合团队补齐需求说明、接口约定和测试用例。</li><li>梳理简历分配、面试安排和反馈提醒流程，减少重复录入。</li></ul>
+        </section>
+      </section>
+      <div class="lower-grid">
+        <section class="side-block"><h2>专业技能</h2><div class="skill-list">
+        <div class="skill-row"><strong>产品能力</strong><span>需求分析、用户研究、原型设计、指标设计</span></div>
+      
+        <div class="skill-row"><strong>AI 理解</strong><span>RAG、Agent、模型评测、Prompt 设计</span></div>
+      
+        <div class="skill-row"><strong>分析工具</strong><span>SQL、Axure、Figma、Postman</span></div>
+      
+        <div class="skill-row"><strong>协作</strong><span>敏捷项目管理、客户访谈、技术方案评审</span></div>
+      
+        <div class="skill-row"><strong>语言</strong><span>英语 CET-6，可阅读英文技术资料</span></div>
+      </div></section>
+        <section class="side-block"><h2>教育背景</h2>
+        <section class="education-row">
+          <div><h3>四川大学</h3><p>信息管理与信息系统 · 本科</p></div>
+          <div class="education-meta"><span>NaN.12—NaN.12</span><span>核心课程：数据结构、操作系统、数据库系统</span></div>
+        </section>
+      </section>
+      </div>
+      <section class="side-block"><h2>补充信息</h2><ul class="extras"><li>近期持续关注多模态、Agent 和模型评测相关实践</li><li>期望工作地点：厦门</li><li>工作偏好：愿意承担跨团队协作和复杂问题拆解</li></ul></section>
+    </div>
+    <footer><span>虚构简历样本 · 仅供 才证 招聘筛选系统测试</span><span>40 / 100</span></footer>
+  </main>
+</body>
+</html>

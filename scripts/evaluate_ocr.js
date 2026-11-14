@@ -23,30 +23,41 @@ const SKILL_TERMS = [
   "RAG", "Agent", "LangChain", "PyTorch", "TensorFlow", "LLM",
 ];
 
+function findResumePdf(directory, sequence) {
+  const dirPath = path.join(ROOT, "sample-resumes", directory);
+  const matches = fs.readdirSync(dirPath)
+    .filter((fileName) => fileName.startsWith(`${sequence}-`) && fileName.endsWith(".pdf"))
+    .sort();
+  if (matches.length !== 1) {
+    throw new Error(`Expected one ${sequence} PDF in ${dirPath}, found ${matches.length}`);
+  }
+  return path.join("sample-resumes", directory, matches[0]);
+}
+
 const CASES = [
   {
     id: "01-160dpi",
-    pdf: "sample-resumes/pdf/01.pdf",
+    pdf: findResumePdf("pdf", "01"),
     dpi: 160,
   },
   {
     id: "01-220dpi",
-    pdf: "sample-resumes/pdf/01.pdf",
+    pdf: findResumePdf("pdf", "01"),
     dpi: 220,
   },
   {
     id: "06-160dpi",
-    pdf: "sample-resumes/pdf/06.pdf",
+    pdf: findResumePdf("pdf", "06"),
     dpi: 160,
   },
   {
     id: "06-220dpi",
-    pdf: "sample-resumes/pdf/06.pdf",
+    pdf: findResumePdf("pdf", "06"),
     dpi: 220,
   },
   {
     id: "17-220dpi",
-    pdf: "sample-resumes/more-pdf/17.pdf",
+    pdf: findResumePdf("more-pdf", "17"),
     dpi: 220,
   },
 ];
