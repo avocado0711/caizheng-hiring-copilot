@@ -1006,6 +1006,16 @@ const KNOWLEDGE_TYPE_LABELS = {
   "resume-screening": "简历样本",
 };
 
+const ENTITY_TYPE_LABELS = {
+  company: "公司",
+  organization: "组织",
+  school: "学校",
+  team: "团队",
+  role: "岗位",
+  paper: "论文",
+  patent: "专利",
+};
+
 function renderKnowledgePage() {
   const knowledge = state.data?.knowledge || {
     documentCount: 0,
@@ -2776,18 +2786,24 @@ function renderExperienceIntelligence(candidate) {
         <div class="experience-index">${value.index}<small>/100</small></div>
       </div>
       <div class="value-dimension-list">
-        ${(value.dimensions || []).map((dimension) => `
-          <div class="value-dimension-row">
-            <span>${escapeHtml(dimension.label)}</span>
-            <div class="value-bar" title="${escapeAttr(dimension.note || "")}"><i style="width:${dimension.score == null ? 0 : clamp(dimension.score, 0, 100)}%"></i></div>
-            <strong>${dimension.score == null ? "N/A" : dimension.score}</strong>
-          </div>
-        `).join("")}
+        ${(value.dimensions || []).map((dimension) => {
+          const displayValue = dimension.displayValue
+            ?? (dimension.score == null ? "N/A" : String(dimension.score));
+          const barPercent = dimension.barPercent
+            ?? (dimension.score == null ? 0 : clamp(dimension.score, 0, 100));
+          return `
+            <div class="value-dimension-row">
+              <span>${escapeHtml(dimension.label)}</span>
+              <div class="value-bar" title="${escapeAttr(dimension.note || "")}"><i style="width:${clamp(barPercent, 0, 100)}%"></i></div>
+              <strong>${escapeHtml(displayValue)}</strong>
+            </div>
+          `;
+        }).join("")}
       </div>
       <p class="experience-disclaimer">${escapeHtml(value.disclaimer || "")}</p>
     </div>
     <div class="entity-chip-list" style="margin-top:12px">
-      ${entities.slice(0, 12).map((entity) => `<span class="entity-chip"><strong>${escapeHtml(entity.type)}</strong> ${escapeHtml(entity.name)}</span>`).join("") || '<span class="helper">未识别到公司、团队、学校、论文或专利实体</span>'}
+      ${entities.slice(0, 12).map((entity) => `<span class="entity-chip"><strong>${escapeHtml(ENTITY_TYPE_LABELS[entity.type] || entity.type)}</strong> ${escapeHtml(entity.name)}</span>`).join("") || '<span class="helper">未识别到公司、岗位、团队、学校、论文或专利实体</span>'}
     </div>
     ${matches.length ? `
       <div style="margin-top:14px">
@@ -2795,7 +2811,7 @@ function renderExperienceIntelligence(candidate) {
           <div class="knowledge-citation">
             <strong>${escapeHtml(match.title)}</strong>
             <p>${escapeHtml(match.snippet)}</p>
-            <small>${escapeHtml(match.sourceLabel || "未指定来源")} · ${escapeHtml(match.publishedAt || "无日期")}${match.synthetic ? " · 虚构演示资料" : ""}</small>
+            <small>${escapeHtml(KNOWLEDGE_TYPE_LABELS[match.documentType] || match.documentType || "知识资料")} · ${escapeHtml(match.sourceLabel || "未指定来源")} · ${escapeHtml(match.publishedAt || "无日期")}${match.synthetic ? " · 虚构演示资料" : ""}</small>
             ${safeExternalUrl(match.sourceUrl) ? `<a class="knowledge-source-link" href="${escapeAttr(safeExternalUrl(match.sourceUrl))}" target="_blank" rel="noreferrer">查看公开来源 ↗</a>` : ""}
           </div>
         `).join("")}

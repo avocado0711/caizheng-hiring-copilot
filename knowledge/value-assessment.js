@@ -37,6 +37,9 @@ function assessExperience({
       .map((item) => item.toLocaleLowerCase()),
   );
   const matches = uniqueMatches(knowledgeMatches);
+  const corroborationScore = matches.length
+    ? clamp((matches.length / 5) * 100)
+    : null;
   const matchedCriteria = (evaluation?.criteriaResults || [])
     .filter((result) => result.level !== "none");
   const completeness = evaluation?.totalCriteria
@@ -80,11 +83,13 @@ function assessExperience({
     },
     {
       key: "externalCorroboration",
-      label: "公开资料佐证",
-      score: matches.length ? clamp(25 + matches.length * 16) : null,
+      label: "知识库命中",
+      score: corroborationScore,
+      displayValue: `${matches.length} 条`,
+      barPercent: corroborationScore || 0,
       note: matches.length
-        ? `命中 ${matches.length} 条带来源的公开知识片段`
-        : "知识库中没有可用佐证；这不是负面结论",
+        ? `命中 ${matches.length} 条相关本地知识片段；只作背景线索`
+        : "没有相关本地知识片段；这不代表候选人不匹配",
     },
   ];
 
@@ -129,15 +134,15 @@ function assessExperience({
       ...(evaluation?.criteriaResults || [])
         .filter((result) => ["strong", "medium"].includes(result.level))
         .map((result) => result.name),
-      ...matches.slice(0, 2).map((match) => `${match.entityName || match.title} 公开资料`),
+      ...matches.slice(0, 2).map((match) => `${match.entityName || match.title} 知识库背景`),
     ].slice(0, 5),
     gaps: [
       ...(evaluation?.criteriaResults || [])
         .filter((result) => result.level === "none")
         .map((result) => `${result.name}未发现证据`),
-      ...(matches.length ? [] : ["公开资料佐证不足"]),
+      ...(matches.length ? [] : ["未发现相关本地知识背景"]),
     ].slice(0, 5),
-    disclaimer: "该指标仅表示岗位相关证据的完整度和可验证程度，不代表个人价值或录用结论。",
+    disclaimer: "知识库命中表示相关本地资料数量，不代表资料真实性、个人价值或录用结论。",
   };
 }
 

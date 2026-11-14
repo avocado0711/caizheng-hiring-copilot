@@ -21,7 +21,11 @@ const {
 } = require("../lib/resume");
 const { redactResumeForLlm, verifyAiAnalysis } = require("../lib/evidence");
 const { retrieveKnowledge } = require("../knowledge/retriever");
-const { extractEntities } = require("../knowledge/entity-extractor");
+const {
+  extractEntities,
+  filterKnowledgeMatchesForCandidate,
+  knowledgeEntityType,
+} = require("../knowledge/entity-extractor");
 const { assessExperience } = require("../knowledge/value-assessment");
 const { fallbackQuestions } = require("../knowledge/interview-questions");
 const { resolvePythonRuntime } = require("../lib/python");
@@ -445,12 +449,92 @@ test("resume entity intelligence and evidence card stay job-related", () => {
   });
   assert.ok(value.index >= 0 && value.index <= 100);
   assert.equal(value.dimensions.find((item) => item.key === "externalCorroboration").score, null);
+  assert.equal(
+    value.dimensions.find((item) => item.key === "externalCorroboration").displayValue,
+    "0 条",
+  );
   const questions = fallbackQuestions({
     criteriaResults: evaluation.criteriaResults,
     valueAssessment: value,
     knowledgeMatches: [],
   });
   assert.ok(questions.length >= 1);
+});
+
+test("entity taxonomy distinguishes roles and skills from organizations", () => {
+  const candidate = {
+    fileName: "赵可欣-合成.txt",
+    text: [
+      "远岚数据",
+      "数据工程师",
+      "AI 数据",
+      "武汉大学",
+      "负责知识库数据清洗和检索数据接口",
+    ].join("\n"),
+    profile: { title: "数据工程师", yearsExperience: 4, education: "本科" },
+  };
+  const extracted = extractEntities(candidate, {
+    workHistory: [{ company: "远岚数据", title: "数据工程师" }],
+  }, [
+    { entityName: "数据工程师", documentType: "role-standard" },
+    { entityName: "远岚数据", documentType: "company" },
+    { entityName: "武汉大学", documentType: "education" },
+  ]);
+  assert.ok(extracted.entities.some((item) => item.type === "company" && item.name === "远岚数据"));
+  assert.ok(extracted.entities.some((item) => item.type === "role" && item.name === "数据工程师"));
+  assert.ok(extracted.entities.some((item) => item.type === "school" && item.name === "武汉大学"));
+  assert.ok(!extracted.entities.some((item) => item.type === "company" && item.name === "AI 数据"));
+  assert.equal(knowledgeEntityType({ entityName: "数据工程师", documentType: "resume-screening" }), "role");
+});
+
+test("knowledge matches keep role guidance but reject unrelated organization evidence", () => {
+  const entities = [
+    { type: "company", name: "远岚数据" },
+    { type: "school", name: "武汉大学" },
+    { type: "role", name: "数据工程师" },
+  ];
+  const matches = [
+    { id: "own-company", entityName: "远岚数据", documentType: "technology" },
+    { id: "similar-company", entityName: "远岚人工智能", documentType: "technology" },
+    { id: "role-standard", entityName: "远岚人工智能", documentType: "role-standard" },
+    { id: "own-school", entityName: "武汉大学", documentType: "education" },
+    { id: "other-school", entityName: "江南智算大学", documentType: "education" },
+    { id: "resume-pattern", entityName: "数据工程师", documentType: "resume-screening" },
+    { id: "method", entityName: "才证招聘知识中心", documentType: "technology" },
+  ];
+  const filtered = filterKnowledgeMatchesForCandidate(entities, matches);
+  assert.deepEqual(filtered.map((item) => item.id), [
+    "own-company",
+    "role-standard",
+    "own-school",
+    "resume-pattern",
+    "method",
+  ]);
+});
+
+test("knowledge hit count is displayed as a count instead of a public-evidence score", () => {
+  const value = assessExperience({
+    candidate: { text: "负责数据平台建设，降低延迟 30%" },
+    evaluation: {
+      score: 80,
+      matchedCount: 2,
+      totalCriteria: 2,
+      criteriaResults: [],
+    },
+    criteria: [],
+    entities: [],
+    knowledgeMatches: Array.from({ length: 5 }, (_, index) => ({
+      sourceId: `source-${index}`,
+      entityName: "数据工程师",
+      title: "数据工程师知识片段",
+    })),
+  });
+  const dimension = value.dimensions.find((item) => item.key === "externalCorroboration");
+  assert.equal(dimension.label, "知识库命中");
+  assert.equal(dimension.displayValue, "5 条");
+  assert.equal(dimension.score, 100);
+  assert.equal(dimension.barPercent, 100);
+  assert.match(dimension.note, /背景线索/);
 });
 
 test("HTTP API supports create, import, ranking, review and CSV export", async (context) => {
@@ -871,6 +955,23 @@ test("resume text sent to the LLM redacts direct identifiers and protected field
   assert.doesNotMatch(redacted, /13800138000/);
   assert.doesNotMatch(redacted, /110101199001011234/);
   assert.doesNotMatch(redacted, /年龄：29/);
+  assert.match(redacted, /Python/);
+});
+
+test("LLM redaction covers protected fields outside line prefixes and common delimiters", () => {
+  const redacted = redactResumeForLlm(`
+张伟 | 男 | 29岁 | 已婚 | 户籍北京
+个人信息：男，29岁，汉族，籍贯上海
+年龄29岁 性别女 民族汉族
+出生日期：1990/01/01
+现住址：上海市浦东新区/张江路1号
+负责面向女性用户的产品设计，使用 Python 开发推荐服务
+`, "张伟");
+  assert.doesNotMatch(redacted, /张伟|北京|浦东|张江路|1990|汉族|29岁|已婚/);
+  assert.doesNotMatch(redacted, /(?:^|[\s|｜])男(?:$|[\s|｜])/m);
+  assert.doesNotMatch(redacted, /(?:^|[\s|｜])女(?:$|[\s|｜])/m);
+  assert.match(redacted, /\[个人信息已隐去\]/);
+  assert.match(redacted, /女性用户/);
   assert.match(redacted, /Python/);
 });
 

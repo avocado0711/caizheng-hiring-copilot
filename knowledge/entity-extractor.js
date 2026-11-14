@@ -20,13 +20,80 @@ function addEntity(target, seen, entity) {
   target.push({ ...entity, name });
 }
 
+function knowledgeEntityType(document) {
+  const documentType = String(document?.documentType || "").toLocaleLowerCase();
+  const entityName = clean(document?.entityName);
+  if (documentType === "education" || /大学|学院|学校|University|College/i.test(entityName)) {
+    return "school";
+  }
+  if (documentType === "role-standard" || documentType === "resume-screening") {
+    return "role";
+  }
+  if (documentType === "organization") return "organization";
+  if (documentType === "technology" && entityName === "才证招聘知识中心") {
+    return "organization";
+  }
+  if (["company", "technology", "annual-report", "paper", "patent"].includes(documentType)) {
+    return "company";
+  }
+  return "organization";
+}
+
+function normalizeEntityName(value) {
+  return clean(value)
+    .toLocaleLowerCase()
+    .replace(/[（）()【】\[\]·,，。；;：:\s_-]/g, "")
+    .replace(/(?:股份有限公司|有限责任公司|有限公司|集团)$/g, "");
+}
+
+const ENTITY_LINKED_DOCUMENT_TYPES = new Set([
+  "company",
+  "organization",
+  "technology",
+  "annual-report",
+  "paper",
+  "patent",
+  "education",
+]);
+
+function filterKnowledgeMatchesForCandidate(entities, knowledgeMatches) {
+  const companyNames = new Set(
+    (entities || [])
+      .filter((entity) => entity.type === "company")
+      .map((entity) => normalizeEntityName(entity.name))
+      .filter(Boolean),
+  );
+  const schoolNames = new Set(
+    (entities || [])
+      .filter((entity) => entity.type === "school")
+      .map((entity) => normalizeEntityName(entity.name))
+      .filter(Boolean),
+  );
+
+  return (knowledgeMatches || []).filter((match) => {
+    const documentType = String(match?.documentType || "").toLocaleLowerCase();
+    const entityName = normalizeEntityName(match?.entityName);
+    if (!ENTITY_LINKED_DOCUMENT_TYPES.has(documentType)) return true;
+    if (documentType === "education") return Boolean(entityName && schoolNames.has(entityName));
+    if (documentType === "technology" && match?.entityName === "才证招聘知识中心") return true;
+    return Boolean(entityName && companyNames.has(entityName));
+  });
+}
+
 function extractEntities(candidate, structured = {}, knowledgeDocuments = []) {
   const lines = String(candidate?.text || "").split("\n").map(clean).filter(Boolean);
   const entities = [];
   const seen = new Set();
-  const knownEntityNames = [...new Set(
-    (knowledgeDocuments || []).map((document) => clean(document.entityName)).filter(Boolean),
-  )];
+  const knownEntities = new Map();
+  for (const document of knowledgeDocuments || []) {
+    const name = clean(document.entityName);
+    const key = name.toLocaleLowerCase();
+    if (!name || knownEntities.has(key)) continue;
+    knownEntities.set(key, {
+      name,
+      type: knowledgeEntityType(document),
+    });
+  }
 
   for (const item of structured?.workHistory || []) {
     if (item?.company) {
@@ -50,11 +117,11 @@ function extractEntities(candidate, structured = {}, knowledgeDocuments = []) {
   }
 
   lines.forEach((line, index) => {
-    for (const entityName of knownEntityNames) {
-      if (line.includes(entityName)) {
+    for (const knownEntity of knownEntities.values()) {
+      if (line.includes(knownEntity.name)) {
         addEntity(entities, seen, {
-          type: /大学|学院|学校|University|College/i.test(entityName) ? "school" : "company",
-          name: entityName,
+          type: knownEntity.type,
+          name: knownEntity.name,
           ...lineEvidence(lines, index),
           confidence: 0.95,
           source: "knowledge-match",
@@ -64,7 +131,10 @@ function extractEntities(candidate, structured = {}, knowledgeDocuments = []) {
 
     if (
       line.length <= 42
-      && /有限公司$|集团$|科技$|网络$|数据$|云服务$|研究院$|银行$|证券$/.test(line)
+      && (
+        /有限公司$|集团$|科技$|网络$|云服务$|研究院$|银行$|证券$/.test(line)
+        || /^[\u3400-\u9fff]{2,}数据$/.test(line)
+      )
       && !/[。；]/.test(line)
     ) {
       addEntity(entities, seen, {
@@ -144,4 +214,7 @@ function buildEntityQuery(entities, criteria = []) {
 module.exports = {
   buildEntityQuery,
   extractEntities,
+  filterKnowledgeMatchesForCandidate,
+  knowledgeEntityType,
+  normalizeEntityName,
 };

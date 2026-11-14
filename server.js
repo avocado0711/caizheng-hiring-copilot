@@ -54,6 +54,7 @@ const {
 const {
   buildEntityQuery,
   extractEntities,
+  filterKnowledgeMatchesForCandidate,
 } = require("./knowledge/entity-extractor");
 const { assessExperience } = require("./knowledge/value-assessment");
 const {
@@ -967,7 +968,10 @@ async function buildCandidateIntelligence({
     ...evidenceTerms,
   ].filter(Boolean).join(" ");
   const knowledgeSearch = await searchKnowledgeHybrid(query, 8);
-  const knowledgeMatches = knowledgeSearch.results;
+  const knowledgeMatches = filterKnowledgeMatchesForCandidate(
+    entityResult.entities,
+    knowledgeSearch.results,
+  );
   const valueAssessment = assessExperience({
     candidate,
     evaluation,
