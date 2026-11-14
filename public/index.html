@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#111318">
+  <title>才证 · 招聘决策台</title>
+  <link rel="icon" type="image/png" href="/assets/logo-mark.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#job" aria-label="才证 招聘决策台">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/assets/logo-mark.png" alt="">
+        </span>
+        <span class="brand-copy">
+          <strong>才证</strong>
+          <small>TALENT EVIDENCE</small>
+        </span>
+      </a>
+
+      <div class="workspace-card">
+        <div class="workspace-card-top">
+          <span>EVIDENCE ENGINE</span>
+          <span class="live-indicator"><i></i> READY</span>
+        </div>
+        <strong>招聘决策中枢</strong>
+        <p>统一岗位标准，让每一份判断都有证据。</p>
+        <div class="workspace-progress" aria-label="招聘流程概览">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <p class="nav-caption">Workflow</p>
+      <nav class="nav" aria-label="主导航">
+        <button class="nav-item is-active" data-view="job" data-short="岗位" data-step="01" aria-label="岗位评价卡">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 19V9m7 10V5m7 14v-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <span class="nav-label">岗位评价卡</span>
+          <span class="nav-count" id="criteria-nav-count">0</span>
+        </button>
+        <button class="nav-item" data-view="import" data-short="导入" data-step="02" aria-label="批量导入简历">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 15V4m0 0L8 8m4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="nav-label">批量导入</span>
+        </button>
+        <button class="nav-item" data-view="knowledge" data-short="知识库" data-step="03" aria-label="公开知识库">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v16H7.5A2.5 2.5 0 0 0 5 21.5v-16Z" stroke="currentColor" stroke-width="1.7"/><path d="M5 18.5A2.5 2.5 0 0 1 7.5 16H19M9 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <span class="nav-label">公开知识库</span>
+          <span class="nav-count" id="nav-knowledge-count">0</span>
+        </button>
+        <button class="nav-item" data-view="review" data-short="排序" data-step="04" aria-label="比较与排序">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 6h10M7 12h10M7 18h6M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </span>
+          <span class="nav-label">比较与排序</span>
+          <span class="nav-count" id="nav-candidate-count">0</span>
+        </button>
+        <button class="nav-item" data-view="interview" data-short="电话" data-step="05" aria-label="AI 电话初筛">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7.2 4.5 9.5 8a1.7 1.7 0 0 1-.2 2.1l-1.2 1.2a14.4 14.4 0 0 0 4.6 4.6l1.2-1.2a1.7 1.7 0 0 1 2.1-.2l3.5 2.3a1.8 1.8 0 0 1 .7 2.1l-.8 2c-.3.8-1 1.3-1.9 1.3C10.7 22 2 13.3 2 6.5c0-.9.5-1.6 1.3-1.9l2-.8a1.8 1.8 0 0 1 1.9.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M15 3.5a5.5 5.5 0 0 1 5.5 5.5M15 7a2 2 0 0 1 2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span class="nav-label">AI 电话初筛</span>
+          <span class="nav-count" id="interview-nav-count">0</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="system-card">
+          <div class="privacy-chip"><span class="status-dot"></span> LOCAL-FIRST</div>
+          <strong>数据留在本机</strong>
+          <p>每一条判断都有出处，最终决定始终由 HR 完成。</p>
+          <div class="system-card-meta">
+            <span>存储 <b>LOCAL</b></span>
+            <span>审计 <b>ON</b></span>
+          </div>
+          <button class="demo-reset-button" id="demo-reset-button" type="button" title="恢复标准演示数据，当前数据会先备份">
+            <span aria-hidden="true">↺</span>
+            重置演示数据
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-context">
+          <span class="topbar-kicker">Hiring Decision Console</span>
+          <div class="job-switcher-wrap">
+            <span class="workspace-label">当前岗位</span>
+            <select id="job-switcher" aria-label="切换当前岗位"></select>
+          </div>
+        </div>
+        <div class="system-pipeline" aria-label="招聘决策流程">
+          <span data-stage="0" class="is-current"><i>01</i>岗位标准</span>
+          <b></b>
+          <span data-stage="1"><i>02</i>证据提取</span>
+          <b></b>
+          <span data-stage="2"><i>03</i>交叉审计</span>
+          <b></b>
+          <span data-stage="3"><i>04</i>人工决策</span>
+        </div>
+        <div class="topbar-actions">
+          <span class="ai-chip is-offline" id="ai-chip">规则基线</span>
+          <span class="save-state" id="save-state">已保存</span>
+          <button class="help-button" id="help-button" type="button" aria-label="了解程序功能" aria-expanded="false" aria-controls="tour-layer" aria-haspopup="dialog">?</button>
+          <button class="button button-primary button-small" id="new-job-button">新建岗位</button>
+        </div>
+      </header>
+
+      <section class="workflow-guide is-next" id="workflow-guide" aria-live="polite" hidden>
+        <div class="workflow-guide-step">
+          <span id="workflow-guide-step">01</span>
+          <small>NEXT</small>
+        </div>
+        <div class="workflow-guide-content">
+          <span class="workflow-guide-kicker" id="workflow-guide-kicker">还差一步</span>
+          <strong id="workflow-guide-title"></strong>
+          <p id="workflow-guide-copy"></p>
+        </div>
+        <button class="button button-secondary workflow-guide-action" id="workflow-guide-action" type="button"></button>
+      </section>
+
+      <section class="view is-active" id="view-job">
+        <div class="page-heading">
+          <div>
+            <div class="heading-meta">
+              <p class="eyebrow"><span></span>ROLE SCORECARD</p>
+              <b>STEP 01 / 04</b>
+            </div>
+            <h1>把岗位要求，<br><span>变成可验证的证据标准。</span></h1>
+            <p class="page-intro">定义岗位能力、证据关键词与硬性门槛，建立全员一致、可复核的筛选基准。</p>
+          </div>
+          <div class="heading-side">
+            <div class="heading-stat">
+              <span id="criteria-count">0</span>
+              <small>个已定义评价项</small>
+            </div>
+            <div class="heading-signal"><i></i> HUMAN-IN-THE-LOOP</div>
+          </div>
+        </div>
+
+        <div class="notice">
+          <span class="notice-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4.5 6v5.2c0 4.6 3.1 8.1 7.5 9.8 4.4-1.7 7.5-5.2 7.5-9.8V6L12 3Z" stroke="currentColor" stroke-width="1.6"/><path d="m9.5 12 1.7 1.7 3.5-3.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <strong>只评价岗位相关信息</strong>
+            <span>忽略年龄、性别、婚育、籍贯、照片等与工作能力无关的信息。</span>
+          </div>
+        </div>
+
+        <form id="job-form">
+          <div class="card setup-card">
+            <div class="card-heading">
+              <div>
+                <span class="step-label">01 · 岗位信息</span>
+                <h2>评价卡基础</h2>
+                <p class="card-description">定义岗位名称和职责范围，这些信息会成为后续筛选的唯一基准。</p>
+              </div>
+              <span class="helper">可随时修改</span>
+            </div>
+            <div class="field-grid">
+              <label class="field">
+                <span>岗位名称 <b>*</b></span>
+                <input id="job-title" type="text" maxlength="100" placeholder="例如：高级后端工程师" required>
+              </label>
+              <label class="field field-wide">
+                <span>岗位描述 / JD</span>
+                <textarea id="job-description" rows="7" maxlength="20000" placeholder="粘贴岗位描述，系统会据此给出评价项建议。"></textarea>
+              </label>
+            </div>
+            <div class="inline-actions">
+              <button type="button" class="button button-secondary" id="suggest-button">
+                <span class="button-spark">✦</span> 从 JD 生成评价项
+              </button>
+              <span class="helper">生成后仍建议由 HR 确认关键词和权重</span>
+            </div>
+          </div>
+
+          <div class="card criteria-card">
+            <div class="card-heading">
+              <div>
+                <span class="step-label">02 · 筛选标准</span>
+                <h2>评价项</h2>
+                <p class="card-description">权重决定排序，硬性条件决定是否跨过第一道门槛。</p>
+              </div>
+              <button type="button" class="button button-quiet" id="add-criterion-button">＋ 添加评价项</button>
+            </div>
+            <div class="criteria-labels" aria-hidden="true">
+              <span>评价项</span>
+              <span>证据关键词</span>
+              <span>权重</span>
+              <span>硬性</span>
+              <span></span>
+            </div>
+            <div id="criteria-list" class="criteria-list"></div>
+            <div class="weight-summary">
+              <span>权重合计</span>
+              <strong id="weight-total">0</strong>
+              <span class="helper">仅影响排序，不代替人工判断</span>
+            </div>
+          </div>
+
+          <div class="sticky-actions">
+            <span id="job-form-message">尚未保存修改</span>
+            <button type="submit" class="button button-primary" id="save-job-button">保存评价卡</button>
+          </div>
+        </form>
+
+        <div class="empty-job card" id="job-empty">
+          <span class="empty-number">01</span>
+          <h2>创建第一个岗位</h2>
+          <p>填写岗位名称后，保存评价卡，再进入批量导入。</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-import">
+        <div class="page-heading">
+          <div>
+            <div class="heading-meta">
+              <p class="eyebrow"><span></span>RESUME INGESTION</p>
+              <b>STEP 02 / 04</b>
+            </div>
+            <h1>批量解析简历，<br><span>逐份形成证据卡。</span></h1>
+            <p class="page-intro">支持 TXT、Markdown、DOCX、PDF、JSON 与常见图片，每次最多 100 份简历。</p>
+          </div>
+          <div class="heading-side">
+            <div class="heading-stat">
+              <span id="imported-count">0</span>
+              <small>份已进入证据流水线</small>
+            </div>
+            <div class="heading-signal"><i></i> PRIVACY BY DESIGN</div>
+          </div>
+        </div>
+
+        <div class="import-layout">
+          <div class="card drop-card">
+            <div class="drop-zone" id="drop-zone" tabindex="0" role="button" aria-label="选择或拖入简历文件">
+              <span class="drop-orbit" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M16 22V8m0 0-6 6m6-6 6 6M7 22v4h18v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h2>拖入简历文件</h2>
+              <p>拖到页面任意位置，或点击选择，可一次添加多份</p>
+              <span class="drop-formats">PDF · DOCX · TXT · IMAGE</span>
+              <input id="file-input" type="file" multiple accept=".txt,.md,.markdown,.json,.docx,.pdf,.png,.jpg,.jpeg,.bmp,.gif,.tif,.tiff,.webp" hidden>
+            </div>
+            <div class="pending-heading">
+              <span>待解析文件</span>
+              <button type="button" class="text-button" id="clear-files-button">清空</button>
+            </div>
+            <ul class="file-list" id="pending-files">
+              <li class="empty-line">还没有选择文件</li>
+            </ul>
+            <div class="import-progress-panel" id="import-progress-panel" aria-live="polite" hidden>
+              <div class="import-progress-head">
+                <div>
+                  <span>BATCH PROCESSING</span>
+                  <strong id="import-progress-title">正在准备简历文件</strong>
+                </div>
+                <b id="import-progress-count">0 / 0</b>
+              </div>
+              <div class="import-progress-track" aria-hidden="true">
+                <i id="import-progress-fill"></i>
+              </div>
+              <div class="import-progress-foot">
+                <span id="import-progress-detail">正在读取文件并进行文本提取。</span>
+                <button type="button" class="text-button" id="cancel-import-button">取消后续</button>
+              </div>
+            </div>
+            <p class="import-limit-note" id="import-limit-note">单份上限 15 MB；请求会按总大小自动拆批。</p>
+            <button class="button button-primary button-block" id="import-button" disabled>开始解析并生成证据卡</button>
+          </div>
+
+          <div class="card paste-card">
+            <div class="card-heading compact">
+              <div>
+                <span class="step-label">备用入口</span>
+                <h2>粘贴一份简历</h2>
+              </div>
+            </div>
+            <p class="card-description">适合复杂 PDF、加密文件或 OCR 识别失败的情况。</p>
+            <label class="field">
+              <span>候选人标识 / 文件名</span>
+              <input id="paste-name" type="text" maxlength="80" placeholder="例如：王小明-后端工程师">
+            </label>
+            <label class="field">
+              <span>简历文字</span>
+              <textarea id="paste-text" rows="15" placeholder="粘贴完整简历文字，原文行号会保留为证据来源。"></textarea>
+            </label>
+            <button class="button button-secondary button-block" id="paste-import-button">解析粘贴内容</button>
+          </div>
+        </div>
+
+        <div class="card import-log-card" id="import-log-card" hidden>
+          <div class="card-heading compact">
+            <div>
+              <span class="step-label">处理结果</span>
+              <h2>本次导入</h2>
+            </div>
+            <button class="button button-quiet button-small" id="go-review-button">查看排序 →</button>
+          </div>
+          <div id="import-log" class="import-log"></div>
+        </div>
+
+        <div class="privacy-panel">
+          <div class="privacy-panel-title">
+            <span class="privacy-icon">⌁</span>
+            <strong>Privacy by design</strong>
+          </div>
+          <p>简历原文与审核结果保存在本机 <code>data/state.json</code>。启用模型 Agent 后，姓名与联系方式会在发送前脱敏。</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-knowledge">
+        <div class="page-heading">
+          <div>
+            <div class="heading-meta">
+              <p class="eyebrow"><span></span>EVIDENCE KNOWLEDGE</p>
+              <b>SUPPORT LAYER</b>
+            </div>
+            <h1>构建可信知识层，<br><span>让每一次判断有据可查。</span></h1>
+            <p class="page-intro">检索企业、团队、论文、专利与教育背景资料，为岗位评价和面试追问提供可追溯上下文。</p>
+          </div>
+          <div class="heading-side">
+            <div class="heading-stat">
+              <span id="knowledge-doc-count">0</span>
+              <small>份可追溯知识资料</small>
+            </div>
+            <div class="heading-signal"><i></i> SOURCE-GROUNDED</div>
+          </div>
+        </div>
+
+        <div class="metric-grid knowledge-metrics">
+          <div class="metric" data-index="01"><span>知识文档</span><strong id="knowledge-metric-docs">0</strong><small>本地知识库</small></div>
+          <div class="metric" data-index="02"><span>实体数量</span><strong id="knowledge-metric-entities">0</strong><small>公司 / 学校 / 组织</small></div>
+          <div class="metric" data-index="03"><span>检索片段</span><strong id="knowledge-metric-chunks">0</strong><small>章节级切分</small></div>
+          <div class="metric" data-index="04"><span>虚构演示数据</span><strong id="knowledge-metric-synthetic">0</strong><small>可安全用于比赛</small></div>
+        </div>
+
+        <div class="knowledge-layout">
+          <div class="card knowledge-library">
+            <div class="card-heading compact">
+              <div>
+                <span class="step-label">Document library</span>
+                <h2>知识资料</h2>
+              </div>
+              <div class="knowledge-library-actions">
+                <span class="helper">支持 JSON 公开资料包</span>
+                <button type="button" class="button button-quiet button-small" id="import-knowledge-pack-button">导入资料包</button>
+                <input id="knowledge-pack-input" type="file" accept=".json,application/json" hidden>
+              </div>
+            </div>
+            <div class="knowledge-document-list" id="knowledge-document-list"></div>
+          </div>
+
+          <div class="knowledge-side">
+            <div class="card knowledge-search-card">
+              <div class="card-heading compact">
+                <div>
+                  <span class="step-label">Hybrid search</span>
+                  <h2>检索知识</h2>
+                </div>
+              </div>
+              <div class="knowledge-search-row">
+                <input id="knowledge-search-input" type="search" aria-label="检索公开知识库" placeholder="例如：星桥的 RAG 团队负责什么？">
+                <button class="button button-primary" id="knowledge-search-button">检索</button>
+              </div>
+              <label class="knowledge-deep-search">
+                <input id="knowledge-rerank-toggle" type="checkbox">
+                <span>深度检索</span>
+                <small>启用 Reranker，耗时和显存占用更高</small>
+              </label>
+              <div class="knowledge-search-results" id="knowledge-search-results">
+                <div class="evidence-empty">输入问题后，返回带来源、版本和日期的知识片段。</div>
+              </div>
+            </div>
+
+            <div class="card knowledge-add-card">
+              <div class="card-heading compact">
+                <div>
+                  <span class="step-label">Add source</span>
+                  <h2>添加资料</h2>
+                </div>
+              </div>
+              <div class="knowledge-form-grid">
+                <label class="field">
+                  <span>标题</span>
+                  <input id="knowledge-title" type="text" placeholder="例如：某公司技术团队介绍">
+                </label>
+                <label class="field">
+                  <span>实体名称</span>
+                  <input id="knowledge-entity" type="text" placeholder="公司、学校或实验室">
+                </label>
+                <label class="field">
+                  <span>资料类型</span>
+                  <select id="knowledge-type">
+                    <option value="company">公司</option>
+                    <option value="organization">组织 / 团队</option>
+                    <option value="annual-report">年报</option>
+                    <option value="technology">技术资料</option>
+                    <option value="paper">论文</option>
+                    <option value="patent">专利</option>
+                    <option value="education">教育背景</option>
+                    <option value="role-standard">岗位标准</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>发布日期</span>
+                  <input id="knowledge-date" type="date">
+                </label>
+                <label class="field">
+                  <span>发布机构</span>
+                  <input id="knowledge-publisher" type="text" maxlength="180" placeholder="例如：公司研究团队 / 大学实验室">
+                </label>
+                <label class="field">
+                  <span>抓取日期</span>
+                  <input id="knowledge-retrieved-date" type="date">
+                </label>
+                <label class="field knowledge-wide-field">
+                  <span>来源说明</span>
+                  <input id="knowledge-source" type="text" placeholder="例如：比赛演示资料 · 虚构公司简介">
+                </label>
+                <label class="field knowledge-wide-field">
+                  <span>来源链接</span>
+                  <input id="knowledge-source-url" type="url" maxlength="500" placeholder="https://example.com/report">
+                </label>
+                <label class="field knowledge-wide-field">
+                  <span>授权 / 许可</span>
+                  <input id="knowledge-license" type="text" maxlength="180" placeholder="例如：官方公开页面，仅用于岗位资料核验">
+                </label>
+                <label class="field knowledge-wide-field">
+                  <span>正文</span>
+                  <textarea id="knowledge-content" rows="9" placeholder="粘贴结构清晰的知识资料。建议使用段落描述事实、组织和来源。"></textarea>
+                </label>
+              </div>
+              <label class="knowledge-synthetic-check">
+                <input id="knowledge-synthetic" type="checkbox" checked>
+                标记为虚构比赛演示资料
+              </label>
+              <button class="button button-secondary button-block" id="add-knowledge-button">添加到知识库</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-review">
+        <div class="page-heading">
+          <div>
+            <div class="heading-meta">
+              <p class="eyebrow"><span></span>DECISION REVIEW</p>
+              <b>STEP 04 / 04</b>
+            </div>
+            <h1>比较证据质量，<br><span>建立可靠的候选人短名单。</span></h1>
+            <p class="page-intro">自动排序提供决策起点，原文证据与人工判断共同决定最终结果。</p>
+          </div>
+          <div class="heading-side heading-review-actions">
+            <div class="heading-signal"><i></i> EVIDENCE COMPLETE</div>
+            <div class="heading-actions">
+              <button class="button button-secondary" id="reanalyze-all-button" hidden>重新分析待重算</button>
+              <button class="button button-primary" id="export-button">导出 CSV</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric" data-index="01"><span>全部候选人</span><strong id="metric-total">0</strong><small>当前岗位</small></div>
+          <div class="metric" data-index="02"><span>硬性条件已覆盖</span><strong id="metric-eligible">0</strong><small>仍需人工确认</small></div>
+          <div class="metric" data-index="03"><span>进入短名单</span><strong id="metric-shortlist">0</strong><small>人工标记</small></div>
+          <div class="metric" data-index="04"><span>待讨论 / 重复</span><strong id="metric-attention">0</strong><small>建议重点复核</small></div>
+        </div>
+
+        <div class="card review-card">
+          <div class="review-toolbar">
+            <div class="segmented" role="tablist" aria-label="结果视图">
+              <button class="is-active" data-result-view="ranking" role="tab" aria-selected="true" tabindex="0">排序表</button>
+              <button data-result-view="matrix" role="tab" aria-selected="false" tabindex="-1">证据矩阵</button>
+            </div>
+            <div class="toolbar-filters">
+              <input id="candidate-search" type="search" aria-label="搜索候选人姓名、邮箱或文件" placeholder="搜索姓名、邮箱或文件">
+              <select id="status-filter" aria-label="按审核状态筛选候选人">
+                <option value="all">全部状态</option>
+                <option value="unreviewed">待审核</option>
+                <option value="shortlist">短名单</option>
+                <option value="discuss">待讨论</option>
+                <option value="reject">不通过</option>
+              </select>
+              <label class="check-filter"><input id="duplicate-filter" type="checkbox"> 仅看重复</label>
+            </div>
+          </div>
+
+          <div class="table-wrap" id="ranking-view">
+            <table class="ranking-table">
+              <thead>
+                <tr>
+                  <th>排名</th>
+                  <th>候选人</th>
+                  <th>匹配分</th>
+                  <th>经历证据</th>
+                  <th>硬性条件</th>
+                  <th>评价项覆盖</th>
+                  <th>状态</th>
+                </tr>
+              </thead>
+              <tbody id="ranking-body"></tbody>
+            </table>
+            <div class="candidate-card-list" id="ranking-card-list" aria-label="候选人排序卡片"></div>
+            <div class="table-empty" id="ranking-empty" hidden>
+              <span>04</span>
+              <h2>还没有候选人</h2>
+              <p>先到“批量导入”添加简历。</p>
+              <button class="button button-secondary" id="empty-import-button">去导入</button>
+            </div>
+          </div>
+
+          <div class="table-wrap" id="matrix-view" hidden>
+            <table class="matrix-table">
+              <thead id="matrix-head"></thead>
+              <tbody id="matrix-body"></tbody>
+            </table>
+            <div class="matrix-legend">
+              <span><i class="level-dot strong"></i>强</span>
+              <span><i class="level-dot medium"></i>中</span>
+              <span><i class="level-dot weak"></i>弱</span>
+              <span><i class="level-dot none"></i>未提及</span>
+              <span><i class="override-mark"></i>人工覆盖</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-interview">
+        <div class="page-heading">
+          <div>
+            <div class="heading-meta">
+              <p class="eyebrow"><span></span>AI PHONE SCREEN</p>
+              <b>WEB VOICE · BETA</b>
+            </div>
+            <h1>让 AI 先完成初筛，<br><span>把有效回答带回证据链。</span></h1>
+            <p class="page-intro">基于候选人证据缺口生成问题，在浏览器内完成语音问答。本应用不保存录音，只接收经候选人同意后的转写文字；浏览器语音识别可能受其自身数据政策约束。</p>
+          </div>
+          <div class="heading-side">
+            <div class="heading-stat">
+              <span id="interview-candidate-count">0</span>
+              <small>位可发起网页初筛</small>
+            </div>
+            <div class="heading-signal"><i></i> CONSENT REQUIRED</div>
+          </div>
+        </div>
+
+        <div class="interview-layout">
+          <div class="card interview-console">
+            <div class="interview-setup" id="interview-setup-panel">
+              <div class="card-heading">
+                <div>
+                  <span class="step-label">CALL SETUP</span>
+                  <h2>创建一次网页初筛</h2>
+                  <p class="card-description">选择候选人并确认授权。系统会先播报 AI 身份和用途，候选人可随时要求结束。</p>
+                </div>
+                <span class="interview-mode-pill">浏览器语音</span>
+              </div>
+              <label class="field">
+                <span>选择候选人</span>
+                <select id="interview-candidate-select"></select>
+              </label>
+              <div class="interview-candidate-summary" id="interview-candidate-summary">
+                请选择一位已完成简历解析的候选人。
+              </div>
+              <label class="interview-consent">
+                <input id="interview-consent" type="checkbox">
+                <span>
+                  <strong>候选人已被告知 AI 身份、浏览器语音识别和转写用途，并同意继续。</strong>
+                  <small>比赛演示必须使用虚构候选人或获得明确授权的数据。</small>
+                </span>
+              </label>
+              <div class="interview-setup-actions">
+                <button class="button button-primary" id="phone-pairing-button" type="button" disabled>发起手机 AI 初筛</button>
+                <button class="button button-secondary" id="interview-start-button" type="button" disabled>在电脑内开始初筛</button>
+                <span class="helper">手机方式会显示二维码；电脑内方式继续使用原有浏览器语音。</span>
+              </div>
+            </div>
+
+            <div class="interview-call-panel" id="interview-call-panel" hidden>
+              <div class="interview-call-head">
+                <div>
+                  <span class="step-label">LIVE WEB CALL</span>
+                  <h2 id="interview-call-name">候选人</h2>
+                  <p id="interview-call-title"></p>
+                </div>
+                <div class="interview-call-meta">
+                  <span class="interview-call-status" id="interview-call-status">准备中</span>
+                  <time id="interview-call-timer">00:00</time>
+                </div>
+              </div>
+              <div class="interview-stage">
+                <div class="interview-orb" id="interview-call-orb" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <span class="interview-stage-label" id="interview-stage-label">正在建立语音会话</span>
+                <strong id="interview-question-text">请稍候…</strong>
+              </div>
+              <div class="interview-transcript" id="interview-transcript" aria-live="polite"></div>
+              <div class="interview-answer-composer" id="interview-answer-composer" hidden>
+                <label class="field">
+                  <span>你的回答</span>
+                  <textarea id="interview-answer-input" rows="3" maxlength="2000" placeholder="可以直接说话，也可以编辑转写内容后提交。"></textarea>
+                </label>
+                <div class="interview-answer-actions">
+                  <button class="button button-secondary" id="interview-mic-button" type="button">开始说话</button>
+                  <button class="button button-primary" id="interview-submit-answer-button" type="button">提交回答</button>
+                </div>
+                <p class="interview-mic-help" id="interview-mic-help">点击“开始说话”，浏览器会实时转写；再点击一次结束录音。</p>
+              </div>
+              <div class="interview-call-footer">
+                <span>本应用不保存录音，只提交转写文字。</span>
+                <button class="text-button" id="interview-end-button" type="button">结束本次通话</button>
+              </div>
+            </div>
+
+            <div class="interview-report" id="interview-report-panel" hidden>
+              <span class="step-label">CALL REPORT</span>
+              <h2 id="interview-report-title">本次初筛已完成</h2>
+              <p id="interview-report-summary"></p>
+              <div class="interview-report-highlights" id="interview-report-highlights"></div>
+              <div class="interview-report-actions">
+                <button class="button button-secondary" id="interview-restart-button" type="button">再发起一次</button>
+                <button class="button button-primary" id="interview-view-candidate-button" type="button">查看候选人证据</button>
+              </div>
+            </div>
+
+            <div class="table-empty" id="interview-empty" hidden>
+              <span>05</span>
+              <h2>还没有可初筛的候选人</h2>
+              <p>请先导入简历并完成证据卡生成。</p>
+            </div>
+          </div>
+
+          <aside class="interview-plan-panel">
+            <div class="card interview-plan-card">
+              <div class="card-heading compact">
+                <div>
+                  <span class="step-label">EVIDENCE-LED PLAN</span>
+                  <h2>本次追问计划</h2>
+                </div>
+              </div>
+              <div id="interview-plan-list" class="interview-plan-list">
+                <div class="evidence-empty">选择候选人后生成问题。</div>
+              </div>
+            </div>
+            <div class="interview-privacy-card">
+              <strong>语音与隐私</strong>
+              <p>网页语音识别由浏览器提供，可能使用云端服务。本应用不接收或保存音频；通话转写、摘要和操作记录会写入本地候选人档案。</p>
+              <p>AI 只负责收集岗位相关回答，不会自动淘汰候选人。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="drawer" id="candidate-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="drawer-title" tabindex="-1">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow"><span></span>CANDIDATE EVIDENCE</p>
+        <h2 id="drawer-title">候选人详情</h2>
+        <p id="drawer-subtitle"></p>
+      </div>
+      <button class="icon-button" id="drawer-close-button" aria-label="关闭详情">×</button>
+    </div>
+    <div class="drawer-scroll" id="drawer-content"></div>
+    <div class="drawer-footer">
+      <button class="button button-quiet" id="drawer-delete-button">移除候选人</button>
+      <button class="button button-primary" id="drawer-save-button">保存人工调整</button>
+    </div>
+  </aside>
+
+  <div class="resume-preview-backdrop" id="resume-preview-backdrop" hidden></div>
+  <section
+    class="resume-preview"
+    id="resume-preview"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="resume-preview-title"
+    tabindex="-1"
+    hidden
+  >
+    <header class="resume-preview-header">
+      <div>
+        <p class="eyebrow"><span></span>SOURCE RESUME</p>
+        <h2 id="resume-preview-title">简历原文</h2>
+        <p id="resume-preview-subtitle"></p>
+      </div>
+      <button class="icon-button" id="resume-preview-close" type="button" aria-label="关闭简历原文">×</button>
+    </header>
+    <div class="resume-preview-toolbar">
+      <input id="resume-preview-search" type="search" aria-label="搜索简历原文" placeholder="搜索姓名、公司、技能或原文内容">
+      <span id="resume-preview-count">0 行</span>
+      <button class="button button-secondary button-small" id="resume-preview-copy" type="button">复制原文</button>
+    </div>
+    <div class="resume-preview-scroll">
+      <div class="resume-preview-document" id="resume-preview-document"></div>
+    </div>
+    <footer class="resume-preview-footer">
+      当前展示解析后的完整原文。系统不会保存原始上传文件，因此不提供 PDF/DOCX 版式预览。
+    </footer>
+  </section>
+
+  <div class="phone-pair-backdrop" id="phone-pair-backdrop" hidden></div>
+  <section
+    class="phone-pair-modal"
+    id="phone-pair-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="phone-pair-title"
+    tabindex="-1"
+    hidden
+  >
+    <header class="phone-pair-header">
+      <div>
+        <p class="eyebrow"><span></span>PHONE HANDOFF</p>
+        <h2 id="phone-pair-title">扫码让手机接听</h2>
+        <p id="phone-pair-copy">用手机扫描二维码，进入才证 AI 招聘来电页面。</p>
+      </div>
+      <button class="icon-button" id="phone-pair-close" type="button" aria-label="关闭手机接听">×</button>
+    </header>
+    <div class="phone-pair-body">
+      <div class="phone-pair-qr-wrap">
+        <div class="phone-pair-qr" id="phone-pair-qr"></div>
+        <div class="phone-pair-status">
+          <span class="phone-pair-status-dot"></span>
+          <strong id="phone-pair-status">等待手机扫码</strong>
+        </div>
+      </div>
+      <div class="phone-pair-info">
+        <div class="phone-pair-step"><span>01</span> 手机扫码进入来电页面</div>
+        <div class="phone-pair-step"><span>02</span> 点击接听，AI 开始语音初筛</div>
+        <div class="phone-pair-step"><span>03</span> 笔记本实时同步回答和报告</div>
+        <code id="phone-pair-url"></code>
+        <p class="helper" id="phone-pair-security-note"></p>
+      </div>
+    </div>
+    <div class="phone-pair-live" id="phone-pair-live" hidden>
+      <span>LIVE TRANSCRIPT</span>
+      <div id="phone-pair-transcript"></div>
+    </div>
+    <footer class="phone-pair-footer">
+      <span>一次性会话，15 分钟后自动失效</span>
+      <button class="text-button" id="phone-pair-cancel" type="button">取消本次配对</button>
+    </footer>
+  </section>
+
+  <div class="tour-layer" id="tour-layer" hidden>
+    <div class="tour-spotlight" id="tour-spotlight" aria-hidden="true"></div>
+    <section class="tour-card" id="tour-card" role="dialog" aria-modal="true" aria-labelledby="tour-title">
+      <div class="tour-card-head">
+        <span class="tour-step-label" id="tour-step-label">01 / 06</span>
+        <button class="icon-button" id="tour-close-button" type="button" aria-label="关闭功能介绍">×</button>
+      </div>
+      <h2 id="tour-title"></h2>
+      <p id="tour-copy"></p>
+      <div class="tour-progress" id="tour-progress" aria-hidden="true"></div>
+      <div class="tour-actions">
+        <button class="text-button" id="tour-skip-button" type="button">跳过介绍</button>
+        <div>
+          <button class="button button-quiet button-small" id="tour-prev-button" type="button">上一步</button>
+          <button class="button button-primary button-small" id="tour-next-button" type="button">下一步</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <section
+    class="intro-sequence"
+    id="intro-sequence"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="intro-title"
+    hidden
+  >
+    <div class="intro-glow intro-glow-left" aria-hidden="true"></div>
+    <div class="intro-glow intro-glow-right" aria-hidden="true"></div>
+    <div class="intro-content">
+      <div class="intro-logo-plate">
+        <img src="/assets/logo-mark.png" alt="才证">
+      </div>
+      <p class="intro-kicker">TALENT EVIDENCE · 招聘决策台</p>
+      <h1 id="intro-title">让每个招聘判断，<br><span>都有原文证据。</span></h1>
+      <p class="intro-copy">锁定岗位标准，逐字核验简历证据。<br>AI 负责提供证据，HR 完成最终决策。</p>
+      <div class="intro-capabilities" aria-label="产品核心能力">
+        <span>原文可追溯</span>
+        <i></i>
+        <span>决策可复核</span>
+        <i></i>
+        <span>流程可审计</span>
+      </div>
+      <div class="intro-progress" aria-hidden="true"><i></i></div>
+    </div>
+    <button class="intro-skip" id="intro-skip" type="button">跳过片头</button>
+  </section>
+  <script src="/vendor/qrcode.js"></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>

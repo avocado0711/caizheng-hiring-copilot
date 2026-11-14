@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c1017">
+  <title>才证 AI 招聘来电</title>
+  <link rel="icon" type="image/png" href="/assets/logo-mark.png">
+  <link rel="stylesheet" href="/phone.css">
+</head>
+<body>
+  <main class="phone-app">
+    <section class="phone-incoming" id="phone-incoming">
+      <div class="phone-brand">
+        <span class="phone-brand-mark"><img src="/assets/logo-mark.png" alt=""></span>
+        <span>才证 · AI 招聘</span>
+      </div>
+      <div class="incoming-copy">
+        <span>AI 招聘初筛来电</span>
+        <h1>才证 AI 招聘助理</h1>
+        <p id="incoming-candidate">正在读取面试信息…</p>
+      </div>
+      <div class="incoming-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="incoming-actions">
+        <button class="phone-action phone-reject" id="phone-reject" type="button">
+          <span>×</span>
+          拒绝
+        </button>
+        <button class="phone-action phone-answer" id="phone-answer" type="button">
+          <span>⌕</span>
+          接听
+        </button>
+      </div>
+      <p class="phone-secure-note">网页语音演示 · 不保存录音</p>
+    </section>
+
+    <section class="phone-call" id="phone-call" hidden>
+      <header class="phone-call-top">
+        <span id="phone-call-status">通话已接通</span>
+        <time id="phone-call-timer">00:00</time>
+      </header>
+      <div class="phone-call-person">
+        <div class="phone-avatar"><img src="/assets/logo-mark.png" alt=""></div>
+        <h1>才证 AI 招聘助理</h1>
+        <p id="phone-job-title"></p>
+      </div>
+      <div class="phone-wave" id="phone-wave" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="phone-question-card">
+        <span id="phone-stage-label">AI 正在说话</span>
+        <strong id="phone-question">请稍候…</strong>
+        <button class="phone-replay" id="phone-replay" type="button">播放问题</button>
+      </div>
+      <div class="phone-live-transcript" id="phone-live-transcript"></div>
+      <div class="phone-answer" id="phone-answer-box">
+        <label for="phone-answer-input">你的回答</label>
+        <textarea id="phone-answer-input" rows="3" maxlength="2000" placeholder="可直接说话，也可输入回答"></textarea>
+        <div class="phone-answer-actions">
+          <button class="phone-secondary" id="phone-mic" type="button">开始说话</button>
+          <button class="phone-primary" id="phone-submit-answer" type="button">提交回答</button>
+        </div>
+        <p class="phone-answer-support" id="phone-answer-support"></p>
+      </div>
+      <button class="phone-hangup" id="phone-hangup" type="button">结束通话</button>
+    </section>
+
+    <section class="phone-ended" id="phone-ended" hidden>
+      <div class="phone-ended-icon">✓</div>
+      <h1>通话已结束</h1>
+      <p id="phone-ended-copy">回答正在同步到招聘控制台。</p>
+      <div class="phone-ended-summary" id="phone-ended-summary"></div>
+      <span>本页面不会保存录音</span>
+    </section>
+
+    <section class="phone-error" id="phone-error" hidden>
+      <div class="phone-ended-icon">!</div>
+      <h1>无法接入通话</h1>
+      <p id="phone-error-copy"></p>
+      <span>请让 HR 重新生成二维码。</span>
+    </section>
+  </main>
+  <script src="/phone.js" defer></script>
+</body>
+</html>

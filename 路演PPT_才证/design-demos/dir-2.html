@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>才证 · 午夜技术蓝图</title>
+<style>
+  :root{--stage-bg:#05080d;--slide-bg:#0b1018;--ink:#f2efe7;--muted:#94a1b5;--line:rgba(163,186,217,.19);--blue:#4d8dff;--amber:#e2a84e}
+  html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--stage-bg)}
+  .deck-viewport{position:fixed;inset:0;overflow:hidden;background:var(--stage-bg)}
+  .deck-stage{position:absolute;width:1920px;height:1080px;transform-origin:0 0;background:var(--slide-bg)}
+  .slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;visibility:hidden;opacity:0;color:var(--ink);background:var(--slide-bg);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif}
+  .slide:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.9%,rgba(77,141,255,.16) 50%,transparent 50.1%);pointer-events:none}
+  .slide.active{visibility:visible;opacity:1;z-index:1}
+  .brand{position:absolute;left:90px;top:70px;font-size:20px;font-weight:700;letter-spacing:.12em}
+  .brand img{width:38px;height:38px;vertical-align:middle;margin-right:13px;filter:brightness(0) invert(1)}
+  .tag{position:absolute;right:90px;top:78px;font:14px/1.4 "Source Code Mono","Source Code Pro",monospace;letter-spacing:.16em;color:var(--muted)}
+  h1{position:absolute;left:90px;top:250px;margin:0;width:1050px;font-size:115px;line-height:1.06;letter-spacing:-.065em;font-weight:300}
+  h1 em{font-style:normal;color:var(--blue)}
+  .lead{position:absolute;left:95px;top:570px;width:780px;font-size:31px;line-height:1.65;color:#cfd7e4}
+  .stamp{position:absolute;left:96px;bottom:82px;font:16px/1.6 "Source Code Mono","Source Code Pro",monospace;color:var(--muted);letter-spacing:.12em}
+  .map{position:absolute;right:90px;top:195px;width:650px;height:650px;border:1px solid var(--line);background:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px}
+  .map:after{content:"SYSTEM / DECISION BOUNDARY";position:absolute;left:24px;bottom:20px;font:12px/1 "Source Code Mono","Source Code Pro",monospace;color:var(--muted);letter-spacing:.15em}
+  .node{position:absolute;padding:16px 18px;border:1px solid rgba(77,141,255,.55);background:#0d1624;box-shadow:0 0 30px rgba(77,141,255,.08)}
+  .node b{display:block;font-size:18px}.node small{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+  .model{left:70px;top:90px}.rule{right:70px;top:245px}.human{left:74px;bottom:96px}
+  .model:after,.human:after{content:"";position:absolute;height:1px;background:var(--blue);width:190px;top:50%;left:100%;transform:rotate(8deg);transform-origin:left}
+  .rule:before{content:"";position:absolute;height:1px;width:190px;background:var(--blue);top:50%;right:100%;transform:rotate(8deg);transform-origin:right}
+  .orb{position:absolute;left:275px;top:282px;width:104px;height:104px;border-radius:50%;border:1px solid var(--blue);box-shadow:0 0 0 18px rgba(77,141,255,.05),0 0 60px rgba(77,141,255,.22);display:grid;place-items:center;font:14px/1 "Source Code Mono","Source Code Pro",monospace;color:var(--blue)}
+  .pageno{position:absolute;right:90px;bottom:70px;font:15px/1 "Source Code Mono","Source Code Pro",monospace;color:var(--muted)}
+  .rev{position:absolute;left:90px;top:78px;font:14px/1.4 "Source Code Mono","Source Code Pro",monospace;letter-spacing:.16em;color:var(--muted)}
+  .ruleline{position:absolute;left:90px;top:160px;width:1740px;height:1px;background:var(--line)}
+  .rev-title{position:absolute;left:90px;top:220px;margin:0;width:1540px;font-size:74px;line-height:1.08;letter-spacing:-.06em;font-weight:300}
+  .rev-title em{font-style:normal;color:var(--blue)}
+  .flow{position:absolute;left:90px;right:90px;top:420px;height:330px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr)}
+  .step{position:relative;padding:44px 26px 34px;border-right:1px solid var(--line)}
+  .step:last-child{border-right:0}.step:before{content:"";position:absolute;left:26px;top:37px;width:12px;height:12px;border:1px solid var(--blue);border-radius:50%;background:var(--slide-bg)}
+  .step strong{display:block;margin-top:70px;font-size:27px}.step p{margin:16px 0 0;font-size:17px;line-height:1.55;color:var(--muted)}
+  .step:nth-child(3):before{background:var(--blue);box-shadow:0 0 20px rgba(77,141,255,.5)}
+  .metrics{position:absolute;left:90px;bottom:78px;display:flex;gap:155px}.metrics b{font:300 48px/1 "Source Code Mono","Source Code Pro",monospace}.metrics span{display:block;margin-top:10px;color:var(--muted);font-size:16px}
+  .fade{animation:fade .6s cubic-bezier(.2,.8,.2,1) both}.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="deck-viewport"><div class="deck-stage" id="stage">
+  <section class="slide active" data-slide="1">
+    <div class="brand fade"><img src="../../public/assets/logo-mark.png" alt="">才证 / 招聘决策台</div>
+    <div class="tag fade d1">EVIDENCE-BOUND<br>HIRING SYSTEM</div>
+    <h1 class="fade d1">AI 提供证据。<br><em>规则负责计算。</em><br>HR 完成决策。</h1>
+    <p class="lead fade d2">招聘的瓶颈不是文本处理，而是信任。<br>才证把每一次判断变成一条可以回到原文的证据链。</p>
+    <div class="stamp fade d3">27/27 TESTS PASSED<br>HUMAN FINAL / AUDIT ONLINE</div>
+    <div class="map fade d2">
+      <div class="node model"><b>LLM / 语义</b><small>结构化 · 匹配 · 追问</small></div>
+      <div class="orb">AUDIT</div>
+      <div class="node rule"><b>规则 / 计算</b><small>评分 · 门槛 · 排序</small></div>
+      <div class="node human"><b>HR / 责任</b><small>覆盖 · 判断 · 留痕</small></div>
+    </div>
+    <div class="pageno">01 / 10</div>
+  </section>
+  <section class="slide" data-slide="2">
+    <div class="rev">WORKFLOW / 可审计流水线</div>
+    <h2 class="rev-title">从一份 JD，到一个能被复核的决定。</h2>
+    <div class="ruleline"></div>
+    <div class="flow">
+      <div class="step"><strong>锁定标准</strong><p>评价项、权重与硬门槛由 HR 确认。</p></div>
+      <div class="step"><strong>生成证据</strong><p>四 Agent 提取结构化事实与逐字引用。</p></div>
+      <div class="step"><strong>交叉审计</strong><p>定位失败、信息缺口和低置信度全部标记。</p></div>
+      <div class="step"><strong>确定性决策</strong><p>固定规则计分，模型不碰排名与录用。</p></div>
+      <div class="step"><strong>人工闭环</strong><p>HR 覆盖、备注，电话追问结果重新入库。</p></div>
+    </div>
+    <div class="metrics">
+      <div><b>100</b><span>份简历批量进入</span></div>
+      <div><b>4</b><span>个职责隔离 Agent</span></div>
+      <div><b>1</b><span>条可追溯证据链</span></div>
+      <div><b>0</b><span>次由模型自动录用</span></div>
+    </div>
+    <div class="pageno">03 / 10</div>
+  </section>
+</div></div>
+<script>
+  const stage=document.getElementById('stage');
+  function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform=`translate(${(innerWidth-1920*s)/2}px,${(innerHeight-1080*s)/2}px) scale(${s})`}
+  addEventListener('resize',fit);fit();
+  const n=new URLSearchParams(location.search).get('slide');
+  if(n==='2'){document.querySelectorAll('.slide').forEach(s=>s.classList.toggle('active',s.dataset.slide==='2'))}
+</script>
+</body>
+</html>

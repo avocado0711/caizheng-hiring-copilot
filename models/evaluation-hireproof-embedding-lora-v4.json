@@ -1,0 +1,13 @@
+{
+  "model_path": "models/hireproof-embedding-lora-v4",
+  "queries": 1385,
+  "corpus": 904,
+  "recall_at_1": 0.24115523465703972,
+  "recall_at_3": 0.3913357400722022,
+  "recall_at_5": 0.5256317689530686,
+  "recall_at_10": 0.6924187725631769,
+  "ndcg_at_5": 0.3626521379282129,
+  "mrr": 0.37076489657552153,
+  "mean_rank": 16.111913357400724,
+  "median_rank": 5.0
+}

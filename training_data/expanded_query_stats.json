@@ -1,0 +1,10 @@
+{
+  "documents": 904,
+  "queries_total": 22346,
+  "train_queries": 17618,
+  "validation_queries": 1965,
+  "test_queries": 2763,
+  "entity_name_queries": 2235,
+  "entity_name_ratio": 0.10001790029535487,
+  "multi_positive_groups": 31
+}

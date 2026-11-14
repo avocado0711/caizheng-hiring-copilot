@@ -1,0 +1,7 @@
+{
+  "texts": 5053,
+  "dimension": 1024,
+  "dtype": "float32",
+  "normalized": true,
+  "source_model": "C:\\Users\\26572\\.cache\\huggingface\\hub\\models--BAAI--bge-m3\\snapshots\\5617a9f61b028005a4858fdac845db406aefb181"
+}

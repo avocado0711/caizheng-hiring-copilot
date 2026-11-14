@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "project": "才证 recruitment evidence intelligence",
+  "baseModel": "BAAI/bge-m3",
+  "projectModel": "models/hireproof-embedding-lora-v4",
+  "projectVectorWeight": 0.5,
+  "dimension": 1024,
+  "documents": 904,
+  "dtype": "float32",
+  "normalized": true,
+  "binaryFile": "vectors.f32.bin",
+  "binarySha256": "cdc7303e1aa684f3ea8fa3e561a113220605d5ee7f742c5e41937f72d31309db",
+  "metadataFile": "metadata.json",
+  "syntheticDataOnly": true,
+  "createdAt": "2026-11-14T01:43:36.481127+00:00"
+}

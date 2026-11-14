@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-11-14T08:09:50.448Z",
+  "dataset": "内置虚构职位与简历场景，仅用于工程回归，不代表真实招聘效果",
+  "scenarioCount": 3,
+  "candidateCount": 9,
+  "metrics": {
+    "top1Accuracy": 1,
+    "pairwiseRankingAccuracy": 1,
+    "gateAccuracy": 1,
+    "locatableEvidenceRate": 1,
+    "protectedAttributeInvarianceRate": 1
+  },
+  "scenarios": [
+    {
+      "id": "ai-platform",
+      "name": "企业 AI 应用工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3
+      ],
+      "actualOrder": [
+        1,
+        2,
+        3
+      ],
+      "top1": true,
+      "gates": [
+        {
+          "id": "strong",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "weak",
+          "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "data-platform",
+      "name": "数据平台工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3
+      ],
+      "actualOrder": [
+        1,
+        2,
+        3
+      ],
+      "top1": true,
+      "gates": [
+        {
+          "id": "strong",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "weak",
+          "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "agent-engineering",
+      "name": "Agent 工作流工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3
+      ],
+      "actualOrder": [
+        1,
+        2,
+        3
+      ],
+      "top1": true,
+      "gates": [
+        {
+          "id": "strong",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "weak",
+          "expected": false,
+          "actual": false
+        }
+      ]
+    }
+  ]
+}

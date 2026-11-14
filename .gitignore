@@ -1,0 +1,27 @@
+data/
+node_modules/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.tmp-*/
+.edge-*/
+.ui-*/
+dist/
+
+# Generated presentation tooling (final PPTX/PDF are kept)
+路演PPT_才证/.ppt-tools/
+路演PPT_才证/.python-tools/
+
+# Intermediate training artifacts (reproducible from JSONL sources)
+training_data/teacher/vectors.npy
+training_data/teacher_v4/vectors.npy
+
+# Editor and OS metadata
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini

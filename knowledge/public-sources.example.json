@@ -1,0 +1,17 @@
+{
+  "documents": [
+    {
+      "title": "示例公司 · 公开技术团队介绍",
+      "documentType": "organization",
+      "entityName": "示例公司",
+      "publisher": "示例公司官网",
+      "sourceLabel": "公开资料示例，请替换为实际可访问来源",
+      "sourceUrl": "https://example.com/technology-team",
+      "publishedAt": "2025-01-10",
+      "retrievedAt": "2026-11-14",
+      "license": "示例结构；使用前必须确认原始页面授权",
+      "synthetic": true,
+      "content": "该文件只演示公开资料来源字段的结构。正式使用时，请填写真实、可访问、允许用于招聘研究的公开页面，并保留发布机构、发布时间、抓取时间和授权说明。"
+    }
+  ]
+}

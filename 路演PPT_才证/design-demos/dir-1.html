@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>才证 · 瑞士证据网格</title>
+<style>
+  :root{--stage-bg:#191b1e;--slide-bg:#f4f3ef;--ink:#18191b;--muted:#666970;--line:#c9c8c2;--blue:#0069d9}
+  html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--stage-bg)}
+  .deck-viewport{position:fixed;inset:0;overflow:hidden;background:var(--stage-bg)}
+  .deck-stage{position:absolute;width:1920px;height:1080px;transform-origin:0 0;background:var(--slide-bg)}
+  .slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;visibility:hidden;opacity:0;background:var(--slide-bg);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:var(--ink)}
+  .slide.active{visibility:visible;opacity:1;z-index:1}
+  .rail{position:absolute;left:96px;top:158px;width:1728px;height:1px;background:var(--line)}
+  .rail:after{content:"";position:absolute;left:0;top:-5px;width:10px;height:10px;background:var(--blue)}
+  .brand{position:absolute;left:96px;top:72px;font-size:22px;font-weight:700;letter-spacing:.08em}
+  .brand img{width:42px;height:42px;vertical-align:middle;margin-right:12px}
+  .meta{position:absolute;right:96px;top:82px;font:16px/1.4 "Source Code Pro",monospace;letter-spacing:.1em;color:var(--muted)}
+  h1{position:absolute;left:96px;top:246px;margin:0;font-size:128px;line-height:1.03;letter-spacing:-.065em;font-weight:600}
+  h1 span{color:var(--blue)}
+  .lead{position:absolute;left:100px;top:535px;width:760px;font-size:34px;line-height:1.55;letter-spacing:-.02em}
+  .foot{position:absolute;left:100px;bottom:76px;font-size:20px;letter-spacing:.08em;color:var(--muted)}
+  .proof{position:absolute;right:96px;top:250px;width:720px;height:540px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .proof .axis{position:absolute;left:74px;right:60px;top:260px;height:1px;background:var(--ink)}
+  .proof .axis:after{content:"";position:absolute;right:-6px;top:-5px;width:11px;height:11px;background:var(--ink);transform:rotate(45deg)}
+  .proof .node{position:absolute;width:150px;text-align:center}
+  .proof .node b{display:block;font:600 18px/1.4 "Source Code Pro",monospace}
+  .proof .node small{display:block;margin-top:12px;font-size:17px;color:var(--muted)}
+  .proof .node:before{content:"";display:block;width:18px;height:18px;border:2px solid var(--ink);background:var(--slide-bg);margin:0 auto 19px;border-radius:50%}
+  .proof .node.verify:before{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 8px rgba(0,105,217,.1)}
+  .n1{left:20px;top:200px}.n2{left:285px;top:200px}.n3{left:550px;top:200px}
+  .proof-label{position:absolute;left:74px;top:84px;font:16px/1.4 "Source Code Pro",monospace;letter-spacing:.12em;color:var(--muted)}
+  .proof-copy{position:absolute;left:74px;bottom:72px;width:520px;font-size:26px;line-height:1.6}
+  .proof-copy strong{color:var(--blue)}
+  .pageno{position:absolute;right:96px;bottom:68px;font:18px/1 "Source Code Pro",monospace;color:var(--muted)}
+  .rev{position:absolute;left:96px;top:150px;font:16px/1.4 "Source Code Pro",monospace;letter-spacing:.12em;color:var(--muted)}
+  .data-title{position:absolute;left:96px;top:220px;margin:0;font-size:76px;line-height:1.1;letter-spacing:-.055em}
+  .data-sub{position:absolute;left:100px;top:360px;width:650px;font-size:30px;line-height:1.6}
+  .chart{position:absolute;right:96px;top:190px;width:1020px;height:600px;border-left:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+  .gridline{position:absolute;left:0;right:0;height:1px;background:#dfdeda}
+  .bar{position:absolute;bottom:0;width:128px;background:var(--ink)}
+  .bar.b2{background:var(--blue)}
+  .bar p{position:absolute;bottom:100%;left:0;width:170px;margin:0 0 16px -20px;font:600 26px/1.2 "Source Code Pro",monospace}
+  .bar small{position:absolute;top:18px;left:0;width:170px;margin-left:-20px;font-size:20px;color:var(--muted)}
+  .b1{left:150px;height:435px}.b2{left:580px;height:506px}
+  .chart-note{position:absolute;right:32px;top:34px;font:16px/1.5 "Source Code Pro",monospace;color:var(--muted);text-align:right}
+  .metric-row{position:absolute;left:96px;bottom:112px;display:flex;gap:92px}
+  .metric b{display:block;font:600 50px/1 "Source Code Pro",monospace}.metric span{display:block;margin-top:12px;font-size:18px;color:var(--muted)}
+  .fade{animation:fade .55s ease both}.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="deck-viewport"><div class="deck-stage" id="stage">
+  <section class="slide active" data-slide="1">
+    <div class="brand fade"><img src="../../public/assets/logo-mark.png" alt="">才证 / 招聘决策台</div>
+    <div class="meta fade d1">EVIDENCE-BOUND HIRING<br>HACKATHON 2026</div>
+    <div class="rail fade d1"></div>
+    <h1 class="fade d1">证据先于<br><span>结论。</span></h1>
+    <p class="lead fade d2">把岗位标准变成可验证的招聘证据链。<br>AI 提供证据，规则负责计算，HR 完成决策。</p>
+    <div class="foot fade d3">才证 · 让每个招聘判断，都有原文证据</div>
+    <div class="proof fade d2">
+      <div class="proof-label">EVIDENCE PATH / 001</div>
+      <div class="axis"></div>
+      <div class="node n1"><b>原文</b><small>简历第 23 行</small></div>
+      <div class="node n2 verify"><b>审计</b><small>逐字定位通过</small></div>
+      <div class="node n3"><b>决策</b><small>HR 人工确认</small></div>
+      <p class="proof-copy">每一条有效结论，都能回到一段原文、一条规则和一次由人负责的决定。</p>
+    </div>
+    <div class="pageno">01 / 10</div>
+  </section>
+  <section class="slide" data-slide="2">
+    <div class="brand"><img src="../../public/assets/logo-mark.png" alt="">才证 / 招聘决策台</div>
+    <div class="rev">VERIFICATION / 证据验证</div>
+    <div class="rail"></div>
+    <h2 class="data-title">可信，不是更大的模型。<br>是每个结论都可复核。</h2>
+    <p class="data-sub">领域适配让检索更懂招聘，但真正的产品壁垒，是“证据能定位、规则能解释、失败能回退”。</p>
+    <div class="chart">
+      <div class="gridline" style="bottom:120px"></div><div class="gridline" style="bottom:280px"></div><div class="gridline" style="bottom:440px"></div>
+      <div class="chart-note">DENSE RECALL@5<br>合成留出集</div>
+      <div class="bar b1"><p>0.450</p><small>BGE-M3</small></div>
+      <div class="bar b2"><p>0.526</p><small>LoRA-v4</small></div>
+    </div>
+    <div class="metric-row">
+      <div class="metric"><b>27/27</b><span>自动化测试</span></div>
+      <div class="metric"><b>98.44%</b><span>合成 PDF OCR 字符准确率</span></div>
+      <div class="metric"><b>0.557</b><span>混合检索 Recall@5</span></div>
+    </div>
+    <div class="pageno">08 / 10</div>
+  </section>
+</div></div>
+<script>
+  const stage=document.getElementById('stage');
+  function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform=`translate(${(innerWidth-1920*s)/2}px,${(innerHeight-1080*s)/2}px) scale(${s})`}
+  addEventListener('resize',fit);fit();
+  const n=new URLSearchParams(location.search).get('slide');
+  if(n==='2'){document.querySelectorAll('.slide').forEach(s=>s.classList.toggle('active',s.dataset.slide==='2'))}
+</script>
+</body>
+</html>

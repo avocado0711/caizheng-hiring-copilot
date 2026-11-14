@@ -1,0 +1,56 @@
+{
+  "base_model": "BAAI/bge-m3",
+  "project_model": "models/hireproof-embedding-lora-v4",
+  "results": [
+    {
+      "project_weight": 0.25,
+      "recall_at_1": 0.24476534296028882,
+      "recall_at_3": 0.4122743682310469,
+      "recall_at_5": 0.5140794223826715,
+      "recall_at_10": 0.6830324909747293,
+      "mrr": 0.37500607085896503,
+      "mean_rank": 24.748014440433213,
+      "median_rank": 5.0
+    },
+    {
+      "project_weight": 0.5,
+      "recall_at_1": 0.2490974729241877,
+      "recall_at_3": 0.40938628158844764,
+      "recall_at_5": 0.5350180505415163,
+      "recall_at_10": 0.7025270758122744,
+      "mrr": 0.3813296112976525,
+      "mean_rank": 17.075090252707582,
+      "median_rank": 5.0
+    },
+    {
+      "project_weight": 0.75,
+      "recall_at_1": 0.24765342960288808,
+      "recall_at_3": 0.3935018050541516,
+      "recall_at_5": 0.5212996389891696,
+      "recall_at_10": 0.7097472924187725,
+      "mrr": 0.3768229389906524,
+      "mean_rank": 15.945126353790613,
+      "median_rank": 5.0
+    },
+    {
+      "project_weight": 1.0,
+      "recall_at_1": 0.23898916967509026,
+      "recall_at_3": 0.39061371841155235,
+      "recall_at_5": 0.5234657039711191,
+      "recall_at_10": 0.6931407942238267,
+      "mrr": 0.3693701172486084,
+      "mean_rank": 16.116245487364623,
+      "median_rank": 5.0
+    }
+  ],
+  "best": {
+    "project_weight": 0.5,
+    "recall_at_1": 0.2490974729241877,
+    "recall_at_3": 0.40938628158844764,
+    "recall_at_5": 0.5350180505415163,
+    "recall_at_10": 0.7025270758122744,
+    "mrr": 0.3813296112976525,
+    "mean_rank": 17.075090252707582,
+    "median_rank": 5.0
+  }
+}

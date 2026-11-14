@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>才证 · 人文编辑式信任</title>
+<style>
+  :root{--stage-bg:#201d18;--slide-bg:#f1ede3;--ink:#1d1c19;--muted:#6d675d;--rule:#b8afa1;--blue:#274f9c;--rust:#b6552b}
+  html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--stage-bg)}
+  .deck-viewport{position:fixed;inset:0;overflow:hidden;background:var(--stage-bg)}
+  .deck-stage{position:absolute;width:1920px;height:1080px;transform-origin:0 0;background:var(--slide-bg)}
+  .slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;visibility:hidden;opacity:0;background:var(--slide-bg);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif}
+  .slide:after{content:"";position:absolute;left:88px;top:86px;right:88px;bottom:82px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);pointer-events:none}
+  .slide.active{visibility:visible;opacity:1;z-index:1}
+  .brand{position:absolute;left:96px;top:48px;font-size:20px;font-weight:700;letter-spacing:.1em}.brand img{width:38px;height:38px;vertical-align:middle;margin-right:11px}
+  .issue{position:absolute;right:100px;top:52px;font:14px/1.4 "Source Code Mono","Source Code Pro",monospace;color:var(--muted);letter-spacing:.14em}
+  .kicker{position:absolute;left:130px;top:180px;font:15px/1.4 "Source Code Mono","Source Code Pro",monospace;letter-spacing:.18em;color:var(--rust);text-transform:uppercase}
+  h1{position:absolute;left:122px;top:255px;margin:0;width:1050px;font-family:"Noto Serif SC","Source Han Serif SC",serif;font-size:120px;line-height:1.18;letter-spacing:-.06em;font-weight:400}
+  h1 em{font-style:normal;color:var(--blue)}
+  .lead{position:absolute;left:130px;top:620px;width:760px;font-size:32px;line-height:1.7;color:#4f4b44}
+  .signature{position:absolute;left:132px;bottom:116px;font-size:20px;letter-spacing:.08em;color:var(--muted)}
+  .sheet{position:absolute;right:126px;top:188px;width:555px;height:650px;background:#fcfbf8;border:1px solid #d5cec2;transform:rotate(2.5deg);box-shadow:0 30px 70px rgba(32,28,22,.08)}
+  .sheet:before{content:"";position:absolute;left:35px;right:35px;top:108px;height:1px;background:#c8c0b3}
+  .filetop{position:absolute;left:38px;right:35px;top:32px;display:flex;justify-content:space-between;font:13px/1.4 "Source Code Mono","Source Code Pro",monospace;letter-spacing:.12em;color:var(--muted)}
+  .quote{position:absolute;left:38px;right:45px;top:150px;font-family:"Noto Serif SC","Source Han Serif SC",serif;font-size:34px;line-height:1.7}
+  .cite{position:absolute;left:38px;right:40px;bottom:156px;font-size:17px;line-height:1.65;color:var(--muted)}
+  .verify{position:absolute;right:40px;bottom:48px;width:134px;height:70px;border:2px solid var(--blue);display:grid;place-items:center;color:var(--blue);font:700 16px/1 "Source Code Mono","Source Code Pro",monospace;letter-spacing:.12em;transform:rotate(-5deg)}
+  .pageno{position:absolute;right:100px;bottom:56px;font:15px/1 "Source Code Mono","Source Code Pro",monospace;color:var(--muted)}
+  .sect{position:absolute;left:128px;top:170px;font:15px/1.4 "Source Code Mono","Source Code Pro",monospace;letter-spacing:.18em;color:var(--rust)}
+  .sec-title{position:absolute;left:122px;top:220px;margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;font-size:83px;line-height:1.2;letter-spacing:-.05em;font-weight:400}
+  .ledger{position:absolute;left:130px;right:130px;top:430px;border-top:2px solid var(--ink)}
+  .row{display:grid;grid-template-columns:90px 1.2fr 1fr 220px;gap:28px;align-items:center;min-height:125px;border-bottom:1px solid var(--rule)}
+  .num{font:15px/1 "Source Code Mono","Source Code Pro",monospace;color:var(--muted)}
+  .row h3{margin:0;font-size:31px;font-weight:600}.row p{margin:0;font-size:20px;line-height:1.55;color:var(--muted)}
+  .state{justify-self:end;padding:8px 12px;border:1px solid var(--blue);color:var(--blue);font:700 14px/1 "Source Code Mono","Source Code Pro",monospace}
+  .state.warn{border-color:var(--rust);color:var(--rust)}
+  .note{position:absolute;left:130px;right:130px;bottom:96px;font-size:18px;line-height:1.6;color:var(--muted)}
+  .fade{animation:fade .6s ease both}.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+  @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="deck-viewport"><div class="deck-stage" id="stage">
+  <section class="slide active" data-slide="1">
+    <div class="brand fade"><img src="../../public/assets/logo-mark.png" alt="">才证 / 招聘决策台</div>
+    <div class="issue fade">HACKATHON / 2026<br>HIRING INTELLIGENCE</div>
+    <div class="kicker fade d1">A VERIFIABLE HIRING DOSSIER</div>
+    <h1 class="fade d1">让每个判断，<br>都有<em>原文证据。</em></h1>
+    <p class="lead fade d2">招聘不是把人的命运交给模型。<br>而是让标准被锁定，让证据被看见，让决定由人负责。</p>
+    <div class="signature fade d3">把岗位标准变成可验证的招聘证据链。</div>
+    <div class="sheet fade d2">
+      <div class="filetop"><span>RESUME / LINE 23</span><span>VERIFIED</span></div>
+      <p class="quote">“使用 Python、FastAPI 开发检索 API，完成重排序和引用追溯。”</p>
+      <p class="cite">评价项：RAG 工程能力<br>证据等级：强 · 原文可定位<br>当前动作：提交 HR 复核</p>
+      <div class="verify">AUDIT PASS</div>
+    </div>
+    <div class="pageno">01 / 10</div>
+  </section>
+  <section class="slide" data-slide="2">
+    <div class="brand"><img src="../../public/assets/logo-mark.png" alt="">才证 / 招聘决策台</div>
+    <div class="issue">THE DECISION DOSSIER / 决策档案</div>
+    <div class="sect">FOUR GUARDRAILS / 四道护栏</div>
+    <h2 class="sec-title">AI 不是裁判。它让判断<br>留下可以被检查的痕迹。</h2>
+    <div class="ledger">
+      <div class="row"><span class="num">01</span><h3>证据绑定</h3><p>每条有效结论，都对应简历原文、行号与来源。</p><span class="state">LOCATED</span></div>
+      <div class="row"><span class="num">02</span><h3>职责分离</h3><p>结构化、匹配、审计、摘要分别执行；摘要不能修改证据。</p><span class="state">SEPARATED</span></div>
+      <div class="row"><span class="num">03</span><h3>确定性决策</h3><p>计分、硬门槛与排序由固定代码执行，模型不碰最终结果。</p><span class="state">AUDITABLE</span></div>
+      <div class="row"><span class="num">04</span><h3>人工负责</h3><p>HR 可以覆盖等级、修改状态；每次变化都进入追加式记录。</p><span class="state warn">HUMAN FINAL</span></div>
+    </div>
+    <div class="note">模型不可用、Agent 失败或岗位标准变化时，旧证据会失效，系统回到透明可重复的规则基线。</div>
+    <div class="pageno">06 / 10</div>
+  </section>
+</div></div>
+<script>
+  const stage=document.getElementById('stage');
+  function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform=`translate(${(innerWidth-1920*s)/2}px,${(innerHeight-1080*s)/2}px) scale(${s})`}
+  addEventListener('resize',fit);fit();
+  const n=new URLSearchParams(location.search).get('slide');
+  if(n==='2'){document.querySelectorAll('.slide').forEach(s=>s.classList.toggle('active',s.dataset.slide==='2'))}
+</script>
+</body>
+</html>

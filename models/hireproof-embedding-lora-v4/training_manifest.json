@@ -1,0 +1,17 @@
+{
+  "model_name": "hireproof-embedding-lora-v4",
+  "base_model": "BAAI/bge-m3",
+  "method": "LoRA + explicit hard negatives + base distillation",
+  "train_examples": 17618,
+  "validation_queries": 300,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "target_layers": [16, 17, 18, 19, 20, 21, 22, 23],
+  "target_modules": ["query", "value"],
+  "trainable_parameters": 262144,
+  "synthetic_data_only": true,
+  "adapter_files": [
+    "adapter/adapter_config.json",
+    "adapter/adapter_model.safetensors"
+  ]
+}

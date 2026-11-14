@@ -1,0 +1,396 @@
+{
+  "generatedAt": "2026-11-14T08:07:21.678Z",
+  "dataset": "3 份合成简历原生 PDF，渲染为 160/220 DPI 扫描图片；同一 PDF 原生文字作为真值",
+  "metrics": {
+    "characterErrorRate": 0.0156,
+    "characterAccuracy": 0.9844,
+    "sequenceCharacterErrorRate": 0.4605,
+    "skillRecall": 1,
+    "fieldAccuracy": 1,
+    "reviewRate": 0
+  },
+  "results": [
+    {
+      "id": "01-160dpi",
+      "pdf": "sample-resumes/pdf/01.pdf",
+      "dpi": 160,
+      "pages": 2,
+      "renderedWidth": 1323,
+      "renderedHeight": 1871,
+      "extractionMethod": "pdf-rapidocr",
+      "ocrEngine": "rapidocr",
+      "meanConfidence": 0.9925,
+      "quality": {
+        "score": 100,
+        "level": "high",
+        "label": "OCR 质量良好",
+        "characterCount": 1545,
+        "lineCount": 65,
+        "sectionHeadings": [
+          "工作经历",
+          "项目经历",
+          "专业技能",
+          "技能",
+          "教育背景"
+        ],
+        "termHits": [
+          "Python",
+          "TypeScript",
+          "SQL",
+          "FastAPI",
+          "Docker",
+          "Kubernetes",
+          "Redis",
+          "PostgreSQL",
+          "Elasticsearch",
+          "Milvus",
+          "RAG",
+          "Agent",
+          "LangChain"
+        ],
+        "hasContact": true,
+        "chineseCharacters": 925,
+        "bodyTermOccurrences": 118,
+        "bodyTermDensity": 0.128,
+        "warnings": []
+      },
+      "characterErrorRate": 0.0078,
+      "sequenceCharacterErrorRate": 0.3827,
+      "truthCharacters": 1411,
+      "ocrCharacters": 1403,
+      "skillRecall": 1,
+      "skillMisses": [],
+      "fields": {
+        "checks": {
+          "name": true,
+          "email": true,
+          "phone": true,
+          "yearsExperience": true,
+          "title": true
+        },
+        "correct": 5,
+        "applicable": 5,
+        "rate": 1
+      },
+      "extractedFields": {
+        "name": "陈思远",
+        "title": "AI应用工程师",
+        "email": "chen.siyuan@example.com",
+        "phone": "138-0000-0001",
+        "yearsExperience": 4.5
+      },
+      "truthFields": {
+        "name": "陈思远",
+        "title": "AI 应用工程师",
+        "email": "chen.siyuan@example.com",
+        "phone": "138-0000-0001",
+        "yearsExperience": 4.5
+      }
+    },
+    {
+      "id": "01-220dpi",
+      "pdf": "sample-resumes/pdf/01.pdf",
+      "dpi": 220,
+      "pages": 2,
+      "renderedWidth": 1818,
+      "renderedHeight": 2573,
+      "extractionMethod": "pdf-rapidocr",
+      "ocrEngine": "rapidocr",
+      "meanConfidence": 0.9938,
+      "quality": {
+        "score": 100,
+        "level": "high",
+        "label": "OCR 质量良好",
+        "characterCount": 1486,
+        "lineCount": 64,
+        "sectionHeadings": [
+          "工作经历",
+          "项目经历",
+          "专业技能",
+          "技能",
+          "教育背景"
+        ],
+        "termHits": [
+          "Python",
+          "TypeScript",
+          "SQL",
+          "FastAPI",
+          "Docker",
+          "Kubernetes",
+          "Redis",
+          "PostgreSQL",
+          "Elasticsearch",
+          "Milvus",
+          "RAG",
+          "Agent",
+          "LangChain"
+        ],
+        "hasContact": true,
+        "chineseCharacters": 882,
+        "bodyTermOccurrences": 116,
+        "bodyTermDensity": 0.132,
+        "warnings": []
+      },
+      "characterErrorRate": 0.0432,
+      "sequenceCharacterErrorRate": 0.4181,
+      "truthCharacters": 1411,
+      "ocrCharacters": 1354,
+      "skillRecall": 1,
+      "skillMisses": [],
+      "fields": {
+        "checks": {
+          "name": true,
+          "email": true,
+          "phone": true,
+          "yearsExperience": true,
+          "title": true
+        },
+        "correct": 5,
+        "applicable": 5,
+        "rate": 1
+      },
+      "extractedFields": {
+        "name": "陈思远",
+        "title": "AI应用工程师",
+        "email": "chen.siyuan@example.com",
+        "phone": "138-0000-0001",
+        "yearsExperience": 4.5
+      },
+      "truthFields": {
+        "name": "陈思远",
+        "title": "AI 应用工程师",
+        "email": "chen.siyuan@example.com",
+        "phone": "138-0000-0001",
+        "yearsExperience": 4.5
+      }
+    },
+    {
+      "id": "06-160dpi",
+      "pdf": "sample-resumes/pdf/06.pdf",
+      "dpi": 160,
+      "pages": 2,
+      "renderedWidth": 1323,
+      "renderedHeight": 1871,
+      "extractionMethod": "pdf-rapidocr",
+      "ocrEngine": "rapidocr",
+      "meanConfidence": 0.9837,
+      "quality": {
+        "score": 100,
+        "level": "high",
+        "label": "OCR 质量良好",
+        "characterCount": 1103,
+        "lineCount": 51,
+        "sectionHeadings": [
+          "工作经历",
+          "项目经历",
+          "专业技能",
+          "技能",
+          "教育背景"
+        ],
+        "termHits": [
+          "Python",
+          "TypeScript",
+          "FastAPI",
+          "React",
+          "Vue",
+          "Docker",
+          "Redis",
+          "PostgreSQL",
+          "RAG",
+          "Agent",
+          "LLM"
+        ],
+        "hasContact": true,
+        "chineseCharacters": 680,
+        "bodyTermOccurrences": 89,
+        "bodyTermDensity": 0.131,
+        "warnings": []
+      },
+      "characterErrorRate": 0.0089,
+      "sequenceCharacterErrorRate": 0.5114,
+      "truthCharacters": 1007,
+      "ocrCharacters": 1000,
+      "skillRecall": 1,
+      "skillMisses": [],
+      "fields": {
+        "checks": {
+          "name": true,
+          "email": true,
+          "phone": true,
+          "yearsExperience": true,
+          "title": true
+        },
+        "correct": 5,
+        "applicable": 5,
+        "rate": 1
+      },
+      "extractedFields": {
+        "name": "许博文",
+        "title": "全栈工程师",
+        "email": "xu.bowen@example.com",
+        "phone": "138-0000-0006",
+        "yearsExperience": 6
+      },
+      "truthFields": {
+        "name": "许博文",
+        "title": "全栈工程师",
+        "email": "xu.bowen@example.com",
+        "phone": "138-0000-0006",
+        "yearsExperience": 6
+      }
+    },
+    {
+      "id": "06-220dpi",
+      "pdf": "sample-resumes/pdf/06.pdf",
+      "dpi": 220,
+      "pages": 2,
+      "renderedWidth": 1818,
+      "renderedHeight": 2573,
+      "extractionMethod": "pdf-rapidocr",
+      "ocrEngine": "rapidocr",
+      "meanConfidence": 0.9935,
+      "quality": {
+        "score": 100,
+        "level": "high",
+        "label": "OCR 质量良好",
+        "characterCount": 1099,
+        "lineCount": 52,
+        "sectionHeadings": [
+          "工作经历",
+          "项目经历",
+          "专业技能",
+          "技能",
+          "教育背景"
+        ],
+        "termHits": [
+          "Python",
+          "TypeScript",
+          "FastAPI",
+          "React",
+          "Vue",
+          "Docker",
+          "Redis",
+          "PostgreSQL",
+          "RAG",
+          "Agent",
+          "LLM"
+        ],
+        "hasContact": true,
+        "chineseCharacters": 680,
+        "bodyTermOccurrences": 89,
+        "bodyTermDensity": 0.131,
+        "warnings": []
+      },
+      "characterErrorRate": 0.0089,
+      "sequenceCharacterErrorRate": 0.5154,
+      "truthCharacters": 1007,
+      "ocrCharacters": 1001,
+      "skillRecall": 1,
+      "skillMisses": [],
+      "fields": {
+        "checks": {
+          "name": true,
+          "email": true,
+          "phone": true,
+          "yearsExperience": true,
+          "title": true
+        },
+        "correct": 5,
+        "applicable": 5,
+        "rate": 1
+      },
+      "extractedFields": {
+        "name": "许博文",
+        "title": "全栈工程师",
+        "email": "xu.bowen@example.com",
+        "phone": "138-0000-0006",
+        "yearsExperience": 6
+      },
+      "truthFields": {
+        "name": "许博文",
+        "title": "全栈工程师",
+        "email": "xu.bowen@example.com",
+        "phone": "138-0000-0006",
+        "yearsExperience": 6
+      }
+    },
+    {
+      "id": "17-220dpi",
+      "pdf": "sample-resumes/more-pdf/17.pdf",
+      "dpi": 220,
+      "pages": 2,
+      "renderedWidth": 1818,
+      "renderedHeight": 2573,
+      "extractionMethod": "pdf-rapidocr",
+      "ocrEngine": "rapidocr",
+      "meanConfidence": 0.9942,
+      "quality": {
+        "score": 100,
+        "level": "high",
+        "label": "OCR 质量良好",
+        "characterCount": 1208,
+        "lineCount": 57,
+        "sectionHeadings": [
+          "工作经历",
+          "项目经历",
+          "项目经验",
+          "专业技能",
+          "技能",
+          "教育背景"
+        ],
+        "termHits": [
+          "Python",
+          "TypeScript",
+          "SQL",
+          "FastAPI",
+          "Docker",
+          "Kubernetes",
+          "Redis",
+          "PostgreSQL",
+          "Elasticsearch",
+          "Milvus",
+          "RAG",
+          "Agent",
+          "LangChain"
+        ],
+        "hasContact": true,
+        "chineseCharacters": 773,
+        "bodyTermOccurrences": 98,
+        "bodyTermDensity": 0.127,
+        "warnings": []
+      },
+      "characterErrorRate": 0.009,
+      "sequenceCharacterErrorRate": 0.4748,
+      "truthCharacters": 1112,
+      "ocrCharacters": 1105,
+      "skillRecall": 1,
+      "skillMisses": [],
+      "fields": {
+        "checks": {
+          "name": true,
+          "email": true,
+          "phone": true,
+          "yearsExperience": true,
+          "title": true
+        },
+        "correct": 5,
+        "applicable": 5,
+        "rate": 1
+      },
+      "extractedFields": {
+        "name": "王天佑",
+        "title": "AI应用工程师",
+        "email": "candidate17@example.com",
+        "phone": "138-0000-0017",
+        "yearsExperience": 5
+      },
+      "truthFields": {
+        "name": "王天佑",
+        "title": "AI 应用工程师",
+        "email": "candidate17@example.com",
+        "phone": "138-0000-0017",
+        "yearsExperience": 5
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "entities": 64,
+  "documents": 904,
+  "train_triplets": 4148,
+  "validation_triplets": 588,
+  "test_cases": 672,
+  "document_types": {
+    "company": 65,
+    "product": 64,
+    "organization": 65,
+    "project": 64,
+    "annual-report": 65,
+    "role-standard": 65,
+    "paper": 65,
+    "patent": 65,
+    "technology": 65,
+    "hiring-policy": 64,
+    "privacy-policy": 64,
+    "interview-rubric": 64,
+    "incident-report": 64,
+    "education": 65
+  },
+  "splits": {
+    "train": 694,
+    "validation": 98,
+    "test": 112
+  },
+  "synthetic_only": true,
+  "split_policy": "entity-isolated train/validation/test",
+  "seed_documents": 8
+}

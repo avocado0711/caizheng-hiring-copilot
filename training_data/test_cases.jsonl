@@ -1,0 +1,672 @@
+{"query": "哪家虚构公司总部位于广州并专注多模态检索？", "positive_id": "company-5f2768fb42474e77", "negative_id": "company-1fd18e26b4e3c38a"}
+{"query": "哪家虚构公司总部位于广州并专注多模态检索？", "positive_id": "company-5f2768fb42474e77", "negative_id": "company-f4d91cac1386dbb5"}
+{"query": "极栈数据智能的核心产品是什么？", "positive_id": "company-5f2768fb42474e77", "negative_id": "company-5f2768fb42474e77"}
+{"query": "极栈数据智能的核心产品是什么？", "positive_id": "company-5f2768fb42474e77", "negative_id": "company-f4d91cac1386dbb5"}
+{"query": "哪些资料介绍极栈数据智能的企业 AI 产品方向？", "positive_id": "company-5f2768fb42474e77", "negative_id": "company-9ec3f1bd6f343582"}
+{"query": "哪些资料介绍极栈数据智能的企业 AI 产品方向？", "positive_id": "company-5f2768fb42474e77", "negative_id": "company-ce085db5574a857e"}
+{"query": "ModelServe 推理服务支持哪些检索和权限能力？", "positive_id": "product-a9874e6d47f48f99", "negative_id": "product-8be04678a6d0a404"}
+{"query": "ModelServe 推理服务支持哪些检索和权限能力？", "positive_id": "product-a9874e6d47f48f99", "negative_id": "product-aac646c0c5372cd0"}
+{"query": "哪些知识资料描述极栈数据智能的引用追溯机制？", "positive_id": "product-a9874e6d47f48f99", "negative_id": "product-a9874e6d47f48f99"}
+{"query": "哪些知识资料描述极栈数据智能的引用追溯机制？", "positive_id": "product-a9874e6d47f48f99", "negative_id": "product-aac646c0c5372cd0"}
+{"query": "多模态检索产品如何处理文档版本和来源标识？", "positive_id": "product-a9874e6d47f48f99", "negative_id": "product-0f0b74f2b0aa346a"}
+{"query": "多模态检索产品如何处理文档版本和来源标识？", "positive_id": "product-a9874e6d47f48f99", "negative_id": "product-102fc07350f5a2f2"}
+{"query": "极栈数据智能的Agent 平台团队负责什么？", "positive_id": "organization-bcde875c99d06a7c", "negative_id": "organization-af0b3b53bfbcddef"}
+{"query": "极栈数据智能的Agent 平台团队负责什么？", "positive_id": "organization-bcde875c99d06a7c", "negative_id": "organization-cbb8d03e443bb84f"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-bcde875c99d06a7c", "negative_id": "organization-8c3bc912619f27e1"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-bcde875c99d06a7c", "negative_id": "organization-af0b3b53bfbcddef"}
+{"query": "极栈数据智能如何组织生产上线和问题回放？", "positive_id": "organization-bcde875c99d06a7c", "negative_id": "organization-af0b3b53bfbcddef"}
+{"query": "极栈数据智能如何组织生产上线和问题回放？", "positive_id": "organization-bcde875c99d06a7c", "negative_id": "organization-4440d2b9b6f5fbca"}
+{"query": "企业知识库混合召回上线后取得了哪些指标？", "positive_id": "project-fcb904778c7ff3da", "negative_id": "project-99b80a6d32fd7c2a"}
+{"query": "企业知识库混合召回上线后取得了哪些指标？", "positive_id": "project-fcb904778c7ff3da", "negative_id": "project-e76d106a8c5f09db"}
+{"query": "极栈数据智能如何降低检索延迟并支持灰度发布？", "positive_id": "project-fcb904778c7ff3da", "negative_id": "project-99b80a6d32fd7c2a"}
+{"query": "极栈数据智能如何降低检索延迟并支持灰度发布？", "positive_id": "project-fcb904778c7ff3da", "negative_id": "project-fcb904778c7ff3da"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-fcb904778c7ff3da", "negative_id": "project-99b80a6d32fd7c2a"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-fcb904778c7ff3da", "negative_id": "project-d5b931fcb9d01d34"}
+{"query": "极栈数据智能的客户规模和知识查询量是多少？", "positive_id": "annual-report-bc0576f334e38286", "negative_id": "annual-report-d606bc714d65b171"}
+{"query": "极栈数据智能的客户规模和知识查询量是多少？", "positive_id": "annual-report-bc0576f334e38286", "negative_id": "annual-report-976133feaa4b5898"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-bc0576f334e38286", "negative_id": "annual-report-976133feaa4b5898"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-bc0576f334e38286", "negative_id": "annual-report-d606bc714d65b171"}
+{"query": "极栈数据智能年度研发投入重点是什么？", "positive_id": "annual-report-bc0576f334e38286", "negative_id": "annual-report-d606bc714d65b171"}
+{"query": "极栈数据智能年度研发投入重点是什么？", "positive_id": "annual-report-bc0576f334e38286", "negative_id": "annual-report-f2a6f9e6fec8bbeb"}
+{"query": "AI 应用工程师需要哪些可核验能力证据？", "positive_id": "role-standard-1a0ccfcd2ed778d2", "negative_id": "role-standard-66081960c9c6d0b6"}
+{"query": "AI 应用工程师需要哪些可核验能力证据？", "positive_id": "role-standard-1a0ccfcd2ed778d2", "negative_id": "role-standard-f3be0d469a54a320"}
+{"query": "极栈数据智能如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-1a0ccfcd2ed778d2", "negative_id": "role-standard-d578e5cb37c0419d"}
+{"query": "极栈数据智能如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-1a0ccfcd2ed778d2", "negative_id": "role-standard-d0a15265a6c3c45f"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-1a0ccfcd2ed778d2", "negative_id": "role-standard-66081960c9c6d0b6"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-1a0ccfcd2ed778d2", "negative_id": "role-standard-eb7cc882d5cffea6"}
+{"query": "哪些论文研究多模态检索的引用约束 RAG？", "positive_id": "paper-303d9e71c4d8ea72", "negative_id": "paper-1c63c8713034e997"}
+{"query": "哪些论文研究多模态检索的引用约束 RAG？", "positive_id": "paper-303d9e71c4d8ea72", "negative_id": "paper-a849e72cdb3c7df4"}
+{"query": "DEMO-PAPER-极栈-0009的主要研究问题是什么？", "positive_id": "paper-303d9e71c4d8ea72", "negative_id": "paper-303d9e71c4d8ea72"}
+{"query": "DEMO-PAPER-极栈-0009的主要研究问题是什么？", "positive_id": "paper-303d9e71c4d8ea72", "negative_id": "paper-1c63c8713034e997"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-303d9e71c4d8ea72", "negative_id": "paper-c008a80464ac4216"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-303d9e71c4d8ea72", "negative_id": "paper-a849e72cdb3c7df4"}
+{"query": "DEMO-PATENT-极栈-0009涉及什么技术？", "positive_id": "patent-4e74665ca3aa4487", "negative_id": "patent-c097f17a6cf5f5f1"}
+{"query": "DEMO-PATENT-极栈-0009涉及什么技术？", "positive_id": "patent-4e74665ca3aa4487", "negative_id": "patent-d34b5cfbf00e4431"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-4e74665ca3aa4487", "negative_id": "patent-b45c9126b122d1cf"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-4e74665ca3aa4487", "negative_id": "patent-7f3f6ce3264c2e3b"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-4e74665ca3aa4487", "negative_id": "patent-d34b5cfbf00e4431"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-4e74665ca3aa4487", "negative_id": "patent-3bb0bf2e0c9e919e"}
+{"query": "极栈数据智能的混合检索架构包含哪些步骤？", "positive_id": "technology-5f2e6440213c94d1", "negative_id": "technology-b8b6500dbaa6626f"}
+{"query": "极栈数据智能的混合检索架构包含哪些步骤？", "positive_id": "technology-5f2e6440213c94d1", "negative_id": "technology-5f2e6440213c94d1"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-5f2e6440213c94d1", "negative_id": "technology-540503176b2db6fa"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-5f2e6440213c94d1", "negative_id": "technology-ebdba42f4fbf8958"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-5f2e6440213c94d1", "negative_id": "technology-e6076d684581a44e"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-5f2e6440213c94d1", "negative_id": "technology-ebdba42f4fbf8958"}
+{"query": "极栈数据智能招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-f29cc5dc882c89bd", "negative_id": "hiring-policy-a493f75863729a5c"}
+{"query": "极栈数据智能招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-f29cc5dc882c89bd", "negative_id": "hiring-policy-297fcefad03189c4"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-f29cc5dc882c89bd", "negative_id": "hiring-policy-8366860561653ff0"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-f29cc5dc882c89bd", "negative_id": "hiring-policy-f29cc5dc882c89bd"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-f29cc5dc882c89bd", "negative_id": "hiring-policy-f29cc5dc882c89bd"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-f29cc5dc882c89bd", "negative_id": "hiring-policy-64a6717fd3232a80"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-59f61f54e1af0598", "negative_id": "privacy-policy-d46701dea7d178f3"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-59f61f54e1af0598", "negative_id": "privacy-policy-59f61f54e1af0598"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-59f61f54e1af0598", "negative_id": "privacy-policy-b8b64eb9c21ced8a"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-59f61f54e1af0598", "negative_id": "privacy-policy-fa666f1008928f46"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-59f61f54e1af0598", "negative_id": "privacy-policy-2fa9e9a00e424a81"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-59f61f54e1af0598", "negative_id": "privacy-policy-b8b64eb9c21ced8a"}
+{"query": "AI 应用工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-d1baefd8bb40da4b", "negative_id": "interview-rubric-d1baefd8bb40da4b"}
+{"query": "AI 应用工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-d1baefd8bb40da4b", "negative_id": "interview-rubric-09d8c802f8ed7cdf"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-d1baefd8bb40da4b", "negative_id": "interview-rubric-09d8c802f8ed7cdf"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-d1baefd8bb40da4b", "negative_id": "interview-rubric-79d7605142c17bee"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-d1baefd8bb40da4b", "negative_id": "interview-rubric-c792626396b119d1"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-d1baefd8bb40da4b", "negative_id": "interview-rubric-0c0e6a52c504e05e"}
+{"query": "企业知识库混合召回的知识索引故障是如何修复的？", "positive_id": "incident-report-5ebc3fb7240249a3", "negative_id": "incident-report-5ebc3fb7240249a3"}
+{"query": "企业知识库混合召回的知识索引故障是如何修复的？", "positive_id": "incident-report-5ebc3fb7240249a3", "negative_id": "incident-report-fb4cb9180be60da7"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-5ebc3fb7240249a3", "negative_id": "incident-report-dfa309708dae64ff"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-5ebc3fb7240249a3", "negative_id": "incident-report-4e4689a469370617"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-5ebc3fb7240249a3", "negative_id": "incident-report-2735f4e2d3199c57"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-5ebc3fb7240249a3", "negative_id": "incident-report-4e4689a469370617"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-9d7d92edcc36e46c", "negative_id": "education-a791cecbc8e58aed"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-9d7d92edcc36e46c", "negative_id": "education-d13723028a9470ae"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-9d7d92edcc36e46c", "negative_id": "education-b70151d9c01795f4"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-9d7d92edcc36e46c", "negative_id": "education-a791cecbc8e58aed"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-9d7d92edcc36e46c", "negative_id": "education-9de6e7069c0072ad"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-9d7d92edcc36e46c", "negative_id": "education-d13723028a9470ae"}
+{"query": "哪家虚构公司总部位于南京并专注供应链优化？", "positive_id": "company-0c76746863a3fcd4", "negative_id": "company-ef3f60302d1ad079"}
+{"query": "哪家虚构公司总部位于南京并专注供应链优化？", "positive_id": "company-0c76746863a3fcd4", "negative_id": "company-fa817b7f4abc1b11"}
+{"query": "启元智能科技的核心产品是什么？", "positive_id": "company-0c76746863a3fcd4", "negative_id": "company-fafc8d8ecd9925ca"}
+{"query": "启元智能科技的核心产品是什么？", "positive_id": "company-0c76746863a3fcd4", "negative_id": "company-c83132966da56e3f"}
+{"query": "哪些资料介绍启元智能科技的企业 AI 产品方向？", "positive_id": "company-0c76746863a3fcd4", "negative_id": "company-ef3f60302d1ad079"}
+{"query": "哪些资料介绍启元智能科技的企业 AI 产品方向？", "positive_id": "company-0c76746863a3fcd4", "negative_id": "company-d040ab46f44ffc22"}
+{"query": "检索增强生成平台支持哪些检索和权限能力？", "positive_id": "product-87300ea09776890b", "negative_id": "product-df1af38a8df5ce05"}
+{"query": "检索增强生成平台支持哪些检索和权限能力？", "positive_id": "product-87300ea09776890b", "negative_id": "product-b11b476b4fae62e6"}
+{"query": "哪些知识资料描述启元智能科技的引用追溯机制？", "positive_id": "product-87300ea09776890b", "negative_id": "product-8cd20b65ee2fd210"}
+{"query": "哪些知识资料描述启元智能科技的引用追溯机制？", "positive_id": "product-87300ea09776890b", "negative_id": "product-b11b476b4fae62e6"}
+{"query": "供应链优化产品如何处理文档版本和来源标识？", "positive_id": "product-87300ea09776890b", "negative_id": "product-8b47d0682371d86a"}
+{"query": "供应链优化产品如何处理文档版本和来源标识？", "positive_id": "product-87300ea09776890b", "negative_id": "product-87300ea09776890b"}
+{"query": "启元智能科技的Agent 平台团队负责什么？", "positive_id": "organization-8c3bc912619f27e1", "negative_id": "organization-a0933001058e8e9f"}
+{"query": "启元智能科技的Agent 平台团队负责什么？", "positive_id": "organization-8c3bc912619f27e1", "negative_id": "organization-2b2d214507ce4e52"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-8c3bc912619f27e1", "negative_id": "organization-cbb8d03e443bb84f"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-8c3bc912619f27e1", "negative_id": "organization-83fd93186914c2d5"}
+{"query": "启元智能科技如何组织生产上线和问题回放？", "positive_id": "organization-8c3bc912619f27e1", "negative_id": "organization-8c3bc912619f27e1"}
+{"query": "启元智能科技如何组织生产上线和问题回放？", "positive_id": "organization-8c3bc912619f27e1", "negative_id": "organization-e707bb017af5dfad"}
+{"query": "检索效果离线评测上线后取得了哪些指标？", "positive_id": "project-48f7ea41c64fcfd4", "negative_id": "project-48f7ea41c64fcfd4"}
+{"query": "检索效果离线评测上线后取得了哪些指标？", "positive_id": "project-48f7ea41c64fcfd4", "negative_id": "project-63a6156f46ae5633"}
+{"query": "启元智能科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-48f7ea41c64fcfd4", "negative_id": "project-123485f7817243bd"}
+{"query": "启元智能科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-48f7ea41c64fcfd4", "negative_id": "project-63a6156f46ae5633"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-48f7ea41c64fcfd4", "negative_id": "project-123485f7817243bd"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-48f7ea41c64fcfd4", "negative_id": "project-63a6156f46ae5633"}
+{"query": "启元智能科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-eee243f9802d96f4", "negative_id": "annual-report-ea4018b42d79e01a"}
+{"query": "启元智能科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-eee243f9802d96f4", "negative_id": "annual-report-6bb193cbbdeabc1e"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-eee243f9802d96f4", "negative_id": "annual-report-4a580670edb1db41"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-eee243f9802d96f4", "negative_id": "annual-report-ea4018b42d79e01a"}
+{"query": "启元智能科技年度研发投入重点是什么？", "positive_id": "annual-report-eee243f9802d96f4", "negative_id": "annual-report-4a580670edb1db41"}
+{"query": "启元智能科技年度研发投入重点是什么？", "positive_id": "annual-report-eee243f9802d96f4", "negative_id": "annual-report-eee243f9802d96f4"}
+{"query": "解决方案架构师需要哪些可核验能力证据？", "positive_id": "role-standard-aa8c381abe9aa956", "negative_id": "role-standard-52408a4926c79b3c"}
+{"query": "解决方案架构师需要哪些可核验能力证据？", "positive_id": "role-standard-aa8c381abe9aa956", "negative_id": "role-standard-3c606d6f72b23264"}
+{"query": "启元智能科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-aa8c381abe9aa956", "negative_id": "role-standard-5f5190668f1a2d8a"}
+{"query": "启元智能科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-aa8c381abe9aa956", "negative_id": "role-standard-3c606d6f72b23264"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-aa8c381abe9aa956", "negative_id": "role-standard-5f5190668f1a2d8a"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-aa8c381abe9aa956", "negative_id": "role-standard-52408a4926c79b3c"}
+{"query": "哪些论文研究供应链优化的引用约束 RAG？", "positive_id": "paper-8687b74a55df1b8a", "negative_id": "paper-6ca06baddc4c2aaf"}
+{"query": "哪些论文研究供应链优化的引用约束 RAG？", "positive_id": "paper-8687b74a55df1b8a", "negative_id": "paper-2f2dff51e8a05c17"}
+{"query": "DEMO-PAPER-启元-0016的主要研究问题是什么？", "positive_id": "paper-8687b74a55df1b8a", "negative_id": "paper-8687b74a55df1b8a"}
+{"query": "DEMO-PAPER-启元-0016的主要研究问题是什么？", "positive_id": "paper-8687b74a55df1b8a", "negative_id": "paper-2f2dff51e8a05c17"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-8687b74a55df1b8a", "negative_id": "paper-6ca06baddc4c2aaf"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-8687b74a55df1b8a", "negative_id": "paper-2f2dff51e8a05c17"}
+{"query": "DEMO-PATENT-启元-0016涉及什么技术？", "positive_id": "patent-1adaecf44eceabdf", "negative_id": "patent-42062c4cd1a4573c"}
+{"query": "DEMO-PATENT-启元-0016涉及什么技术？", "positive_id": "patent-1adaecf44eceabdf", "negative_id": "patent-56958f909bf174b6"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-1adaecf44eceabdf", "negative_id": "patent-7a2434d9712aec77"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-1adaecf44eceabdf", "negative_id": "patent-668f364e7c2b5ba8"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-1adaecf44eceabdf", "negative_id": "patent-668f364e7c2b5ba8"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-1adaecf44eceabdf", "negative_id": "patent-7a2434d9712aec77"}
+{"query": "启元智能科技的混合检索架构包含哪些步骤？", "positive_id": "technology-aef567a2ece21ccc", "negative_id": "technology-12b446380a2301b9"}
+{"query": "启元智能科技的混合检索架构包含哪些步骤？", "positive_id": "technology-aef567a2ece21ccc", "negative_id": "technology-198d0bd335638844"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-aef567a2ece21ccc", "negative_id": "technology-51709b7c3bd27bec"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-aef567a2ece21ccc", "negative_id": "technology-198d0bd335638844"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-aef567a2ece21ccc", "negative_id": "technology-198d0bd335638844"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-aef567a2ece21ccc", "negative_id": "technology-d35a350854c8ca5b"}
+{"query": "启元智能科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-02d52328c4e3fbb6", "negative_id": "hiring-policy-d84eb2bbaf1519cf"}
+{"query": "启元智能科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-02d52328c4e3fbb6", "negative_id": "hiring-policy-c7c65bc6386be5ea"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-02d52328c4e3fbb6", "negative_id": "hiring-policy-c7c65bc6386be5ea"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-02d52328c4e3fbb6", "negative_id": "hiring-policy-25efec40bf17da11"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-02d52328c4e3fbb6", "negative_id": "hiring-policy-ab71b8d171383da3"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-02d52328c4e3fbb6", "negative_id": "hiring-policy-2b4900be60e4827d"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-8e6e1c329546f1e6", "negative_id": "privacy-policy-118e51e575506de9"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-8e6e1c329546f1e6", "negative_id": "privacy-policy-8e6e1c329546f1e6"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-8e6e1c329546f1e6", "negative_id": "privacy-policy-078bf8f54b621bdd"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-8e6e1c329546f1e6", "negative_id": "privacy-policy-293b3d05b69c3fbd"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-8e6e1c329546f1e6", "negative_id": "privacy-policy-f071b1971e4a4696"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-8e6e1c329546f1e6", "negative_id": "privacy-policy-078bf8f54b621bdd"}
+{"query": "解决方案架构师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-5273bd4294b91247", "negative_id": "interview-rubric-29a9d4d4d0e4cb29"}
+{"query": "解决方案架构师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-5273bd4294b91247", "negative_id": "interview-rubric-41b50ba4765df49f"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-5273bd4294b91247", "negative_id": "interview-rubric-ef39bd717056f81e"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-5273bd4294b91247", "negative_id": "interview-rubric-41b50ba4765df49f"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-5273bd4294b91247", "negative_id": "interview-rubric-0cb4d979473109c2"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-5273bd4294b91247", "negative_id": "interview-rubric-6ecf723c8849dbca"}
+{"query": "检索效果离线评测的知识索引故障是如何修复的？", "positive_id": "incident-report-f5b50da2a9f933aa", "negative_id": "incident-report-38c1fbe5820bb8be"}
+{"query": "检索效果离线评测的知识索引故障是如何修复的？", "positive_id": "incident-report-f5b50da2a9f933aa", "negative_id": "incident-report-f5b50da2a9f933aa"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-f5b50da2a9f933aa", "negative_id": "incident-report-d2b528927e1729d1"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-f5b50da2a9f933aa", "negative_id": "incident-report-d2b528927e1729d1"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-f5b50da2a9f933aa", "negative_id": "incident-report-3a588e9c0b1eec16"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-f5b50da2a9f933aa", "negative_id": "incident-report-679d6930ab78e80f"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-84f72fadccc18e1a", "negative_id": "education-2cb21f46f5e83317"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-84f72fadccc18e1a", "negative_id": "education-c98cd0d2fbff86ba"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-84f72fadccc18e1a", "negative_id": "education-254ca491888c3765"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-84f72fadccc18e1a", "negative_id": "education-c98cd0d2fbff86ba"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-84f72fadccc18e1a", "negative_id": "education-cecffe5cf821fe86"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-84f72fadccc18e1a", "negative_id": "education-c74546f6288a1d24"}
+{"query": "哪家虚构公司总部位于上海并专注企业知识库？", "positive_id": "company-c284487ed0e6e9f2", "negative_id": "company-1fd18e26b4e3c38a"}
+{"query": "哪家虚构公司总部位于上海并专注企业知识库？", "positive_id": "company-c284487ed0e6e9f2", "negative_id": "company-019948959156bc09"}
+{"query": "原界智算科技的核心产品是什么？", "positive_id": "company-c284487ed0e6e9f2", "negative_id": "company-4078624729ba0cd5"}
+{"query": "原界智算科技的核心产品是什么？", "positive_id": "company-c284487ed0e6e9f2", "negative_id": "company-1fd18e26b4e3c38a"}
+{"query": "哪些资料介绍原界智算科技的企业 AI 产品方向？", "positive_id": "company-c284487ed0e6e9f2", "negative_id": "company-1fd18e26b4e3c38a"}
+{"query": "哪些资料介绍原界智算科技的企业 AI 产品方向？", "positive_id": "company-c284487ed0e6e9f2", "negative_id": "company-019948959156bc09"}
+{"query": "知识引擎支持哪些检索和权限能力？", "positive_id": "product-8b81f55e958b5763", "negative_id": "product-a0307f303ad3711c"}
+{"query": "知识引擎支持哪些检索和权限能力？", "positive_id": "product-8b81f55e958b5763", "negative_id": "product-62908bcca0a3decb"}
+{"query": "哪些知识资料描述原界智算科技的引用追溯机制？", "positive_id": "product-8b81f55e958b5763", "negative_id": "product-98baee4eb83435b3"}
+{"query": "哪些知识资料描述原界智算科技的引用追溯机制？", "positive_id": "product-8b81f55e958b5763", "negative_id": "product-62908bcca0a3decb"}
+{"query": "企业知识库产品如何处理文档版本和来源标识？", "positive_id": "product-8b81f55e958b5763", "negative_id": "product-352ea07d2e52bb6e"}
+{"query": "企业知识库产品如何处理文档版本和来源标识？", "positive_id": "product-8b81f55e958b5763", "negative_id": "product-219e050d530d1bb9"}
+{"query": "原界智算科技的模型推理团队负责什么？", "positive_id": "organization-e7f153ab8e16a555", "negative_id": "organization-602323b7ad72964a"}
+{"query": "原界智算科技的模型推理团队负责什么？", "positive_id": "organization-e7f153ab8e16a555", "negative_id": "organization-4ecfbc83853dd731"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-e7f153ab8e16a555", "negative_id": "organization-7f15004c96934737"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-e7f153ab8e16a555", "negative_id": "organization-aedd073088c3d1c2"}
+{"query": "原界智算科技如何组织生产上线和问题回放？", "positive_id": "organization-e7f153ab8e16a555", "negative_id": "organization-3ea40967011bdadd"}
+{"query": "原界智算科技如何组织生产上线和问题回放？", "positive_id": "organization-e7f153ab8e16a555", "negative_id": "organization-979039351b953dc5"}
+{"query": "模型灰度发布平台上线后取得了哪些指标？", "positive_id": "project-5d6dae91932a1218", "negative_id": "project-d48036fa902e395b"}
+{"query": "模型灰度发布平台上线后取得了哪些指标？", "positive_id": "project-5d6dae91932a1218", "negative_id": "project-b4e1c55a6486b7ae"}
+{"query": "原界智算科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-5d6dae91932a1218", "negative_id": "project-d54607f37f1b5113"}
+{"query": "原界智算科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-5d6dae91932a1218", "negative_id": "project-b4e1c55a6486b7ae"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-5d6dae91932a1218", "negative_id": "project-55614038e1fdb61e"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-5d6dae91932a1218", "negative_id": "project-d54607f37f1b5113"}
+{"query": "原界智算科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-8fb4f71937c1e4b9", "negative_id": "annual-report-7859d3fb858c4075"}
+{"query": "原界智算科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-8fb4f71937c1e4b9", "negative_id": "annual-report-c6a96bc781b3fd46"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-8fb4f71937c1e4b9", "negative_id": "annual-report-7859d3fb858c4075"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-8fb4f71937c1e4b9", "negative_id": "annual-report-c6a96bc781b3fd46"}
+{"query": "原界智算科技年度研发投入重点是什么？", "positive_id": "annual-report-8fb4f71937c1e4b9", "negative_id": "annual-report-463a1c62bb2e036a"}
+{"query": "原界智算科技年度研发投入重点是什么？", "positive_id": "annual-report-8fb4f71937c1e4b9", "negative_id": "annual-report-832d4cb6c6555419"}
+{"query": "算法工程师需要哪些可核验能力证据？", "positive_id": "role-standard-3183dc18b0c9a3b1", "negative_id": "role-standard-a8b90a0b88635523"}
+{"query": "算法工程师需要哪些可核验能力证据？", "positive_id": "role-standard-3183dc18b0c9a3b1", "negative_id": "role-standard-74c55179f91db393"}
+{"query": "原界智算科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-3183dc18b0c9a3b1", "negative_id": "role-standard-6125a2b5e9b2814a"}
+{"query": "原界智算科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-3183dc18b0c9a3b1", "negative_id": "role-standard-a8b90a0b88635523"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-3183dc18b0c9a3b1", "negative_id": "role-standard-1d816bf9f5fd8bd4"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-3183dc18b0c9a3b1", "negative_id": "role-standard-6125a2b5e9b2814a"}
+{"query": "哪些论文研究企业知识库的引用约束 RAG？", "positive_id": "paper-80562b6469118b69", "negative_id": "paper-c008a80464ac4216"}
+{"query": "哪些论文研究企业知识库的引用约束 RAG？", "positive_id": "paper-80562b6469118b69", "negative_id": "paper-4be876e7f0dfcc37"}
+{"query": "DEMO-PAPER-原界-0031的主要研究问题是什么？", "positive_id": "paper-80562b6469118b69", "negative_id": "paper-c422745f7c3c828b"}
+{"query": "DEMO-PAPER-原界-0031的主要研究问题是什么？", "positive_id": "paper-80562b6469118b69", "negative_id": "paper-c008a80464ac4216"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-80562b6469118b69", "negative_id": "paper-c008a80464ac4216"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-80562b6469118b69", "negative_id": "paper-c008a80464ac4216"}
+{"query": "DEMO-PATENT-原界-0031涉及什么技术？", "positive_id": "patent-73296a6d7f1d2236", "negative_id": "patent-51c83f26654137ef"}
+{"query": "DEMO-PATENT-原界-0031涉及什么技术？", "positive_id": "patent-73296a6d7f1d2236", "negative_id": "patent-0d12f569d485187d"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-73296a6d7f1d2236", "negative_id": "patent-fef9f21dd24ee686"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-73296a6d7f1d2236", "negative_id": "patent-9152a8331f2c07c2"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-73296a6d7f1d2236", "negative_id": "patent-9d3e5f5d8e0ad877"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-73296a6d7f1d2236", "negative_id": "patent-0d12f569d485187d"}
+{"query": "原界智算科技的混合检索架构包含哪些步骤？", "positive_id": "technology-8d58705533631a56", "negative_id": "technology-794a3cd63d84e92a"}
+{"query": "原界智算科技的混合检索架构包含哪些步骤？", "positive_id": "technology-8d58705533631a56", "negative_id": "technology-8d6fd45723f132a8"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-8d58705533631a56", "negative_id": "technology-8d6fd45723f132a8"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-8d58705533631a56", "negative_id": "technology-e795d4633905881b"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-8d58705533631a56", "negative_id": "technology-e795d4633905881b"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-8d58705533631a56", "negative_id": "technology-abaa369f409ca5de"}
+{"query": "原界智算科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-b37b15b7400ca231", "negative_id": "hiring-policy-27fd8981d0a0dbe8"}
+{"query": "原界智算科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-b37b15b7400ca231", "negative_id": "hiring-policy-f760314b68f81588"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-b37b15b7400ca231", "negative_id": "hiring-policy-a9b26c6ff88a2fa5"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-b37b15b7400ca231", "negative_id": "hiring-policy-24099d169deef01b"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-b37b15b7400ca231", "negative_id": "hiring-policy-d799fd439db3202e"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-b37b15b7400ca231", "negative_id": "hiring-policy-a9b26c6ff88a2fa5"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-a3ae1d3f5efdf8d7", "negative_id": "privacy-policy-b2c47e23f0c84d8e"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-a3ae1d3f5efdf8d7", "negative_id": "privacy-policy-253557ccc279e01f"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-a3ae1d3f5efdf8d7", "negative_id": "privacy-policy-d1ff19dae23b58f8"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-a3ae1d3f5efdf8d7", "negative_id": "privacy-policy-b14c1b1dd81689eb"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-a3ae1d3f5efdf8d7", "negative_id": "privacy-policy-b2c47e23f0c84d8e"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-a3ae1d3f5efdf8d7", "negative_id": "privacy-policy-391e635b88c43799"}
+{"query": "算法工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-8cdbc43c73ad9f94", "negative_id": "interview-rubric-d47c223b42258cea"}
+{"query": "算法工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-8cdbc43c73ad9f94", "negative_id": "interview-rubric-0c0e6a52c504e05e"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-8cdbc43c73ad9f94", "negative_id": "interview-rubric-480cc7d8d594ac0d"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-8cdbc43c73ad9f94", "negative_id": "interview-rubric-0c0e6a52c504e05e"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-8cdbc43c73ad9f94", "negative_id": "interview-rubric-38c2e66c8e1b335c"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-8cdbc43c73ad9f94", "negative_id": "interview-rubric-fea3795f4ae1806e"}
+{"query": "模型灰度发布平台的知识索引故障是如何修复的？", "positive_id": "incident-report-bcaeb632b64bd1ef", "negative_id": "incident-report-4e4689a469370617"}
+{"query": "模型灰度发布平台的知识索引故障是如何修复的？", "positive_id": "incident-report-bcaeb632b64bd1ef", "negative_id": "incident-report-cf8008d260de927b"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-bcaeb632b64bd1ef", "negative_id": "incident-report-4e4689a469370617"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-bcaeb632b64bd1ef", "negative_id": "incident-report-c8fd15a4b856a30b"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-bcaeb632b64bd1ef", "negative_id": "incident-report-715692a4d7017b78"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-bcaeb632b64bd1ef", "negative_id": "incident-report-f2badb1c1d2e4d58"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-073d357d01374ea7", "negative_id": "education-f9011b72a6413434"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-073d357d01374ea7", "negative_id": "education-893f385970f5bb5e"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-073d357d01374ea7", "negative_id": "education-a4dd3f2771829af4"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-073d357d01374ea7", "negative_id": "education-df84b35d3c1d244c"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-073d357d01374ea7", "negative_id": "education-a4dd3f2771829af4"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-073d357d01374ea7", "negative_id": "education-a4dd3f2771829af4"}
+{"query": "哪家虚构公司总部位于北京并专注制造质检？", "positive_id": "company-cfdd49f169142339", "negative_id": "company-1fd18e26b4e3c38a"}
+{"query": "哪家虚构公司总部位于北京并专注制造质检？", "positive_id": "company-cfdd49f169142339", "negative_id": "company-cae986af061cd501"}
+{"query": "星澜数据智能的核心产品是什么？", "positive_id": "company-cfdd49f169142339", "negative_id": "company-0a9aedf774e81d04"}
+{"query": "星澜数据智能的核心产品是什么？", "positive_id": "company-cfdd49f169142339", "negative_id": "company-cae986af061cd501"}
+{"query": "哪些资料介绍星澜数据智能的企业 AI 产品方向？", "positive_id": "company-cfdd49f169142339", "negative_id": "company-cae986af061cd501"}
+{"query": "哪些资料介绍星澜数据智能的企业 AI 产品方向？", "positive_id": "company-cfdd49f169142339", "negative_id": "company-0a9aedf774e81d04"}
+{"query": "ModelServe 推理服务支持哪些检索和权限能力？", "positive_id": "product-102fc07350f5a2f2", "negative_id": "product-0bf76b7a564410b1"}
+{"query": "ModelServe 推理服务支持哪些检索和权限能力？", "positive_id": "product-102fc07350f5a2f2", "negative_id": "product-aac646c0c5372cd0"}
+{"query": "哪些知识资料描述星澜数据智能的引用追溯机制？", "positive_id": "product-102fc07350f5a2f2", "negative_id": "product-0f0b74f2b0aa346a"}
+{"query": "哪些知识资料描述星澜数据智能的引用追溯机制？", "positive_id": "product-102fc07350f5a2f2", "negative_id": "product-a9874e6d47f48f99"}
+{"query": "制造质检产品如何处理文档版本和来源标识？", "positive_id": "product-102fc07350f5a2f2", "negative_id": "product-c13d2c2f1400471e"}
+{"query": "制造质检产品如何处理文档版本和来源标识？", "positive_id": "product-102fc07350f5a2f2", "negative_id": "product-a9874e6d47f48f99"}
+{"query": "星澜数据智能的企业交付团队负责什么？", "positive_id": "organization-fccf06048c08a63e", "negative_id": "organization-fcf28a9137f859ad"}
+{"query": "星澜数据智能的企业交付团队负责什么？", "positive_id": "organization-fccf06048c08a63e", "negative_id": "organization-14817353d1e7e2d8"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-fccf06048c08a63e", "negative_id": "organization-8ffbe2a30b7e8173"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-fccf06048c08a63e", "negative_id": "organization-14817353d1e7e2d8"}
+{"query": "星澜数据智能如何组织生产上线和问题回放？", "positive_id": "organization-fccf06048c08a63e", "negative_id": "organization-14817353d1e7e2d8"}
+{"query": "星澜数据智能如何组织生产上线和问题回放？", "positive_id": "organization-fccf06048c08a63e", "negative_id": "organization-14817353d1e7e2d8"}
+{"query": "企业知识库混合召回上线后取得了哪些指标？", "positive_id": "project-d5b931fcb9d01d34", "negative_id": "project-fcb904778c7ff3da"}
+{"query": "企业知识库混合召回上线后取得了哪些指标？", "positive_id": "project-d5b931fcb9d01d34", "negative_id": "project-99b80a6d32fd7c2a"}
+{"query": "星澜数据智能如何降低检索延迟并支持灰度发布？", "positive_id": "project-d5b931fcb9d01d34", "negative_id": "project-fda9ed5f57a0c8f1"}
+{"query": "星澜数据智能如何降低检索延迟并支持灰度发布？", "positive_id": "project-d5b931fcb9d01d34", "negative_id": "project-fcb904778c7ff3da"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-d5b931fcb9d01d34", "negative_id": "project-e76d106a8c5f09db"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-d5b931fcb9d01d34", "negative_id": "project-fda9ed5f57a0c8f1"}
+{"query": "星澜数据智能的客户规模和知识查询量是多少？", "positive_id": "annual-report-cb74f03b7f6d4cf5", "negative_id": "annual-report-1e5358943a8232bd"}
+{"query": "星澜数据智能的客户规模和知识查询量是多少？", "positive_id": "annual-report-cb74f03b7f6d4cf5", "negative_id": "annual-report-2a559d36ff68e675"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-cb74f03b7f6d4cf5", "negative_id": "annual-report-2a559d36ff68e675"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-cb74f03b7f6d4cf5", "negative_id": "annual-report-1e5358943a8232bd"}
+{"query": "星澜数据智能年度研发投入重点是什么？", "positive_id": "annual-report-cb74f03b7f6d4cf5", "negative_id": "annual-report-2a559d36ff68e675"}
+{"query": "星澜数据智能年度研发投入重点是什么？", "positive_id": "annual-report-cb74f03b7f6d4cf5", "negative_id": "annual-report-1e5358943a8232bd"}
+{"query": "AI 应用工程师需要哪些可核验能力证据？", "positive_id": "role-standard-4d3ff0de043d1597", "negative_id": "role-standard-66081960c9c6d0b6"}
+{"query": "AI 应用工程师需要哪些可核验能力证据？", "positive_id": "role-standard-4d3ff0de043d1597", "negative_id": "role-standard-1a0ccfcd2ed778d2"}
+{"query": "星澜数据智能如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-4d3ff0de043d1597", "negative_id": "role-standard-d0a15265a6c3c45f"}
+{"query": "星澜数据智能如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-4d3ff0de043d1597", "negative_id": "role-standard-eb7cc882d5cffea6"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-4d3ff0de043d1597", "negative_id": "role-standard-1a0ccfcd2ed778d2"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-4d3ff0de043d1597", "negative_id": "role-standard-f3be0d469a54a320"}
+{"query": "哪些论文研究制造质检的引用约束 RAG？", "positive_id": "paper-4e2e426701020c9c", "negative_id": "paper-90f13758a2173fa3"}
+{"query": "哪些论文研究制造质检的引用约束 RAG？", "positive_id": "paper-4e2e426701020c9c", "negative_id": "paper-a849e72cdb3c7df4"}
+{"query": "DEMO-PAPER-星澜-0033的主要研究问题是什么？", "positive_id": "paper-4e2e426701020c9c", "negative_id": "paper-de4fee3134a15b19"}
+{"query": "DEMO-PAPER-星澜-0033的主要研究问题是什么？", "positive_id": "paper-4e2e426701020c9c", "negative_id": "paper-c008a80464ac4216"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-4e2e426701020c9c", "negative_id": "paper-a849e72cdb3c7df4"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-4e2e426701020c9c", "negative_id": "paper-de4fee3134a15b19"}
+{"query": "DEMO-PATENT-星澜-0033涉及什么技术？", "positive_id": "patent-be1f43e8a8339f5a", "negative_id": "patent-7f3f6ce3264c2e3b"}
+{"query": "DEMO-PATENT-星澜-0033涉及什么技术？", "positive_id": "patent-be1f43e8a8339f5a", "negative_id": "patent-1b00e850c718e161"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-be1f43e8a8339f5a", "negative_id": "patent-1b00e850c718e161"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-be1f43e8a8339f5a", "negative_id": "patent-1b00e850c718e161"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-be1f43e8a8339f5a", "negative_id": "patent-7f3f6ce3264c2e3b"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-be1f43e8a8339f5a", "negative_id": "patent-3bb0bf2e0c9e919e"}
+{"query": "星澜数据智能的混合检索架构包含哪些步骤？", "positive_id": "technology-e6076d684581a44e", "negative_id": "technology-966845c61246b080"}
+{"query": "星澜数据智能的混合检索架构包含哪些步骤？", "positive_id": "technology-e6076d684581a44e", "negative_id": "technology-137b5af3a81eb9a4"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-e6076d684581a44e", "negative_id": "technology-966845c61246b080"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-e6076d684581a44e", "negative_id": "technology-39b9d13a89358b4b"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-e6076d684581a44e", "negative_id": "technology-39b9d13a89358b4b"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-e6076d684581a44e", "negative_id": "technology-5f2e6440213c94d1"}
+{"query": "星澜数据智能招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-64a6717fd3232a80", "negative_id": "hiring-policy-9635fdc6d92cefb9"}
+{"query": "星澜数据智能招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-64a6717fd3232a80", "negative_id": "hiring-policy-3833dfae6f0b6fa7"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-64a6717fd3232a80", "negative_id": "hiring-policy-9635fdc6d92cefb9"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-64a6717fd3232a80", "negative_id": "hiring-policy-f29cc5dc882c89bd"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-64a6717fd3232a80", "negative_id": "hiring-policy-998f006f8b8cd5c1"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-64a6717fd3232a80", "negative_id": "hiring-policy-f29cc5dc882c89bd"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-fa666f1008928f46", "negative_id": "privacy-policy-2cfa958aba9ed88a"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-fa666f1008928f46", "negative_id": "privacy-policy-4f7d580125c182c0"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-fa666f1008928f46", "negative_id": "privacy-policy-4f7d580125c182c0"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-fa666f1008928f46", "negative_id": "privacy-policy-59f61f54e1af0598"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-fa666f1008928f46", "negative_id": "privacy-policy-dedc2fc2f920122e"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-fa666f1008928f46", "negative_id": "privacy-policy-35d11499a7fb4c8e"}
+{"query": "AI 应用工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-79d7605142c17bee", "negative_id": "interview-rubric-83559f03bbbdc092"}
+{"query": "AI 应用工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-79d7605142c17bee", "negative_id": "interview-rubric-09d8c802f8ed7cdf"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-79d7605142c17bee", "negative_id": "interview-rubric-e7f3319195592ef1"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-79d7605142c17bee", "negative_id": "interview-rubric-0606c462c64a3b46"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-79d7605142c17bee", "negative_id": "interview-rubric-d1baefd8bb40da4b"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-79d7605142c17bee", "negative_id": "interview-rubric-e7f3319195592ef1"}
+{"query": "企业知识库混合召回的知识索引故障是如何修复的？", "positive_id": "incident-report-fb4cb9180be60da7", "negative_id": "incident-report-87c4ce43a8cc7e29"}
+{"query": "企业知识库混合召回的知识索引故障是如何修复的？", "positive_id": "incident-report-fb4cb9180be60da7", "negative_id": "incident-report-4e4689a469370617"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-fb4cb9180be60da7", "negative_id": "incident-report-5ebc3fb7240249a3"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-fb4cb9180be60da7", "negative_id": "incident-report-87c4ce43a8cc7e29"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-fb4cb9180be60da7", "negative_id": "incident-report-dfa309708dae64ff"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-fb4cb9180be60da7", "negative_id": "incident-report-4e4689a469370617"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-d13723028a9470ae", "negative_id": "education-ab038e7d806e996c"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-d13723028a9470ae", "negative_id": "education-3b9ae52e29de3f39"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-d13723028a9470ae", "negative_id": "education-9de6e7069c0072ad"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-d13723028a9470ae", "negative_id": "education-3b9ae52e29de3f39"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-d13723028a9470ae", "negative_id": "education-29af6496a2cf40d2"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-d13723028a9470ae", "negative_id": "education-a791cecbc8e58aed"}
+{"query": "哪家虚构公司总部位于南京并专注供应链优化？", "positive_id": "company-b51ab43383878e28", "negative_id": "company-8217448a686735d1"}
+{"query": "哪家虚构公司总部位于南京并专注供应链优化？", "positive_id": "company-b51ab43383878e28", "negative_id": "company-c83132966da56e3f"}
+{"query": "智川数字科技的核心产品是什么？", "positive_id": "company-b51ab43383878e28", "negative_id": "company-c83132966da56e3f"}
+{"query": "智川数字科技的核心产品是什么？", "positive_id": "company-b51ab43383878e28", "negative_id": "company-5d1a0845c8099018"}
+{"query": "哪些资料介绍智川数字科技的企业 AI 产品方向？", "positive_id": "company-b51ab43383878e28", "negative_id": "company-5331af3ae70ce2b9"}
+{"query": "哪些资料介绍智川数字科技的企业 AI 产品方向？", "positive_id": "company-b51ab43383878e28", "negative_id": "company-8217448a686735d1"}
+{"query": "多智能体工作台支持哪些检索和权限能力？", "positive_id": "product-4ad47dc1392724b5", "negative_id": "product-07d9e668608097be"}
+{"query": "多智能体工作台支持哪些检索和权限能力？", "positive_id": "product-4ad47dc1392724b5", "negative_id": "product-0eb407871d0f18ae"}
+{"query": "哪些知识资料描述智川数字科技的引用追溯机制？", "positive_id": "product-4ad47dc1392724b5", "negative_id": "product-07d9e668608097be"}
+{"query": "哪些知识资料描述智川数字科技的引用追溯机制？", "positive_id": "product-4ad47dc1392724b5", "negative_id": "product-27e222c2bd334864"}
+{"query": "供应链优化产品如何处理文档版本和来源标识？", "positive_id": "product-4ad47dc1392724b5", "negative_id": "product-0eb407871d0f18ae"}
+{"query": "供应链优化产品如何处理文档版本和来源标识？", "positive_id": "product-4ad47dc1392724b5", "negative_id": "product-07d9e668608097be"}
+{"query": "智川数字科技的知识检索团队负责什么？", "positive_id": "organization-83fd93186914c2d5", "negative_id": "organization-a0933001058e8e9f"}
+{"query": "智川数字科技的知识检索团队负责什么？", "positive_id": "organization-83fd93186914c2d5", "negative_id": "organization-2b2d214507ce4e52"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-83fd93186914c2d5", "negative_id": "organization-f407c29d050211aa"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-83fd93186914c2d5", "negative_id": "organization-8c3bc912619f27e1"}
+{"query": "智川数字科技如何组织生产上线和问题回放？", "positive_id": "organization-83fd93186914c2d5", "negative_id": "organization-60cd690e6bb76301"}
+{"query": "智川数字科技如何组织生产上线和问题回放？", "positive_id": "organization-83fd93186914c2d5", "negative_id": "organization-f407c29d050211aa"}
+{"query": "多租户权限检索上线后取得了哪些指标？", "positive_id": "project-0f6ec0fe9253366d", "negative_id": "project-72b0438e4853f7fe"}
+{"query": "多租户权限检索上线后取得了哪些指标？", "positive_id": "project-0f6ec0fe9253366d", "negative_id": "project-553f82fd5cb37144"}
+{"query": "智川数字科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-0f6ec0fe9253366d", "negative_id": "project-404b8d99043e010a"}
+{"query": "智川数字科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-0f6ec0fe9253366d", "negative_id": "project-553f82fd5cb37144"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-0f6ec0fe9253366d", "negative_id": "project-fe3b0efdd2b0e7cf"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-0f6ec0fe9253366d", "negative_id": "project-72b0438e4853f7fe"}
+{"query": "智川数字科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-c6a96bc781b3fd46", "negative_id": "annual-report-1e5358943a8232bd"}
+{"query": "智川数字科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-c6a96bc781b3fd46", "negative_id": "annual-report-cbfc87af8691cfc4"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-c6a96bc781b3fd46", "negative_id": "annual-report-1e5358943a8232bd"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-c6a96bc781b3fd46", "negative_id": "annual-report-1e5358943a8232bd"}
+{"query": "智川数字科技年度研发投入重点是什么？", "positive_id": "annual-report-c6a96bc781b3fd46", "negative_id": "annual-report-8fb4f71937c1e4b9"}
+{"query": "智川数字科技年度研发投入重点是什么？", "positive_id": "annual-report-c6a96bc781b3fd46", "negative_id": "annual-report-cbfc87af8691cfc4"}
+{"query": "推理优化工程师需要哪些可核验能力证据？", "positive_id": "role-standard-4858fc0abd2c287b", "negative_id": "role-standard-aeecc920ff58201f"}
+{"query": "推理优化工程师需要哪些可核验能力证据？", "positive_id": "role-standard-4858fc0abd2c287b", "negative_id": "role-standard-ad4c4b4e4532436f"}
+{"query": "智川数字科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-4858fc0abd2c287b", "negative_id": "role-standard-aeecc920ff58201f"}
+{"query": "智川数字科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-4858fc0abd2c287b", "negative_id": "role-standard-14459bca22914446"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-4858fc0abd2c287b", "negative_id": "role-standard-aeecc920ff58201f"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-4858fc0abd2c287b", "negative_id": "role-standard-66ee158a367812aa"}
+{"query": "哪些论文研究供应链优化的引用约束 RAG？", "positive_id": "paper-a04092482a86cc71", "negative_id": "paper-6ca06baddc4c2aaf"}
+{"query": "哪些论文研究供应链优化的引用约束 RAG？", "positive_id": "paper-a04092482a86cc71", "negative_id": "paper-8f0aa662c420baed"}
+{"query": "DEMO-PAPER-智川-0036的主要研究问题是什么？", "positive_id": "paper-a04092482a86cc71", "negative_id": "paper-b59e0014a4d63d42"}
+{"query": "DEMO-PAPER-智川-0036的主要研究问题是什么？", "positive_id": "paper-a04092482a86cc71", "negative_id": "paper-8f0aa662c420baed"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-a04092482a86cc71", "negative_id": "paper-6ca06baddc4c2aaf"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-a04092482a86cc71", "negative_id": "paper-b59e0014a4d63d42"}
+{"query": "DEMO-PATENT-智川-0036涉及什么技术？", "positive_id": "patent-e2d09df21beeaa08", "negative_id": "patent-7c1fab3570cd150b"}
+{"query": "DEMO-PATENT-智川-0036涉及什么技术？", "positive_id": "patent-e2d09df21beeaa08", "negative_id": "patent-d440e94cccb60a01"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-e2d09df21beeaa08", "negative_id": "patent-d2680febbe4c59a1"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-e2d09df21beeaa08", "negative_id": "patent-7a2434d9712aec77"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-e2d09df21beeaa08", "negative_id": "patent-d2680febbe4c59a1"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-e2d09df21beeaa08", "negative_id": "patent-42062c4cd1a4573c"}
+{"query": "智川数字科技的混合检索架构包含哪些步骤？", "positive_id": "technology-f39cae1d496d4444", "negative_id": "technology-2900b243f7d6f4f6"}
+{"query": "智川数字科技的混合检索架构包含哪些步骤？", "positive_id": "technology-f39cae1d496d4444", "negative_id": "technology-796fea5303a143f1"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-f39cae1d496d4444", "negative_id": "technology-13ccc81680687f01"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-f39cae1d496d4444", "negative_id": "technology-ad2a400ff1334737"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-f39cae1d496d4444", "negative_id": "technology-13ccc81680687f01"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-f39cae1d496d4444", "negative_id": "technology-019b100d7bdcb3a0"}
+{"query": "智川数字科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-5016b5a95bf82fed", "negative_id": "hiring-policy-59f496776d6419d4"}
+{"query": "智川数字科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-5016b5a95bf82fed", "negative_id": "hiring-policy-dab921ca275eeb97"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-5016b5a95bf82fed", "negative_id": "hiring-policy-0465ca15e0269fc1"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-5016b5a95bf82fed", "negative_id": "hiring-policy-d02d394de8de8279"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-5016b5a95bf82fed", "negative_id": "hiring-policy-334b2e84c4e6dd84"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-5016b5a95bf82fed", "negative_id": "hiring-policy-59f496776d6419d4"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-5f5fb2e901e2023e", "negative_id": "privacy-policy-52c90642f11ba6fd"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-5f5fb2e901e2023e", "negative_id": "privacy-policy-d25f32443743073f"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-5f5fb2e901e2023e", "negative_id": "privacy-policy-d25f32443743073f"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-5f5fb2e901e2023e", "negative_id": "privacy-policy-52c90642f11ba6fd"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-5f5fb2e901e2023e", "negative_id": "privacy-policy-d25f32443743073f"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-5f5fb2e901e2023e", "negative_id": "privacy-policy-a76ba955c16a1439"}
+{"query": "推理优化工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-004b968c7da88ceb", "negative_id": "interview-rubric-247b5147c224a6ca"}
+{"query": "推理优化工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-004b968c7da88ceb", "negative_id": "interview-rubric-4543dcd3ad0d5929"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-004b968c7da88ceb", "negative_id": "interview-rubric-41b50ba4765df49f"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-004b968c7da88ceb", "negative_id": "interview-rubric-d64f3de74f8bfcc7"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-004b968c7da88ceb", "negative_id": "interview-rubric-41b50ba4765df49f"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-004b968c7da88ceb", "negative_id": "interview-rubric-d64f3de74f8bfcc7"}
+{"query": "多租户权限检索的知识索引故障是如何修复的？", "positive_id": "incident-report-33613430ff019d02", "negative_id": "incident-report-70abb801f2f423de"}
+{"query": "多租户权限检索的知识索引故障是如何修复的？", "positive_id": "incident-report-33613430ff019d02", "negative_id": "incident-report-679d6930ab78e80f"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-33613430ff019d02", "negative_id": "incident-report-70abb801f2f423de"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-33613430ff019d02", "negative_id": "incident-report-e5111f9334015a09"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-33613430ff019d02", "negative_id": "incident-report-70abb801f2f423de"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-33613430ff019d02", "negative_id": "incident-report-af4c1dc5e4adbd29"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-ec43b93f9abc230f", "negative_id": "education-84cba10f21062372"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-ec43b93f9abc230f", "negative_id": "education-348767ff20de9b11"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-ec43b93f9abc230f", "negative_id": "education-84cba10f21062372"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-ec43b93f9abc230f", "negative_id": "education-4fc7825fb48235f8"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-ec43b93f9abc230f", "negative_id": "education-84cba10f21062372"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-ec43b93f9abc230f", "negative_id": "education-dcd574acda05bf1c"}
+{"query": "哪家虚构公司总部位于武汉并专注代码生成？", "positive_id": "company-084afc04db2317f2", "negative_id": "company-5331af3ae70ce2b9"}
+{"query": "哪家虚构公司总部位于武汉并专注代码生成？", "positive_id": "company-084afc04db2317f2", "negative_id": "company-8217448a686735d1"}
+{"query": "元穹云服务的核心产品是什么？", "positive_id": "company-084afc04db2317f2", "negative_id": "company-ddc5bbcbbe75a42f"}
+{"query": "元穹云服务的核心产品是什么？", "positive_id": "company-084afc04db2317f2", "negative_id": "company-fafc8d8ecd9925ca"}
+{"query": "哪些资料介绍元穹云服务的企业 AI 产品方向？", "positive_id": "company-084afc04db2317f2", "negative_id": "company-5331af3ae70ce2b9"}
+{"query": "哪些资料介绍元穹云服务的企业 AI 产品方向？", "positive_id": "company-084afc04db2317f2", "negative_id": "company-5331af3ae70ce2b9"}
+{"query": "AgentFlow 平台支持哪些检索和权限能力？", "positive_id": "product-ff8f2c9c75ed21da", "negative_id": "product-e9028085a2a409e7"}
+{"query": "AgentFlow 平台支持哪些检索和权限能力？", "positive_id": "product-ff8f2c9c75ed21da", "negative_id": "product-e9028085a2a409e7"}
+{"query": "哪些知识资料描述元穹云服务的引用追溯机制？", "positive_id": "product-ff8f2c9c75ed21da", "negative_id": "product-e9028085a2a409e7"}
+{"query": "哪些知识资料描述元穹云服务的引用追溯机制？", "positive_id": "product-ff8f2c9c75ed21da", "negative_id": "product-371b62caff8fca67"}
+{"query": "代码生成产品如何处理文档版本和来源标识？", "positive_id": "product-ff8f2c9c75ed21da", "negative_id": "product-57a58617fe1d5bef"}
+{"query": "代码生成产品如何处理文档版本和来源标识？", "positive_id": "product-ff8f2c9c75ed21da", "negative_id": "product-371b62caff8fca67"}
+{"query": "元穹云服务的模型推理团队负责什么？", "positive_id": "organization-602323b7ad72964a", "negative_id": "organization-979039351b953dc5"}
+{"query": "元穹云服务的模型推理团队负责什么？", "positive_id": "organization-602323b7ad72964a", "negative_id": "organization-a670a760c050d864"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-602323b7ad72964a", "negative_id": "organization-aedd073088c3d1c2"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-602323b7ad72964a", "negative_id": "organization-979039351b953dc5"}
+{"query": "元穹云服务如何组织生产上线和问题回放？", "positive_id": "organization-602323b7ad72964a", "negative_id": "organization-3ea40967011bdadd"}
+{"query": "元穹云服务如何组织生产上线和问题回放？", "positive_id": "organization-602323b7ad72964a", "negative_id": "organization-7f15004c96934737"}
+{"query": "客服回答引用校验上线后取得了哪些指标？", "positive_id": "project-bb73347ea0549aad", "negative_id": "project-565ae05500f759e2"}
+{"query": "客服回答引用校验上线后取得了哪些指标？", "positive_id": "project-bb73347ea0549aad", "negative_id": "project-daaeefce46b03bc1"}
+{"query": "元穹云服务如何降低检索延迟并支持灰度发布？", "positive_id": "project-bb73347ea0549aad", "negative_id": "project-7285df1a0cc98eb9"}
+{"query": "元穹云服务如何降低检索延迟并支持灰度发布？", "positive_id": "project-bb73347ea0549aad", "negative_id": "project-90f84ffa23de5974"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-bb73347ea0549aad", "negative_id": "project-daaeefce46b03bc1"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-bb73347ea0549aad", "negative_id": "project-565ae05500f759e2"}
+{"query": "元穹云服务的客户规模和知识查询量是多少？", "positive_id": "annual-report-1a8c82711f8cadab", "negative_id": "annual-report-078c55f313d15ee7"}
+{"query": "元穹云服务的客户规模和知识查询量是多少？", "positive_id": "annual-report-1a8c82711f8cadab", "negative_id": "annual-report-7d9d0787e708a36d"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-1a8c82711f8cadab", "negative_id": "annual-report-2a559d36ff68e675"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-1a8c82711f8cadab", "negative_id": "annual-report-078c55f313d15ee7"}
+{"query": "元穹云服务年度研发投入重点是什么？", "positive_id": "annual-report-1a8c82711f8cadab", "negative_id": "annual-report-fe79ac630801a9d4"}
+{"query": "元穹云服务年度研发投入重点是什么？", "positive_id": "annual-report-1a8c82711f8cadab", "negative_id": "annual-report-1f189deffa66c28c"}
+{"query": "AI 产品经理需要哪些可核验能力证据？", "positive_id": "role-standard-faa66abe5f92ea32", "negative_id": "role-standard-9fe917595669148a"}
+{"query": "AI 产品经理需要哪些可核验能力证据？", "positive_id": "role-standard-faa66abe5f92ea32", "negative_id": "role-standard-987cd13be1cafef9"}
+{"query": "元穹云服务如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-faa66abe5f92ea32", "negative_id": "role-standard-9fe917595669148a"}
+{"query": "元穹云服务如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-faa66abe5f92ea32", "negative_id": "role-standard-ff2b13245032d5c0"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-faa66abe5f92ea32", "negative_id": "role-standard-a77d93c79ef768df"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-faa66abe5f92ea32", "negative_id": "role-standard-3b3cb80e21d8a489"}
+{"query": "哪些论文研究代码生成的引用约束 RAG？", "positive_id": "paper-26d0848f89ad93bf", "negative_id": "paper-0ec04301b923f261"}
+{"query": "哪些论文研究代码生成的引用约束 RAG？", "positive_id": "paper-26d0848f89ad93bf", "negative_id": "paper-8a70770b4aad6847"}
+{"query": "DEMO-PAPER-元穹-0038的主要研究问题是什么？", "positive_id": "paper-26d0848f89ad93bf", "negative_id": "paper-9f271d5e35f9c3d6"}
+{"query": "DEMO-PAPER-元穹-0038的主要研究问题是什么？", "positive_id": "paper-26d0848f89ad93bf", "negative_id": "paper-6c33521f48b4a37f"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-26d0848f89ad93bf", "negative_id": "paper-8f0aa662c420baed"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-26d0848f89ad93bf", "negative_id": "paper-6c33521f48b4a37f"}
+{"query": "DEMO-PATENT-元穹-0038涉及什么技术？", "positive_id": "patent-90975efc306b8efb", "negative_id": "patent-5f738f53cc38a5fd"}
+{"query": "DEMO-PATENT-元穹-0038涉及什么技术？", "positive_id": "patent-90975efc306b8efb", "negative_id": "patent-f926babb7da88386"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-90975efc306b8efb", "negative_id": "patent-364e426d9ec43bcb"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-90975efc306b8efb", "negative_id": "patent-56958f909bf174b6"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-90975efc306b8efb", "negative_id": "patent-d440e94cccb60a01"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-90975efc306b8efb", "negative_id": "patent-f926babb7da88386"}
+{"query": "元穹云服务的混合检索架构包含哪些步骤？", "positive_id": "technology-24e3dc5dda8c2b73", "negative_id": "technology-078753cd05df6dbf"}
+{"query": "元穹云服务的混合检索架构包含哪些步骤？", "positive_id": "technology-24e3dc5dda8c2b73", "negative_id": "technology-c447abc0a6d822b1"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-24e3dc5dda8c2b73", "negative_id": "technology-5c511bac960b91e2"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-24e3dc5dda8c2b73", "negative_id": "technology-91fa49d590cec21b"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-24e3dc5dda8c2b73", "negative_id": "technology-5c511bac960b91e2"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-24e3dc5dda8c2b73", "negative_id": "technology-91fa49d590cec21b"}
+{"query": "元穹云服务招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-444eae9460f084b0", "negative_id": "hiring-policy-b74c8bf64b5be385"}
+{"query": "元穹云服务招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-444eae9460f084b0", "negative_id": "hiring-policy-9fdd5dfc78d095ab"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-444eae9460f084b0", "negative_id": "hiring-policy-9fdd5dfc78d095ab"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-444eae9460f084b0", "negative_id": "hiring-policy-5ea6acc3d6896354"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-444eae9460f084b0", "negative_id": "hiring-policy-9fdd5dfc78d095ab"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-444eae9460f084b0", "negative_id": "hiring-policy-13d8b6caa7706edb"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-2ba83d75cc17a586", "negative_id": "privacy-policy-84d52e6b0d8b0533"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-2ba83d75cc17a586", "negative_id": "privacy-policy-abc5f42f09c1e873"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-2ba83d75cc17a586", "negative_id": "privacy-policy-917751cac145502a"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-2ba83d75cc17a586", "negative_id": "privacy-policy-84d52e6b0d8b0533"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-2ba83d75cc17a586", "negative_id": "privacy-policy-aae0794ccbf3a756"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-2ba83d75cc17a586", "negative_id": "privacy-policy-aae0794ccbf3a756"}
+{"query": "AI 产品经理面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-51387bfb85b438d7", "negative_id": "interview-rubric-e76876779861ef18"}
+{"query": "AI 产品经理面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-51387bfb85b438d7", "negative_id": "interview-rubric-4096974a53ed1ab7"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-51387bfb85b438d7", "negative_id": "interview-rubric-d39c0767e2477cee"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-51387bfb85b438d7", "negative_id": "interview-rubric-f692fbead253c9b4"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-51387bfb85b438d7", "negative_id": "interview-rubric-b7171c8bcf4f3435"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-51387bfb85b438d7", "negative_id": "interview-rubric-f692fbead253c9b4"}
+{"query": "客服回答引用校验的知识索引故障是如何修复的？", "positive_id": "incident-report-42fab92a5b72cac6", "negative_id": "incident-report-55a9bb7cbb80a13a"}
+{"query": "客服回答引用校验的知识索引故障是如何修复的？", "positive_id": "incident-report-42fab92a5b72cac6", "negative_id": "incident-report-244c528ba191028d"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-42fab92a5b72cac6", "negative_id": "incident-report-b2532c3394d30ca7"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-42fab92a5b72cac6", "negative_id": "incident-report-63d1d782ed14f8e3"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-42fab92a5b72cac6", "negative_id": "incident-report-244c528ba191028d"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-42fab92a5b72cac6", "negative_id": "incident-report-55a9bb7cbb80a13a"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-5df45dda36c4fc15", "negative_id": "education-e1149957a4d0cff8"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-5df45dda36c4fc15", "negative_id": "education-0d3717adb0f9c544"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-5df45dda36c4fc15", "negative_id": "education-75090cf63e94bc55"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-5df45dda36c4fc15", "negative_id": "education-3455db172e0f4151"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-5df45dda36c4fc15", "negative_id": "education-e80ef1c5969d290c"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-5df45dda36c4fc15", "negative_id": "education-928484c70527c399"}
+{"query": "哪家虚构公司总部位于广州并专注多模态检索？", "positive_id": "company-019948959156bc09", "negative_id": "company-019948959156bc09"}
+{"query": "哪家虚构公司总部位于广州并专注多模态检索？", "positive_id": "company-019948959156bc09", "negative_id": "company-96862816db1fef37"}
+{"query": "星澜智算科技的核心产品是什么？", "positive_id": "company-019948959156bc09", "negative_id": "company-c284487ed0e6e9f2"}
+{"query": "星澜智算科技的核心产品是什么？", "positive_id": "company-019948959156bc09", "negative_id": "company-93a9878b24010658"}
+{"query": "哪些资料介绍星澜智算科技的企业 AI 产品方向？", "positive_id": "company-019948959156bc09", "negative_id": "company-93a9878b24010658"}
+{"query": "哪些资料介绍星澜智算科技的企业 AI 产品方向？", "positive_id": "company-019948959156bc09", "negative_id": "company-c284487ed0e6e9f2"}
+{"query": "知识引擎支持哪些检索和权限能力？", "positive_id": "product-219e050d530d1bb9", "negative_id": "product-352ea07d2e52bb6e"}
+{"query": "知识引擎支持哪些检索和权限能力？", "positive_id": "product-219e050d530d1bb9", "negative_id": "product-352ea07d2e52bb6e"}
+{"query": "哪些知识资料描述星澜智算科技的引用追溯机制？", "positive_id": "product-219e050d530d1bb9", "negative_id": "product-352ea07d2e52bb6e"}
+{"query": "哪些知识资料描述星澜智算科技的引用追溯机制？", "positive_id": "product-219e050d530d1bb9", "negative_id": "product-98baee4eb83435b3"}
+{"query": "多模态检索产品如何处理文档版本和来源标识？", "positive_id": "product-219e050d530d1bb9", "negative_id": "product-41ff40ad6c1b37e5"}
+{"query": "多模态检索产品如何处理文档版本和来源标识？", "positive_id": "product-219e050d530d1bb9", "negative_id": "product-352ea07d2e52bb6e"}
+{"query": "星澜智算科技的评测与可观测性团队负责什么？", "positive_id": "organization-4ecfbc83853dd731", "negative_id": "organization-14817353d1e7e2d8"}
+{"query": "星澜智算科技的评测与可观测性团队负责什么？", "positive_id": "organization-4ecfbc83853dd731", "negative_id": "organization-89a063acc72476ca"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-4ecfbc83853dd731", "negative_id": "organization-c2d30035e764071e"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-4ecfbc83853dd731", "negative_id": "organization-14817353d1e7e2d8"}
+{"query": "星澜智算科技如何组织生产上线和问题回放？", "positive_id": "organization-4ecfbc83853dd731", "negative_id": "organization-6fa85642b4db49e5"}
+{"query": "星澜智算科技如何组织生产上线和问题回放？", "positive_id": "organization-4ecfbc83853dd731", "negative_id": "organization-84ec70230c7e93e9"}
+{"query": "企业知识库混合召回上线后取得了哪些指标？", "positive_id": "project-fda9ed5f57a0c8f1", "negative_id": "project-99b80a6d32fd7c2a"}
+{"query": "企业知识库混合召回上线后取得了哪些指标？", "positive_id": "project-fda9ed5f57a0c8f1", "negative_id": "project-d5b931fcb9d01d34"}
+{"query": "星澜智算科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-fda9ed5f57a0c8f1", "negative_id": "project-fcb904778c7ff3da"}
+{"query": "星澜智算科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-fda9ed5f57a0c8f1", "negative_id": "project-61f98b00bc2e35a7"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-fda9ed5f57a0c8f1", "negative_id": "project-fda9ed5f57a0c8f1"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-fda9ed5f57a0c8f1", "negative_id": "project-61f98b00bc2e35a7"}
+{"query": "星澜智算科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-c35c30b49af4df69", "negative_id": "annual-report-dc92979275a97534"}
+{"query": "星澜智算科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-c35c30b49af4df69", "negative_id": "annual-report-8fb4f71937c1e4b9"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-c35c30b49af4df69", "negative_id": "annual-report-832d4cb6c6555419"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-c35c30b49af4df69", "negative_id": "annual-report-7859d3fb858c4075"}
+{"query": "星澜智算科技年度研发投入重点是什么？", "positive_id": "annual-report-c35c30b49af4df69", "negative_id": "annual-report-dc92979275a97534"}
+{"query": "星澜智算科技年度研发投入重点是什么？", "positive_id": "annual-report-c35c30b49af4df69", "negative_id": "annual-report-7859d3fb858c4075"}
+{"query": "AI 应用工程师需要哪些可核验能力证据？", "positive_id": "role-standard-74c55179f91db393", "negative_id": "role-standard-f3be0d469a54a320"}
+{"query": "AI 应用工程师需要哪些可核验能力证据？", "positive_id": "role-standard-74c55179f91db393", "negative_id": "role-standard-6ea068b0088a6b2d"}
+{"query": "星澜智算科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-74c55179f91db393", "negative_id": "role-standard-6ea068b0088a6b2d"}
+{"query": "星澜智算科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-74c55179f91db393", "negative_id": "role-standard-f3be0d469a54a320"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-74c55179f91db393", "negative_id": "role-standard-f7feada201207fe4"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-74c55179f91db393", "negative_id": "role-standard-f3be0d469a54a320"}
+{"query": "哪些论文研究多模态检索的引用约束 RAG？", "positive_id": "paper-0cb4b7b6455fde98", "negative_id": "paper-90f13758a2173fa3"}
+{"query": "哪些论文研究多模态检索的引用约束 RAG？", "positive_id": "paper-0cb4b7b6455fde98", "negative_id": "paper-6e1571c261fd275d"}
+{"query": "DEMO-PAPER-星澜-0049的主要研究问题是什么？", "positive_id": "paper-0cb4b7b6455fde98", "negative_id": "paper-1c63c8713034e997"}
+{"query": "DEMO-PAPER-星澜-0049的主要研究问题是什么？", "positive_id": "paper-0cb4b7b6455fde98", "negative_id": "paper-6e1571c261fd275d"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-0cb4b7b6455fde98", "negative_id": "paper-0cb4b7b6455fde98"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-0cb4b7b6455fde98", "negative_id": "paper-1c63c8713034e997"}
+{"query": "DEMO-PATENT-星澜-0049涉及什么技术？", "positive_id": "patent-a19b8a743a3bbe4c", "negative_id": "patent-fef9f21dd24ee686"}
+{"query": "DEMO-PATENT-星澜-0049涉及什么技术？", "positive_id": "patent-a19b8a743a3bbe4c", "negative_id": "patent-51c83f26654137ef"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-a19b8a743a3bbe4c", "negative_id": "patent-fef9f21dd24ee686"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-a19b8a743a3bbe4c", "negative_id": "patent-76d0f8517b5c72d3"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-a19b8a743a3bbe4c", "negative_id": "patent-51c83f26654137ef"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-a19b8a743a3bbe4c", "negative_id": "patent-a19b8a743a3bbe4c"}
+{"query": "星澜智算科技的混合检索架构包含哪些步骤？", "positive_id": "technology-2ee14605e39f0d43", "negative_id": "technology-2ee14605e39f0d43"}
+{"query": "星澜智算科技的混合检索架构包含哪些步骤？", "positive_id": "technology-2ee14605e39f0d43", "negative_id": "technology-4e96d8a389240dbc"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-2ee14605e39f0d43", "negative_id": "technology-e795d4633905881b"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-2ee14605e39f0d43", "negative_id": "technology-794a3cd63d84e92a"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-2ee14605e39f0d43", "negative_id": "technology-8d6fd45723f132a8"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-2ee14605e39f0d43", "negative_id": "technology-5f67ebc6e1fc50dd"}
+{"query": "星澜智算科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-45f97d802093d97b", "negative_id": "hiring-policy-d799fd439db3202e"}
+{"query": "星澜智算科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-45f97d802093d97b", "negative_id": "hiring-policy-45f97d802093d97b"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-45f97d802093d97b", "negative_id": "hiring-policy-b37b15b7400ca231"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-45f97d802093d97b", "negative_id": "hiring-policy-f760314b68f81588"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-45f97d802093d97b", "negative_id": "hiring-policy-27fd8981d0a0dbe8"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-45f97d802093d97b", "negative_id": "hiring-policy-b37b15b7400ca231"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-b2c47e23f0c84d8e", "negative_id": "privacy-policy-3d63c0be8e35f5dc"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-b2c47e23f0c84d8e", "negative_id": "privacy-policy-5470ab1c3c3351a3"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-b2c47e23f0c84d8e", "negative_id": "privacy-policy-253557ccc279e01f"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-b2c47e23f0c84d8e", "negative_id": "privacy-policy-391e635b88c43799"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-b2c47e23f0c84d8e", "negative_id": "privacy-policy-5470ab1c3c3351a3"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-b2c47e23f0c84d8e", "negative_id": "privacy-policy-253557ccc279e01f"}
+{"query": "AI 应用工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-38c2e66c8e1b335c", "negative_id": "interview-rubric-fea3795f4ae1806e"}
+{"query": "AI 应用工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-38c2e66c8e1b335c", "negative_id": "interview-rubric-480cc7d8d594ac0d"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-38c2e66c8e1b335c", "negative_id": "interview-rubric-8cdbc43c73ad9f94"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-38c2e66c8e1b335c", "negative_id": "interview-rubric-0606c462c64a3b46"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-38c2e66c8e1b335c", "negative_id": "interview-rubric-fea3795f4ae1806e"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-38c2e66c8e1b335c", "negative_id": "interview-rubric-c7308f94a1e51ddf"}
+{"query": "企业知识库混合召回的知识索引故障是如何修复的？", "positive_id": "incident-report-4e4689a469370617", "negative_id": "incident-report-fb4cb9180be60da7"}
+{"query": "企业知识库混合召回的知识索引故障是如何修复的？", "positive_id": "incident-report-4e4689a469370617", "negative_id": "incident-report-5ebc3fb7240249a3"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-4e4689a469370617", "negative_id": "incident-report-2735f4e2d3199c57"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-4e4689a469370617", "negative_id": "incident-report-4e4689a469370617"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-4e4689a469370617", "negative_id": "incident-report-def7513ddb41ac3a"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-4e4689a469370617", "negative_id": "incident-report-dfa309708dae64ff"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-a4dd3f2771829af4", "negative_id": "education-df84b35d3c1d244c"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-a4dd3f2771829af4", "negative_id": "education-893f385970f5bb5e"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-a4dd3f2771829af4", "negative_id": "education-80425f564904427e"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-a4dd3f2771829af4", "negative_id": "education-073d357d01374ea7"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-a4dd3f2771829af4", "negative_id": "education-23908b6bbaed1bd2"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-a4dd3f2771829af4", "negative_id": "education-073d357d01374ea7"}
+{"query": "哪家虚构公司总部位于西安并专注模型推理平台？", "positive_id": "company-866eef96421f3e2a", "negative_id": "company-c83132966da56e3f"}
+{"query": "哪家虚构公司总部位于西安并专注模型推理平台？", "positive_id": "company-866eef96421f3e2a", "negative_id": "company-ddc5bbcbbe75a42f"}
+{"query": "数屿数字科技的核心产品是什么？", "positive_id": "company-866eef96421f3e2a", "negative_id": "company-ddc5bbcbbe75a42f"}
+{"query": "数屿数字科技的核心产品是什么？", "positive_id": "company-866eef96421f3e2a", "negative_id": "company-422dff462abcd1bd"}
+{"query": "哪些资料介绍数屿数字科技的企业 AI 产品方向？", "positive_id": "company-866eef96421f3e2a", "negative_id": "company-ddc5bbcbbe75a42f"}
+{"query": "哪些资料介绍数屿数字科技的企业 AI 产品方向？", "positive_id": "company-866eef96421f3e2a", "negative_id": "company-422dff462abcd1bd"}
+{"query": "多智能体工作台支持哪些检索和权限能力？", "positive_id": "product-0b1827a974bb58b2", "negative_id": "product-ea73823fc191f4bc"}
+{"query": "多智能体工作台支持哪些检索和权限能力？", "positive_id": "product-0b1827a974bb58b2", "negative_id": "product-d8285af711ab76ac"}
+{"query": "哪些知识资料描述数屿数字科技的引用追溯机制？", "positive_id": "product-0b1827a974bb58b2", "negative_id": "product-0b1827a974bb58b2"}
+{"query": "哪些知识资料描述数屿数字科技的引用追溯机制？", "positive_id": "product-0b1827a974bb58b2", "negative_id": "product-0eb407871d0f18ae"}
+{"query": "模型推理平台产品如何处理文档版本和来源标识？", "positive_id": "product-0b1827a974bb58b2", "negative_id": "product-0b1827a974bb58b2"}
+{"query": "模型推理平台产品如何处理文档版本和来源标识？", "positive_id": "product-0b1827a974bb58b2", "negative_id": "product-47a0200af666283b"}
+{"query": "数屿数字科技的数据工程团队负责什么？", "positive_id": "organization-60cd690e6bb76301", "negative_id": "organization-fcfbbdf753a50be5"}
+{"query": "数屿数字科技的数据工程团队负责什么？", "positive_id": "organization-60cd690e6bb76301", "negative_id": "organization-9dc21d6a1d176f87"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-60cd690e6bb76301", "negative_id": "organization-9dc21d6a1d176f87"}
+{"query": "谁负责 Agent 工具权限和运行轨迹审计？", "positive_id": "organization-60cd690e6bb76301", "negative_id": "organization-921fd015005af28e"}
+{"query": "数屿数字科技如何组织生产上线和问题回放？", "positive_id": "organization-60cd690e6bb76301", "negative_id": "organization-8ffbe2a30b7e8173"}
+{"query": "数屿数字科技如何组织生产上线和问题回放？", "positive_id": "organization-60cd690e6bb76301", "negative_id": "organization-9dc21d6a1d176f87"}
+{"query": "多租户权限检索上线后取得了哪些指标？", "positive_id": "project-fe3b0efdd2b0e7cf", "negative_id": "project-b35bd66e7651fb33"}
+{"query": "多租户权限检索上线后取得了哪些指标？", "positive_id": "project-fe3b0efdd2b0e7cf", "negative_id": "project-553f82fd5cb37144"}
+{"query": "数屿数字科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-fe3b0efdd2b0e7cf", "negative_id": "project-72b0438e4853f7fe"}
+{"query": "数屿数字科技如何降低检索延迟并支持灰度发布？", "positive_id": "project-fe3b0efdd2b0e7cf", "negative_id": "project-404b8d99043e010a"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-fe3b0efdd2b0e7cf", "negative_id": "project-72b0438e4853f7fe"}
+{"query": "哪些案例包含企业知识库生产上线和量化结果？", "positive_id": "project-fe3b0efdd2b0e7cf", "negative_id": "project-72b0438e4853f7fe"}
+{"query": "数屿数字科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-bd195cd9cd9992c6", "negative_id": "annual-report-78f7fb8a04567cbd"}
+{"query": "数屿数字科技的客户规模和知识查询量是多少？", "positive_id": "annual-report-bd195cd9cd9992c6", "negative_id": "annual-report-bd195cd9cd9992c6"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-bd195cd9cd9992c6", "negative_id": "annual-report-bd195cd9cd9992c6"}
+{"query": "哪些公司公开资料强调 Agent 评测和权限隔离？", "positive_id": "annual-report-bd195cd9cd9992c6", "negative_id": "annual-report-7859d3fb858c4075"}
+{"query": "数屿数字科技年度研发投入重点是什么？", "positive_id": "annual-report-bd195cd9cd9992c6", "negative_id": "annual-report-bd195cd9cd9992c6"}
+{"query": "数屿数字科技年度研发投入重点是什么？", "positive_id": "annual-report-bd195cd9cd9992c6", "negative_id": "annual-report-f87002c49fe3a697"}
+{"query": "推理优化工程师需要哪些可核验能力证据？", "positive_id": "role-standard-66ee158a367812aa", "negative_id": "role-standard-66ee158a367812aa"}
+{"query": "推理优化工程师需要哪些可核验能力证据？", "positive_id": "role-standard-66ee158a367812aa", "negative_id": "role-standard-ad4c4b4e4532436f"}
+{"query": "数屿数字科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-66ee158a367812aa", "negative_id": "role-standard-14459bca22914446"}
+{"query": "数屿数字科技如何定义 RAG 岗位的生产上线和评测要求？", "positive_id": "role-standard-66ee158a367812aa", "negative_id": "role-standard-ad4c4b4e4532436f"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-66ee158a367812aa", "negative_id": "role-standard-00c7847d892988ef"}
+{"query": "招聘评价卡应如何核验 Agent 项目的真实职责？", "positive_id": "role-standard-66ee158a367812aa", "negative_id": "role-standard-aeecc920ff58201f"}
+{"query": "哪些论文研究模型推理平台的引用约束 RAG？", "positive_id": "paper-c3036dd35ab4b682", "negative_id": "paper-6ca06baddc4c2aaf"}
+{"query": "哪些论文研究模型推理平台的引用约束 RAG？", "positive_id": "paper-c3036dd35ab4b682", "negative_id": "paper-c3036dd35ab4b682"}
+{"query": "DEMO-PAPER-数屿-0060的主要研究问题是什么？", "positive_id": "paper-c3036dd35ab4b682", "negative_id": "paper-b49dbd3c103676b1"}
+{"query": "DEMO-PAPER-数屿-0060的主要研究问题是什么？", "positive_id": "paper-c3036dd35ab4b682", "negative_id": "paper-cdb3133d415811d2"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-c3036dd35ab4b682", "negative_id": "paper-b49dbd3c103676b1"}
+{"query": "如何避免公开论文被错误当作候选人个人成果？", "positive_id": "paper-c3036dd35ab4b682", "negative_id": "paper-cdb3133d415811d2"}
+{"query": "DEMO-PATENT-数屿-0060涉及什么技术？", "positive_id": "patent-d2680febbe4c59a1", "negative_id": "patent-7c1fab3570cd150b"}
+{"query": "DEMO-PATENT-数屿-0060涉及什么技术？", "positive_id": "patent-d2680febbe4c59a1", "negative_id": "patent-f9f8754218185a22"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-d2680febbe4c59a1", "negative_id": "patent-f9f8754218185a22"}
+{"query": "哪些专利描述多租户权限感知检索？", "positive_id": "patent-d2680febbe4c59a1", "negative_id": "patent-c3fe9586ca7ce1c7"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-d2680febbe4c59a1", "negative_id": "patent-f926babb7da88386"}
+{"query": "专利公开信息如何辅助核验候选人项目背景？", "positive_id": "patent-d2680febbe4c59a1", "negative_id": "patent-f926babb7da88386"}
+{"query": "数屿数字科技的混合检索架构包含哪些步骤？", "positive_id": "technology-2900b243f7d6f4f6", "negative_id": "technology-ad2a400ff1334737"}
+{"query": "数屿数字科技的混合检索架构包含哪些步骤？", "positive_id": "technology-2900b243f7d6f4f6", "negative_id": "technology-7a728de33048e1ea"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-2900b243f7d6f4f6", "negative_id": "technology-1e7b1b6e85c93a07"}
+{"query": "哪些技术资料同时提到 BM25、向量召回和重排？", "positive_id": "technology-2900b243f7d6f4f6", "negative_id": "technology-ad2a400ff1334737"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-2900b243f7d6f4f6", "negative_id": "technology-1e7b1b6e85c93a07"}
+{"query": "Agent 运行轨迹如何记录和审计？", "positive_id": "technology-2900b243f7d6f4f6", "negative_id": "technology-ad2a400ff1334737"}
+{"query": "数屿数字科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-0465ca15e0269fc1", "negative_id": "hiring-policy-59f496776d6419d4"}
+{"query": "数屿数字科技招聘时禁止使用哪些保护性信息？", "positive_id": "hiring-policy-0465ca15e0269fc1", "negative_id": "hiring-policy-e99ad619063f0ed4"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-0465ca15e0269fc1", "negative_id": "hiring-policy-334b2e84c4e6dd84"}
+{"query": "招聘评价卡如何遵守数据合规和授权要求？", "positive_id": "hiring-policy-0465ca15e0269fc1", "negative_id": "hiring-policy-59f496776d6419d4"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-0465ca15e0269fc1", "negative_id": "hiring-policy-d02d394de8de8279"}
+{"query": "公开信息能否直接替代候选人的个人证据？", "positive_id": "hiring-policy-0465ca15e0269fc1", "negative_id": "hiring-policy-e99ad619063f0ed4"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-a76ba955c16a1439", "negative_id": "privacy-policy-52c90642f11ba6fd"}
+{"query": "知识文档更新后向量索引如何处理？", "positive_id": "privacy-policy-a76ba955c16a1439", "negative_id": "privacy-policy-01187e51382717bb"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-a76ba955c16a1439", "negative_id": "privacy-policy-52c90642f11ba6fd"}
+{"query": "候选人删除时需要清理哪些数据和引用？", "positive_id": "privacy-policy-a76ba955c16a1439", "negative_id": "privacy-policy-d25f32443743073f"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-a76ba955c16a1439", "negative_id": "privacy-policy-16e226d569091662"}
+{"query": "模型服务如何实现租户隔离和最小权限？", "positive_id": "privacy-policy-a76ba955c16a1439", "negative_id": "privacy-policy-a76ba955c16a1439"}
+{"query": "推理优化工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-d64f3de74f8bfcc7", "negative_id": "interview-rubric-41b50ba4765df49f"}
+{"query": "推理优化工程师面试如何核验个人职责和量化成果？", "positive_id": "interview-rubric-d64f3de74f8bfcc7", "negative_id": "interview-rubric-dc0b070e4d445bd1"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-d64f3de74f8bfcc7", "negative_id": "interview-rubric-4543dcd3ad0d5929"}
+{"query": "哪些评价表要求追问项目边界和团队贡献？", "positive_id": "interview-rubric-d64f3de74f8bfcc7", "negative_id": "interview-rubric-41b50ba4765df49f"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-d64f3de74f8bfcc7", "negative_id": "interview-rubric-41b50ba4765df49f"}
+{"query": "公开资料在面试评价中应如何使用？", "positive_id": "interview-rubric-d64f3de74f8bfcc7", "negative_id": "interview-rubric-d64f3de74f8bfcc7"}
+{"query": "多租户权限检索的知识索引故障是如何修复的？", "positive_id": "incident-report-70abb801f2f423de", "negative_id": "incident-report-679d6930ab78e80f"}
+{"query": "多租户权限检索的知识索引故障是如何修复的？", "positive_id": "incident-report-70abb801f2f423de", "negative_id": "incident-report-1eb9e368cee37acb"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-70abb801f2f423de", "negative_id": "incident-report-e5111f9334015a09"}
+{"query": "哪些资料记录知识版本回滚和双写校验？", "positive_id": "incident-report-70abb801f2f423de", "negative_id": "incident-report-679d6930ab78e80f"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-70abb801f2f423de", "negative_id": "incident-report-679d6930ab78e80f"}
+{"query": "知识索引过期时候选人证据卡应如何处理？", "positive_id": "incident-report-70abb801f2f423de", "negative_id": "incident-report-af4c1dc5e4adbd29"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-1780648c76545eb1", "negative_id": "education-66ca64ea225a0b07"}
+{"query": "江南智算大学课程与 RAG 岗位有什么关系？", "positive_id": "education-1780648c76545eb1", "negative_id": "education-84cba10f21062372"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-1780648c76545eb1", "negative_id": "education-66ca64ea225a0b07"}
+{"query": "哪些教育项目覆盖信息检索和 Agent 安全？", "positive_id": "education-1780648c76545eb1", "negative_id": "education-ec43b93f9abc230f"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-1780648c76545eb1", "negative_id": "education-d50d106f5df6cdc3"}
+{"query": "教育背景在招聘评价中应如何使用？", "positive_id": "education-1780648c76545eb1", "negative_id": "education-dcd574acda05bf1c"}
