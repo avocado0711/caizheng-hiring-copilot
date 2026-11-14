@@ -6699,13 +6699,6 @@ body.is-booting .app-shell {
   animation: boot-progress 1.35s ease-in-out infinite;
 }
 
-.boot-panel > small {
-  margin-top: 13px;
-  color: #68758e;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-}
-
 .boot-noscript {
   position: fixed;
   inset: auto 20px 20px;
