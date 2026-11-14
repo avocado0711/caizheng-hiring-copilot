@@ -714,6 +714,27 @@ test("demo reset restores the standard presentation dataset", async (context) =>
     body: JSON.stringify({ title: "将被重置的岗位", criteria: CRITERIA }),
   });
   assert.equal(response.status, 201);
+  const oldJob = (await response.json()).job;
+
+  response = await fetch(`${app.url}/api/jobs/${encodeURIComponent(oldJob.id)}/candidates/import`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      files: [
+        {
+          name: "旧样本一.txt",
+          type: "text/plain",
+          data: Buffer.from("旧样本一\nold.one@example.com\n6 年工作经验\nPython FastAPI 上线优化", "utf8").toString("base64"),
+        },
+        {
+          name: "旧样本二.txt",
+          type: "text/plain",
+          data: Buffer.from("旧样本二\nold.two@example.com\n5 年工作经验\nPython 后端开发与项目交付", "utf8").toString("base64"),
+        },
+      ],
+    }),
+  });
+  assert.equal(response.status, 200);
 
   response = await fetch(`${app.url}/api/demo/reset`, {
     method: "POST",
@@ -726,6 +747,11 @@ test("demo reset restores the standard presentation dataset", async (context) =>
   assert.equal(reset.candidateCount, 4);
   assert.ok(reset.knowledgeCount >= 7);
   assert.ok(reset.backupPath);
+  assert.equal(reset.state.candidates.length, 4);
+  assert.equal(reset.state.counts.total, 4);
+  assert.ok(reset.state.candidates.every((candidate) => candidate.jobId === reset.jobId));
+  assert.ok(reset.state.candidates.every((candidate) => candidate.fileName.startsWith("0")));
+  assert.ok(!reset.state.jobs.some((job) => job.id === oldJob.id));
 
   const state = await fetch(`${app.url}/api/state`).then((item) => item.json());
   assert.equal(state.jobs.length, 6);

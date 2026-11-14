@@ -18,6 +18,7 @@ const state = {
   isImporting: false,
   importCancelled: false,
   importController: null,
+  stateRequestRevision: 0,
 };
 
 const LEVEL_OPTIONS = [
@@ -468,11 +469,14 @@ function currentJob() {
 }
 
 function activeImportedCandidates() {
-  return state.data?.candidates || [];
+  if (!state.editingJobId) return [];
+  return (state.data?.candidates || []).filter(
+    (candidate) => candidate.jobId === state.editingJobId,
+  );
 }
 
-async function loadState({ preserveDraft = false } = {}) {
-  state.data = await api("/api/state");
+function applyStateSnapshot(data, { preserveDraft = false } = {}) {
+  state.data = data;
   const previousJobId = state.editingJobId;
   const currentExists = state.data.jobs.some((job) => job.id === previousJobId);
   state.editingJobId = currentExists
@@ -484,6 +488,20 @@ async function loadState({ preserveDraft = false } = {}) {
     loadCurrentJobIntoForm();
   }
   scheduleAiPolling();
+}
+
+async function loadState({ preserveDraft = false } = {}) {
+  const revision = ++state.stateRequestRevision;
+  const data = await api("/api/state");
+  if (revision !== state.stateRequestRevision) return false;
+  applyStateSnapshot(data, { preserveDraft });
+  return true;
+}
+
+function invalidateStateRefreshes() {
+  state.stateRequestRevision += 1;
+  clearTimeout(aiPollTimer);
+  aiPollTimer = null;
 }
 
 function render() {
@@ -522,8 +540,11 @@ function scheduleAiPolling() {
   clearTimeout(aiPollTimer);
   if (!state.data?.ai?.configured || !hasPendingAi()) return;
   aiPollTimer = setTimeout(async () => {
+    const revision = state.stateRequestRevision;
     try {
-      state.data = await api("/api/state");
+      const data = await api("/api/state");
+      if (revision !== state.stateRequestRevision) return;
+      state.data = data;
       renderCounters();
       renderAiStatus();
       renderReviewPage();
@@ -2988,16 +3009,31 @@ async function resetDemoWorkspaceFromUi() {
   button.disabled = true;
   button.textContent = "正在重置…";
   try {
+    invalidateStateRefreshes();
     if ($("#candidate-drawer").classList.contains("is-open")) closeDrawer();
     if (!$("#resume-preview").hidden) closeResumePreview();
     resetInterviewPage();
+    $("#candidate-search").value = "";
+    $("#status-filter").value = "all";
+    $("#duplicate-filter").checked = false;
+    state.resultView = "ranking";
+    $$(".segmented [data-result-view]").forEach((item) => {
+      const selected = item.dataset.resultView === "ranking";
+      item.classList.toggle("is-active", selected);
+      item.setAttribute("aria-selected", String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
     const result = await api("/api/demo/reset", {
       method: "POST",
       body: "{}",
     });
     state.pendingFiles = [];
     state.jobDirty = false;
-    await loadState();
+    if (result.state) {
+      applyStateSnapshot(result.state);
+    } else {
+      await loadState();
+    }
     switchView("job", false);
     toast(
       result.backupPath
@@ -3005,6 +3041,7 @@ async function resetDemoWorkspaceFromUi() {
         : "演示数据已重置",
     );
   } catch (error) {
+    scheduleAiPolling();
     toast(`重置演示失败：${error.message}`, true);
   } finally {
     button.disabled = false;

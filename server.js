@@ -32,7 +32,7 @@ const {
   identityKeys,
   parseResumeText,
 } = require("./lib/resume");
-const { JsonStore, defaultState } = require("./lib/store");
+const { JsonStore } = require("./lib/store");
 const {
   DEMO_DECISIONS,
   DEMO_JOB_CARDS,
@@ -796,32 +796,53 @@ function backupStateBeforeDemo(store) {
   return path.relative(ROOT_DIR, backupPath);
 }
 
+async function buildDemoWorkspaceState() {
+  const stagingDir = fs.mkdtempSync(path.join(os.tmpdir(), "caizheng-demo-reset-"));
+  try {
+    const stagingStore = new JsonStore(path.join(stagingDir, "state.json"));
+    seedKnowledge(stagingStore, DEMO_KNOWLEDGE_PATH);
+    seedKnowledge(stagingStore, RESUME_KNOWLEDGE_PATH);
+    const [primaryJobCard, ...additionalJobCards] = DEMO_JOB_CARDS;
+    for (const card of [...additionalJobCards].reverse()) {
+      createJob(card, stagingStore);
+    }
+    const job = createJob(primaryJobCard, stagingStore);
+    const imported = await importCandidates(job, {
+      files: DEMO_RESUMES.map(toDemoFilePayload),
+    }, stagingStore, null);
+    const byFile = new Map(
+      stagingStore.jobCandidates(job.id).map((candidate) => [candidate.fileName, candidate]),
+    );
+    for (const decision of DEMO_DECISIONS) {
+      const candidate = byFile.get(decision.fileName);
+      if (!candidate) continue;
+      updateCandidate(candidate, {
+        reviewer: "演示 HR",
+        reviewStatus: decision.reviewStatus,
+        reviewNote: decision.reviewNote,
+        overrides: decision.overrides,
+      }, stagingStore);
+    }
+    stagingStore.save();
+    return {
+      state: stagingStore.state,
+      imported,
+      jobId: job.id,
+    };
+  } finally {
+    fs.rmSync(stagingDir, { recursive: true, force: true });
+  }
+}
+
 async function resetDemoWorkspace(store) {
   const backupPath = backupStateBeforeDemo(store);
-  store.state = defaultState();
-  seedKnowledge(store, DEMO_KNOWLEDGE_PATH);
-  seedKnowledge(store, RESUME_KNOWLEDGE_PATH);
-  const [primaryJobCard, ...additionalJobCards] = DEMO_JOB_CARDS;
-  for (const card of [...additionalJobCards].reverse()) {
-    createJob(card, store);
-  }
-  const job = createJob(primaryJobCard, store);
-  const imported = await importCandidates(job, {
-    files: DEMO_RESUMES.map(toDemoFilePayload),
-  }, store, null);
-  const byFile = new Map(
-    store.jobCandidates(job.id).map((candidate) => [candidate.fileName, candidate]),
-  );
-  for (const decision of DEMO_DECISIONS) {
-    const candidate = byFile.get(decision.fileName);
-    if (!candidate) continue;
-    updateCandidate(candidate, {
-      reviewer: "演示 HR",
-      reviewStatus: decision.reviewStatus,
-      reviewNote: decision.reviewNote,
-      overrides: decision.overrides,
-    }, store);
-  }
+  const demo = await buildDemoWorkspaceState();
+
+  // Swap only after the complete demo dataset is ready, so readers never
+  // observe a partially reset workspace.
+  store.state = demo.state;
+  store.save();
+
   let knowledgeVector = { indexed: 0, failed: 0 };
   if (activeVectorServiceUrl) {
     const resumeKnowledge = store.state.knowledgeDocuments.filter(
@@ -831,13 +852,13 @@ async function resetDemoWorkspace(store) {
   }
   store.save();
   return {
-    jobId: job.id,
+    jobId: demo.jobId,
     jobCount: store.state.jobs.length,
-    candidateCount: store.jobCandidates(job.id).length,
+    candidateCount: store.jobCandidates(demo.jobId).length,
     knowledgeCount: store.state.knowledgeDocuments.length,
     knowledgeVector,
     backupPath,
-    errors: imported.errors,
+    errors: demo.imported.errors,
   };
 }
 
@@ -1441,7 +1462,11 @@ async function handleApi(request, response, url) {
     demoResetInProgress = true;
     try {
       const result = await resetDemoWorkspace(activeStore);
-      jsonResponse(response, 200, { ok: true, ...result });
+      jsonResponse(response, 200, {
+        ok: true,
+        ...result,
+        state: publicState(),
+      });
     } finally {
       demoResetInProgress = false;
     }
