@@ -110,6 +110,9 @@ const tourState = {
 
 const HELP_TOUR_STORAGE_KEY = "caizheng.help-tour.v2.completed";
 const INTRO_STORAGE_KEY = "caizheng.intro.v2.completed";
+const INTRO_DURATION_MS = 4_000;
+const INTRO_REVEAL_AT_MS = 3_000;
+const INTRO_REVEAL_DURATION_MS = 1_000;
 
 let aiPollTimer = null;
 
@@ -299,7 +302,7 @@ function revealIntroSequence() {
   document.body.classList.add("is-intro-revealing");
   introState.finishTimer = setTimeout(
     finishIntroSequence,
-    900,
+    INTRO_REVEAL_DURATION_MS,
   );
 }
 
@@ -322,9 +325,28 @@ function playIntroSequence({ force = false } = {}) {
       document.body.classList.add("is-intro-visible");
       $("#intro-skip").focus({ preventScroll: true });
     });
-    introState.revealTimer = setTimeout(revealIntroSequence, 1450);
-    introState.finishTimer = setTimeout(finishIntroSequence, 2350);
+    introState.revealTimer = setTimeout(revealIntroSequence, INTRO_REVEAL_AT_MS);
+    introState.finishTimer = setTimeout(finishIntroSequence, INTRO_DURATION_MS);
   });
+}
+
+function clearFirstVisitProgress() {
+  try {
+    window.localStorage.removeItem(INTRO_STORAGE_KEY);
+    window.localStorage.removeItem(HELP_TOUR_STORAGE_KEY);
+  } catch {
+    // Replay still works in the current page when storage is unavailable.
+  }
+}
+
+async function replayFirstVisitExperience() {
+  clearFirstVisitProgress();
+  history.replaceState(null, "", window.location.pathname);
+  switchView("job", false);
+  window.scrollTo({ top: 0, behavior: "auto" });
+  await playIntroSequence({ force: true });
+  await new Promise((resolve) => window.setTimeout(resolve, 380));
+  if (!tourState.active) startHelpTour();
 }
 
 function positionTour(rect) {
@@ -3001,7 +3023,7 @@ async function resetDemoWorkspaceFromUi() {
     return;
   }
   const confirmed = window.confirm(
-    "将清空比较与排序中的全部候选人，并恢复标准演示岗位和知识库。原数据会先备份到 data/backups。是否继续？",
+    "将清空全部候选人、恢复标准岗位和知识库，并从品牌开场动画与新手引导重新开始。原数据会先备份到 data/backups。是否继续？",
   );
   if (!confirmed) return;
 
@@ -3040,6 +3062,7 @@ async function resetDemoWorkspaceFromUi() {
         ? `演示候选人已清空，原数据已备份至 ${result.backupPath}`
         : "演示候选人已清空",
     );
+    await replayFirstVisitExperience();
   } catch (error) {
     scheduleAiPolling();
     toast(`重置演示失败：${error.message}`, true);
