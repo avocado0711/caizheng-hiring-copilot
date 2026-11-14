@@ -6352,3 +6352,111 @@ body.is-intro-revealing .intro-progress {
     transition: none !important;
   }
 }
+
+/* Mobile controls and device safe-area support */
+.mobile-demo-reset,
+.new-job-button-icon {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .sidebar {
+    min-height: calc(64px + env(safe-area-inset-top));
+    padding-top: calc(9px + env(safe-area-inset-top));
+  }
+
+  .topbar {
+    top: calc(64px + env(safe-area-inset-top));
+  }
+
+  .main {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  .mobile-demo-reset {
+    display: grid;
+    flex: 0 0 auto;
+    color: #4f5d75;
+  }
+
+  .mobile-demo-reset.is-resetting {
+    color: var(--blue);
+    animation: mobile-reset-spin 850ms linear infinite;
+  }
+
+  .sticky-actions {
+    bottom: calc(14px + env(safe-area-inset-bottom));
+  }
+
+  .toast {
+    bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+
+  .drawer-footer,
+  .resume-preview-footer,
+  .phone-pair-footer {
+    padding-bottom: calc(13px + env(safe-area-inset-bottom));
+  }
+
+  .intro-sequence {
+    padding-top: calc(42px + env(safe-area-inset-top));
+    padding-bottom: calc(42px + env(safe-area-inset-bottom));
+  }
+
+  .intro-skip {
+    right: calc(18px + env(safe-area-inset-right));
+    bottom: calc(18px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 430px) {
+  .topbar {
+    padding-inline: 12px;
+  }
+
+  .topbar-context {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  #job-switcher {
+    width: min(190px, calc(100vw - 195px));
+    min-width: 0;
+    padding-inline: 10px 30px;
+  }
+
+  #new-job-button {
+    width: 44px;
+    min-width: 44px;
+    padding: 0;
+  }
+
+  .new-job-button-label {
+    display: none;
+  }
+
+  .new-job-button-icon {
+    display: inline;
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .drawer-header,
+  .drawer-footer {
+    padding-inline: 16px;
+  }
+
+  .drawer-header p:last-child {
+    overflow-wrap: anywhere;
+  }
+
+  .tour-card {
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@keyframes mobile-reset-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

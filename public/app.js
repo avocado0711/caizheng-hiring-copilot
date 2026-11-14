@@ -3027,9 +3027,15 @@ async function resetDemoWorkspaceFromUi() {
   );
   if (!confirmed) return;
 
-  const button = $("#demo-reset-button");
-  button.disabled = true;
-  button.textContent = "正在重置…";
+  const resetButtons = $$("[data-demo-reset]");
+  resetButtons.forEach((button) => {
+    button.disabled = true;
+    if (button.id === "demo-reset-button") {
+      button.textContent = "正在重置…";
+    } else {
+      button.classList.add("is-resetting");
+    }
+  });
   try {
     invalidateStateRefreshes();
     if ($("#candidate-drawer").classList.contains("is-open")) closeDrawer();
@@ -3067,8 +3073,14 @@ async function resetDemoWorkspaceFromUi() {
     scheduleAiPolling();
     toast(`重置演示失败：${error.message}`, true);
   } finally {
-    button.disabled = false;
-    button.textContent = "↺ 重置演示数据";
+    resetButtons.forEach((button) => {
+      button.disabled = false;
+      if (button.id === "demo-reset-button") {
+        button.textContent = "↺ 重置演示数据";
+      } else {
+        button.classList.remove("is-resetting");
+      }
+    });
   }
 }
 
@@ -3081,7 +3093,9 @@ function bindEvents() {
   $("#tour-next-button").addEventListener("click", () => moveTour(1));
   $("#new-job-button").addEventListener("click", startNewJob);
   $("#intro-skip").addEventListener("click", revealIntroSequence);
-  $("#demo-reset-button").addEventListener("click", resetDemoWorkspaceFromUi);
+  $$("[data-demo-reset]").forEach((button) => {
+    button.addEventListener("click", resetDemoWorkspaceFromUi);
+  });
   $("#job-empty").addEventListener("click", startNewJob);
   $("#interview-candidate-select").addEventListener("change", (event) => {
     if (!["idle", "completed", "failed"].includes(webInterview.status)) return;

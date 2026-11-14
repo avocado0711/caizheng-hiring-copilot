@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#111318">
   <title>才证 · 招聘决策台</title>
@@ -87,7 +87,7 @@
             <span>存储 <b>LOCAL</b></span>
             <span>审计 <b>ON</b></span>
           </div>
-          <button class="demo-reset-button" id="demo-reset-button" type="button" title="清空候选人并播放首次访问的开场动画与新手引导，当前数据会先备份">
+          <button class="demo-reset-button" id="demo-reset-button" type="button" data-demo-reset title="清空候选人并播放首次访问的开场动画与新手引导，当前数据会先备份">
             <span aria-hidden="true">↺</span>
             重置演示数据
           </button>
@@ -116,8 +116,19 @@
         <div class="topbar-actions">
           <span class="ai-chip is-offline" id="ai-chip">规则基线</span>
           <span class="save-state" id="save-state">已保存</span>
+          <button
+            class="icon-button mobile-demo-reset"
+            id="mobile-demo-reset-button"
+            type="button"
+            data-demo-reset
+            aria-label="重置演示数据并重新播放首次访问体验"
+            title="重置演示数据"
+          >↺</button>
           <button class="help-button" id="help-button" type="button" aria-label="了解程序功能" aria-expanded="false" aria-controls="tour-layer" aria-haspopup="dialog">?</button>
-          <button class="button button-primary button-small" id="new-job-button">新建岗位</button>
+          <button class="button button-primary button-small" id="new-job-button" type="button" aria-label="新建岗位">
+            <span class="new-job-button-label">新建岗位</span>
+            <span class="new-job-button-icon" aria-hidden="true">＋</span>
+          </button>
         </div>
       </header>
 
