@@ -1962,7 +1962,29 @@ function renderInterviewReport(interview) {
       ? "需要重新安排时间"
       : "本次 AI 初筛已完成";
   $("#interview-report-summary").textContent = interview.summary;
-  $("#interview-report-highlights").innerHTML = (interview.highlights || []).length
+  const analysis = interview.analysis;
+  const signals = (analysis?.criteria || []).filter((item) => item.level !== "none");
+  const impact = analysis?.scoreImpact;
+  const analysisBlock = analysis && analysis.source === "llm"
+    ? `
+      <article class="interview-analysis-result">
+        <span>对话摘要 Agent 已识别</span>
+        <strong>${signals.length} 项通话岗位证据${impact ? ` · 综合分修正 ${scoreAdjustmentLabel(impact.adjustment)}` : ""}</strong>
+        <p>${signals.length
+          ? signals.map((item) => `${escapeHtml(levelLabel(item.level))} · ${escapeHtml(item.reasoning || "已通过回答原文核验")}`).join("<br>")
+          : "本次回答未形成可核验的岗位评价项证据。"}</p>
+      </article>
+    `
+    : analysis
+      ? `
+        <article class="interview-analysis-result is-rules">
+          <span>规则摘要</span>
+          <strong>本次未形成通话评分修正</strong>
+          <p>${escapeHtml(analysis.error || "模型未配置或回答不足，仅保存原始回答摘要。")}</p>
+        </article>
+      `
+      : "";
+  const answerBlocks = (interview.highlights || []).length
     ? interview.highlights.map((item) => `
         <article>
           <span>回答记录</span>
@@ -1971,13 +1993,14 @@ function renderInterviewReport(interview) {
         </article>
       `).join("")
     : '<div class="evidence-empty">本次没有进入岗位问题环节。</div>';
+  $("#interview-report-highlights").innerHTML = `${analysisBlock}${answerBlocks}`;
 }
 
 async function finishWebInterview({ reason = "completed" } = {}) {
   if (!webInterview.startedAt || webInterview.endedAt) return;
   webInterview.endedAt = new Date().toISOString();
   clearInterviewRuntime();
-  setInterviewStage("saving", "正在生成通话报告");
+  setInterviewStage("saving", "正在识别对话摘要");
   const durationSec = Math.max(
     0,
     Math.round((new Date(webInterview.endedAt).getTime() - new Date(webInterview.startedAt).getTime()) / 1000),
@@ -2002,7 +2025,9 @@ async function finishWebInterview({ reason = "completed" } = {}) {
     );
     renderInterviewReport(result.interview);
     await loadState({ preserveDraft: true });
-    toast(result.interview.status === "declined" ? "已记录候选人拒绝，未进入岗位问题" : "网页 AI 初筛已完成并写入审计记录");
+    toast(result.interview.status === "declined"
+      ? "已记录候选人拒绝，未进入岗位问题"
+      : "对话摘要已完成识别，评分与候选人详情已更新");
   } catch (error) {
     webInterview.status = "failed";
     $("#interview-call-panel").hidden = true;
@@ -2157,7 +2182,7 @@ async function pollPhonePairing() {
       } else if (event.type === "candidate.transcript") {
         addPhonePairTranscript("candidate", event.data?.answer);
       } else if (event.type === "call.ended") {
-        $("#phone-pair-status").textContent = "通话结束，正在生成报告";
+        $("#phone-pair-status").textContent = "通话结束，正在识别对话摘要";
         await savePhoneInterviewReport(event.data || {});
         return;
       }
@@ -2199,7 +2224,7 @@ async function savePhoneInterviewReport(data) {
     renderInterviewReport(result.interview);
     $("#phone-pair-status").textContent = "报告已生成并同步";
     await loadState({ preserveDraft: true });
-    toast("手机 AI 初筛已完成，报告已写入候选人审计记录");
+    toast("手机 AI 初筛已完成，对话摘要已识别并更新候选人评分");
     window.setTimeout(() => {
       closePhonePairing();
       $("#interview-call-panel").hidden = true;
@@ -2840,6 +2865,82 @@ async function openCandidate(candidateId, options = {}) {
   }
 }
 
+function levelLabel(level) {
+  return LEVEL_OPTIONS.find(([value]) => value === level)?.[1] || "未提及";
+}
+
+function scoreAdjustmentLabel(value) {
+  const adjustment = Number(value) || 0;
+  return `${adjustment > 0 ? "+" : ""}${adjustment}`;
+}
+
+function latestAnalyzedInterview(candidate) {
+  return (candidate.webInterviews || []).find((interview) => (
+    interview.analysis && Array.isArray(interview.analysis.criteria)
+  )) || null;
+}
+
+function renderCallSummaryInsight(candidate, evaluation) {
+  const interview = latestAnalyzedInterview(candidate);
+  if (!interview) {
+    return `
+      <section class="drawer-section">
+        <h3>AI 通话摘要</h3>
+        <div class="evidence-empty">完成一次 AI 初筛后，对话摘要和通话证据会写入这里。</div>
+      </section>
+    `;
+  }
+  const analysis = interview.analysis;
+  const signals = (analysis.criteria || []).filter((item) => item.level !== "none");
+  const impact = analysis.scoreImpact
+    || (evaluation.interviewInfluence?.interviewId === interview.id
+      ? evaluation.interviewInfluence
+      : null);
+  const adjustment = impact?.adjustment || 0;
+  const tone = adjustment > 0 ? "is-positive" : adjustment < 0 ? "is-negative" : "is-neutral";
+  const criterionName = (criterionId) => (
+    evaluation.criteriaResults.find((result) => result.id === criterionId)?.name || criterionId
+  );
+  return `
+    <section class="drawer-section call-summary-section">
+      <h3>AI 通话摘要</h3>
+      <article class="call-summary-card">
+        <div class="call-summary-head">
+          <span class="call-summary-source ${analysis.source === "llm" ? "is-ai" : "is-rules"}">
+            ${analysis.source === "llm" ? "对话摘要 Agent 已识别" : "规则摘要"}
+          </span>
+          <time>${escapeHtml(formatDateTime(interview.endedAt || interview.createdAt))}</time>
+        </div>
+        <p>${escapeHtml(analysis.summary || interview.summary || "")}</p>
+        <div class="call-score-impact ${tone}">
+          <span>通话证据评分修正</span>
+          <strong>${scoreAdjustmentLabel(adjustment)}</strong>
+          <small>${impact?.criteriaCovered || 0} 项已核验 · 通话证据权重 ${Math.round((impact?.weight || 0.35) * 100)}% · 综合分 ${impact?.scoreAfter ?? evaluation.score}</small>
+        </div>
+        ${analysis.error ? `<div class="call-analysis-note">${escapeHtml(analysis.error)}</div>` : ""}
+        <div class="call-signal-list">
+          ${signals.length
+            ? signals.map((signal) => {
+                const evidence = signal.evidence?.[0];
+                return `
+                  <div class="call-signal">
+                    <div>
+                      <strong>${escapeHtml(criterionName(signal.criterionId))}</strong>
+                      <span class="level-chip ${escapeAttr(signal.level)}">${escapeHtml(levelLabel(signal.level))}</span>
+                      <small>识别置信度 ${Math.round((signal.confidence || 0) * 100)}%</small>
+                    </div>
+                    ${evidence ? `<blockquote>${escapeHtml(evidence.quote)}</blockquote>` : ""}
+                    <small>${escapeHtml(signal.reasoning || "回答原文已通过核验")}</small>
+                  </div>
+                `;
+              }).join("")
+            : '<div class="evidence-empty">本次通话没有形成可核验的岗位证据。</div>'}
+        </div>
+      </article>
+    </section>
+  `;
+}
+
 function renderCandidateDrawer(candidate) {
   const evaluation = candidate.evaluation;
   const warnings = candidate.warnings || [];
@@ -2886,10 +2987,12 @@ function renderCandidateDrawer(candidate) {
       </div>
     ` : ""}
     <div class="drawer-stats">
-      <div class="drawer-stat"><span>匹配分</span><strong>${evaluation.score}</strong></div>
+      <div class="drawer-stat"><span>综合匹配分</span><strong>${evaluation.score}</strong></div>
+      <div class="drawer-stat"><span>简历基础分</span><strong>${evaluation.resumeScore ?? evaluation.score}</strong></div>
+      <div class="drawer-stat"><span>通话修正</span><strong>${scoreAdjustmentLabel(evaluation.interviewInfluence?.adjustment || 0)}</strong></div>
       <div class="drawer-stat"><span>评价项覆盖</span><strong>${evaluation.matchedCount}/${evaluation.totalCriteria}</strong></div>
-      <div class="drawer-stat"><span>证据条数</span><strong>${evaluation.evidenceCount}</strong></div>
     </div>
+    ${renderCallSummaryInsight(candidate, evaluation)}
     <section class="drawer-section">
       <h3>经历含金量证据卡</h3>
       ${renderExperienceIntelligence(candidate)}
@@ -2922,7 +3025,7 @@ function renderCandidateDrawer(candidate) {
                 <span>${escapeHtml(formatDateTime(interview.endedAt || interview.createdAt))} · ${Math.max(1, Math.round((interview.durationSec || 0) / 60))} 分钟</span>
               </div>
               <p>${escapeHtml(interview.summary || "")}</p>
-              <small>不保存录音 · ${interview.answers?.length || 0} 条岗位问题回答</small>
+              <small>${interview.summarySource === "llm" ? "对话摘要 Agent 识别" : "规则摘要"} · 不保存录音 · ${interview.answers?.length || 0} 条岗位问题回答${interview.analysis?.scoreImpact ? ` · 综合分修正 ${scoreAdjustmentLabel(interview.analysis.scoreImpact.adjustment)}` : ""}</small>
             </article>
           `).join("")}
         </div>
@@ -2995,7 +3098,23 @@ function renderCandidateDrawer(candidate) {
             `).join("")
             : `<div class="evidence-empty">${result.status === "absent"
               ? "简历中有明确否定表述，系统将其视为“明确不具备”。"
-              : "简历中未发现该评价项的关键词证据。系统将其视为“未提及”，不直接视为“不具备”。"}</div>`}
+              : result.interviewLevel !== "none"
+                ? "简历中未发现该评价项证据，但通话回答已通过原文核验。"
+                : "简历中未发现该评价项的关键词证据。系统将其视为“未提及”，不直接视为“不具备”。"}</div>`}
+          ${result.interviewLevel !== "none" ? `
+            <div class="interview-evidence-inline">
+              <div>
+                <span>通话证据</span>
+                <strong class="level-chip ${escapeAttr(result.interviewLevel)}">${escapeHtml(levelLabel(result.interviewLevel))}</strong>
+                <small>识别置信度 ${Math.round((result.interviewConfidence || 0) * 100)}%</small>
+              </div>
+              ${(result.interviewEvidence || []).map((evidence) => `
+                <blockquote>${escapeHtml(evidence.quote)}</blockquote>
+                <small>${escapeHtml(evidence.question || "AI 岗位问题")}</small>
+              `).join("")}
+              ${result.interviewReasoning ? `<p>${escapeHtml(result.interviewReasoning)}</p>` : ""}
+            </div>
+          ` : ""}
           ${result.reasoning ? `<div class="evidence-meta"><span>理由：${escapeHtml(result.reasoning)}</span></div>` : ""}
           <input class="override-note" type="text" maxlength="300" value="${escapeAttr(result.override?.note || "")}" placeholder="人工覆盖说明（可选）">
         </div>

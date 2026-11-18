@@ -12,6 +12,7 @@ const {
   createAgentTrace,
   runScreeningAgents,
 } = require("./agents/orchestrator");
+const interviewSummaryAgent = require("./agents/对话摘要Agent/对话摘要Agent");
 const { loadEnvFile } = require("./lib/env");
 const { createLlmClientFromEnv } = require("./lib/llm");
 const { resolvePythonRuntime } = require("./lib/python");
@@ -27,6 +28,7 @@ const {
   suggestCriteria: suggestCriteriaFallback,
   LEVEL_META,
 } = require("./lib/screening");
+const { verifyInterviewAnalysis } = require("./lib/interview-analysis");
 const {
   extractResumeFile,
   identityKeys,
@@ -1148,6 +1150,78 @@ function summarizeWebInterview(input, questions) {
   };
 }
 
+function fallbackInterviewAnalysis({
+  interviewId,
+  summary,
+  criteria,
+  error = "",
+}) {
+  return {
+    interviewId,
+    source: "rules",
+    model: null,
+    summary: cleanText(summary || "").slice(0, 500),
+    criteria: [],
+    criteriaSignature: criteriaSignature(criteria),
+    verifiedCount: 0,
+    rejectedCount: 0,
+    analyzedAt: new Date().toISOString(),
+    error: cleanText(error || "").slice(0, 300),
+    usage: null,
+  };
+}
+
+async function analyzeInterviewTranscript({
+  llmClient,
+  candidate,
+  job,
+  questions,
+  answers,
+  report,
+  interviewId,
+}) {
+  const substantive = answers.filter((answer) => answer.answer.length >= 8);
+  if (!llmClient?.configured || !substantive.length) {
+    return fallbackInterviewAnalysis({
+      interviewId,
+      summary: report.summary,
+      criteria: job.criteria,
+      error: llmClient?.configured ? "候选人没有提供可识别的岗位回答" : "LLM 未配置，使用规则摘要",
+    });
+  }
+  try {
+    const result = await interviewSummaryAgent.run({
+      llmClient,
+      candidate,
+      criteria: job.criteria,
+      questions,
+      answers: substantive,
+    });
+    const verified = verifyInterviewAnalysis(result.data, substantive, job.criteria);
+    if (!verified.summary) throw new Error("对话摘要 Agent 未返回可用摘要");
+    return {
+      interviewId,
+      source: "llm",
+      model: result.model || llmClient.model,
+      summary: verified.summary,
+      criteria: verified.criteria,
+      criteriaSignature: criteriaSignature(job.criteria),
+      verifiedCount: verified.verifiedCount,
+      rejectedCount: verified.rejectedCount,
+      analyzedAt: new Date().toISOString(),
+      error: "",
+      usage: result.usage || null,
+    };
+  } catch (error) {
+    return fallbackInterviewAnalysis({
+      interviewId,
+      summary: report.summary,
+      criteria: job.criteria,
+      error: `对话摘要 Agent 失败，已使用规则摘要：${error.message}`,
+    });
+  }
+}
+
 function findLanAddress() {
   const interfaces = os.networkInterfaces();
   const candidates = [];
@@ -1734,14 +1808,35 @@ async function handleApi(request, response, url) {
         }));
       const report = summarizeWebInterview({ answers }, questions);
       const now = new Date().toISOString();
+      const interviewId = `web-interview-${crypto.randomUUID()}`;
       const completionReason = cleanText(input.completionReason || "completed").slice(0, 80);
       const status = !consent
         ? "declined"
         : completionReason === "reschedule"
           ? "follow_up_required"
           : "completed";
+      const fixedSummary = !consent
+        ? "候选人在通话开始时未同意继续，本次未进入岗位问题环节。"
+        : completionReason === "reschedule"
+          ? "候选人当前不方便继续，本次未进入完整岗位问题环节，建议重新安排时间。"
+          : "";
+      const interviewAnalysis = status === "completed"
+        ? await analyzeInterviewTranscript({
+            llmClient: activeLlm,
+            candidate,
+            job,
+            questions,
+            answers,
+            report,
+            interviewId,
+          })
+        : fallbackInterviewAnalysis({
+            interviewId,
+            summary: fixedSummary,
+            criteria: job.criteria,
+          });
       const interview = {
-        id: `web-interview-${crypto.randomUUID()}`,
+        id: interviewId,
         mode: input.mode === "phone-pair-demo" ? "phone-pair-demo" : "browser-voice",
         status,
         consent,
@@ -1751,11 +1846,9 @@ async function handleApi(request, response, url) {
         durationSec: Math.max(0, Math.min(7_200, Number(input.durationSec) || 0)),
         questions,
         answers,
-        summary: !consent
-          ? "候选人在通话开始时未同意继续，本次未进入岗位问题环节。"
-          : completionReason === "reschedule"
-            ? "候选人当前不方便继续，本次未进入完整岗位问题环节，建议重新安排时间。"
-            : report.summary,
+        summary: interviewAnalysis.summary,
+        summarySource: interviewAnalysis.source,
+        analysis: interviewAnalysis,
         highlights: consent ? report.highlights : [],
         unansweredQuestionIds: consent ? report.unansweredQuestionIds : questions.map((item) => item.id),
         audioStored: false,
@@ -1765,6 +1858,12 @@ async function handleApi(request, response, url) {
       candidate.webInterviews.unshift(interview);
       candidate.webInterviews = candidate.webInterviews.slice(0, 20);
       candidate.updatedAt = now;
+      const interviewEvaluation = evaluateCandidate(candidate, job.criteria);
+      if (interviewEvaluation.interviewInfluence.interviewId === interview.id) {
+        interview.analysis.scoreImpact = {
+          ...interviewEvaluation.interviewInfluence,
+        };
+      }
       appendCandidateAudit(candidate, {
         actor: "browser-voice-agent",
         action: !consent
@@ -1777,11 +1876,14 @@ async function handleApi(request, response, url) {
           interviewId: interview.id,
           durationSec: interview.durationSec,
           answerCount: interview.answers.filter((item) => item.answer.length >= 8).length,
+          summarySource: interview.summarySource,
+          interviewAdjustment: interviewEvaluation.interviewInfluence.adjustment,
+          scoreAfter: interviewEvaluation.score,
           audioStored: false,
         },
       });
       activeStore.save();
-      jsonResponse(response, 201, { interview });
+      jsonResponse(response, 201, { interview, evaluation: interviewEvaluation });
       return true;
     }
     if (request.method === "POST" && parts[5] === "analyze" && parts.length === 6) {

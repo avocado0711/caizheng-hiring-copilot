@@ -1882,7 +1882,7 @@ td {
 
 .drawer-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 9px;
   margin: 14px 0 25px;
 }
@@ -1904,6 +1904,190 @@ td {
   margin-top: 6px;
   font-size: 23px;
   font-weight: 300;
+}
+
+.call-summary-card {
+  overflow: hidden;
+  border: 1px solid #e3e6eb;
+  border-radius: 13px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(68, 104, 242, 0.08), transparent 38%),
+    #fbfcfd;
+}
+
+.call-summary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  border-bottom: 1px solid #e8ebef;
+}
+
+.call-summary-head time {
+  color: #7b8591;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.call-summary-source {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.call-summary-source.is-ai {
+  background: rgba(68, 104, 242, 0.1);
+  color: #3858ca;
+}
+
+.call-summary-source.is-rules {
+  background: #eef0f3;
+  color: #68727e;
+}
+
+.call-summary-card > p {
+  margin: 0;
+  padding: 15px;
+  color: #4f5b68;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.call-score-impact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  align-items: center;
+  margin: 0 15px 14px;
+  padding: 12px 13px;
+  border: 1px solid #e5e8ed;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.call-score-impact span {
+  color: #68727e;
+  font-size: 10px;
+}
+
+.call-score-impact strong {
+  grid-row: span 2;
+  color: #48515d;
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.call-score-impact small {
+  color: #8a929c;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.call-score-impact.is-positive strong {
+  color: #26714f;
+}
+
+.call-score-impact.is-negative strong {
+  color: var(--red);
+}
+
+.call-analysis-note {
+  margin: 0 15px 14px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: var(--amber-soft);
+  color: #7f5d25;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.call-signal-list {
+  display: grid;
+  gap: 8px;
+  padding: 0 15px 15px;
+}
+
+.call-signal {
+  padding: 11px 12px;
+  border: 1px solid #e8eaee;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.call-signal > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.call-signal strong {
+  color: #3f4955;
+  font-size: 11px;
+}
+
+.call-signal small {
+  color: #858e98;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.call-signal blockquote {
+  margin: 8px 0 6px;
+  padding: 8px 10px;
+  border-left: 2px solid #9fb1ff;
+  border-radius: 0 7px 7px 0;
+  background: #f6f8ff;
+  color: #566273;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.interview-evidence-inline {
+  margin-top: 10px;
+  padding: 11px 12px;
+  border: 1px solid rgba(68, 104, 242, 0.14);
+  border-radius: 9px;
+  background: #f7f8ff;
+}
+
+.interview-evidence-inline > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.interview-evidence-inline > div > span {
+  color: #7d8794;
+  font-size: 9px;
+}
+
+.interview-evidence-inline blockquote {
+  margin: 8px 0 5px;
+  padding: 8px 10px;
+  border-left: 2px solid #9fb1ff;
+  background: #fff;
+  color: #566273;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.interview-evidence-inline small,
+.interview-evidence-inline p {
+  color: #7d8794;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.interview-evidence-inline p {
+  margin: 7px 0 0;
 }
 
 .drawer-section {
@@ -5590,6 +5774,24 @@ body.is-touring .app-shell {
   color: #626d7b;
   font-size: 12px;
   line-height: 1.65;
+}
+
+.interview-analysis-result {
+  border-color: rgba(68, 104, 242, 0.2) !important;
+  background: #f5f7ff !important;
+}
+
+.interview-analysis-result strong {
+  color: #3c57bd !important;
+}
+
+.interview-analysis-result.is-rules {
+  border-color: #e2e5ea !important;
+  background: #f7f8fa !important;
+}
+
+.interview-analysis-result.is-rules strong {
+  color: #626c78 !important;
 }
 
 .interview-report-actions {

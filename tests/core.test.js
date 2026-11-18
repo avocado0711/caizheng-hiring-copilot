@@ -6,11 +6,13 @@ const os = require("node:os");
 const path = require("node:path");
 const test = require("node:test");
 const {
+  criteriaSignature,
   evaluateCandidate,
   findProtectedCriterion,
   rankCandidates,
   splitKeywords,
 } = require("../lib/screening");
+const { verifyInterviewAnalysis } = require("../lib/interview-analysis");
 const {
   assessOcrQuality,
   docxXmlToText,
@@ -194,6 +196,73 @@ test("evidence levels and deterministic weighting produce a stable score", () =>
   assert.equal(strong.gateMet, true);
   assert.ok(strong.score > weak.score);
   assert.ok(strong.criteriaResults[0].evidence[0].line >= 1);
+});
+
+test("verified interview evidence adjusts scoring and rejects invented quotes", () => {
+  const candidate = {
+    id: "candidate-call",
+    text: "使用 Python 和 FastAPI 开发检索服务",
+    fileName: "candidate-call.txt",
+  };
+  const base = evaluateCandidate(candidate, CRITERIA);
+  const answers = [{
+    questionId: "q-delivery",
+    question: "请说明最能代表你的项目成果。",
+    answer: "我负责项目上线并让核心指标提升 40%",
+  }];
+  const verified = verifyInterviewAnalysis({
+    summary: "候选人说明了项目上线和指标提升结果。",
+    criteria: [
+      {
+        criterionId: "delivery",
+        level: "strong",
+        confidence: 0.94,
+        evidenceQuotes: ["项目上线并让核心指标提升 40%"],
+        reasoning: "回答包含明确上线和指标结果",
+      },
+      {
+        criterionId: "unknown",
+        level: "strong",
+        confidence: 1,
+        evidenceQuotes: ["项目上线并让核心指标提升 40%"],
+        reasoning: "无效评价项",
+      },
+    ],
+  }, answers, CRITERIA);
+  assert.equal(verified.criteria.find((item) => item.criterionId === "delivery").level, "strong");
+  assert.equal(verified.criteria.find((item) => item.criterionId === "delivery").evidence[0].questionId, "q-delivery");
+  assert.deepEqual(verified.criteria.map((item) => item.criterionId), ["python", "delivery"]);
+
+  const adjusted = evaluateCandidate({
+    ...candidate,
+    webInterviews: [{
+      id: "interview-1",
+      endedAt: "2026-11-17T10:00:00.000Z",
+      analysis: {
+        interviewId: "interview-1",
+        criteriaSignature: criteriaSignature(CRITERIA),
+        criteria: verified.criteria,
+      },
+    }],
+  }, CRITERIA);
+  assert.ok(adjusted.score > base.score);
+  assert.equal(adjusted.resumeScore, base.score);
+  assert.ok(adjusted.interviewInfluence.adjustment > 0);
+  assert.equal(adjusted.criteriaResults[1].interviewLevel, "strong");
+  assert.equal(adjusted.criteriaResults[1].interviewEvidence[0].quote, "项目上线并让核心指标提升 40%");
+
+  const rejected = verifyInterviewAnalysis({
+    summary: "模型编造了未出现的表述。",
+    criteria: [{
+      criterionId: "delivery",
+      level: "strong",
+      confidence: 0.99,
+      evidenceQuotes: ["我负责了多个十亿级项目"],
+      reasoning: "未经回答支持的引用",
+    }],
+  }, answers, CRITERIA);
+  assert.equal(rejected.criteria.find((item) => item.criterionId === "delivery").verification, "rejected");
+  assert.equal(rejected.rejectedCount, 1);
 });
 
 test("human level override is retained and affects ranking", () => {
@@ -718,11 +787,14 @@ test("HTTP API supports create, import, ranking, review and CSV export", async (
   assert.equal(webInterview.status, "completed");
   assert.equal(webInterview.audioStored, false);
   assert.match(webInterview.summary, /网页 AI 初筛/);
+  assert.equal(webInterview.summarySource, "rules");
+  assert.equal(webInterview.analysis.source, "rules");
 
   response = await fetch(`${app.url}/api/jobs/${jobId}/candidates/${candidateId}`);
   const afterInterview = (await response.json()).candidate;
   assert.equal(afterInterview.webInterviews.length, 1);
   assert.ok(afterInterview.auditHistory.some((event) => event.action === "web_interview_completed"));
+  assert.equal(afterInterview.evaluation.interviewInfluence.applied, false);
 
   response = await fetch(`${app.url}/api/call-sessions`, {
     method: "POST",
@@ -1044,6 +1116,33 @@ test("background AI enrichment improves matching only after validation", async (
           },
         };
       }
+      if (system.includes("对话摘要 Agent")) {
+        calls.push("interview-summary");
+        const answer = input.answers[0].answer;
+        return {
+          model: "test-model",
+          usage: { total_tokens: 6 },
+          data: {
+            summary: "候选人说明了项目上线和指标提升结果。",
+            criteria: [
+              {
+                criterionId: "python",
+                level: "none",
+                confidence: 0,
+                evidenceQuotes: [],
+                reasoning: "本次回答未涉及 Python 使用细节",
+              },
+              {
+                criterionId: "delivery",
+                level: "strong",
+                confidence: 0.94,
+                evidenceQuotes: [answer],
+                reasoning: "回答包含可核验的上线和指标结果",
+              },
+            ],
+          },
+        };
+      }
       if (system.includes("候选人摘要 Agent")) {
         calls.push("summary");
         return {
@@ -1140,6 +1239,43 @@ test("background AI enrichment improves matching only after validation", async (
   );
   assert.equal(detail.candidate.aiAnalysis.pipelineVersion, 2);
 
+  const scoreBeforeInterview = detail.candidate.evaluation.score;
+  const interviewAnswer = "我负责项目上线并让核心指标提升 40%";
+  response = await fetch(`${app.url}/api/jobs/${job.id}/candidates/${candidate.id}/web-interview`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      consent: true,
+      completionReason: "completed",
+      startedAt: "2026-11-17T10:00:00.000Z",
+      endedAt: "2026-11-17T10:04:00.000Z",
+      durationSec: 240,
+      questions: [{
+        id: "question-delivery",
+        question: "请说明最能代表你的项目成果。",
+        criterionId: "delivery",
+      }],
+      answers: [{
+        questionId: "question-delivery",
+        question: "请说明最能代表你的项目成果。",
+        answer: interviewAnswer,
+      }],
+    }),
+  });
+  assert.equal(response.status, 201);
+  const interviewReport = await response.json();
+  assert.equal(interviewReport.interview.summarySource, "llm");
+  assert.equal(interviewReport.interview.summary, "候选人说明了项目上线和指标提升结果。");
+  assert.equal(interviewReport.interview.analysis.source, "llm");
+  assert.equal(interviewReport.interview.analysis.scoreImpact.adjustment > 0, true);
+
+  const interviewedDetail = await fetch(`${app.url}/api/jobs/${job.id}/candidates/${candidate.id}`)
+    .then((item) => item.json());
+  assert.ok(interviewedDetail.candidate.evaluation.score > scoreBeforeInterview);
+  assert.ok(interviewedDetail.candidate.evaluation.interviewInfluence.adjustment > 0);
+  assert.equal(interviewedDetail.candidate.webInterviews[0].analysis.criteria[1].level, "strong");
+  assert.deepEqual(calls, ["structure", "evidence", "summary", "questions", "interview-summary"]);
+
   response = await fetch(`${app.url}/api/jobs/${job.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -1154,4 +1290,5 @@ test("background AI enrichment improves matching only after validation", async (
   const staleState = await fetch(`${app.url}/api/state`).then((item) => item.json());
   assert.equal(staleState.candidates[0].aiStatus, "stale");
   assert.equal(staleState.candidates[0].summary.source, "keyword");
+  assert.equal(staleState.candidates[0].evaluation.interviewInfluence.applied, false);
 });
