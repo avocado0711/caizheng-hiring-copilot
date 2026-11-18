@@ -13,10 +13,15 @@ __pycache__/
 dist/
 
 # Presentation build artifacts (deliverables live outside this app repository)
+.ppt_deps/
 路演PPT_才证/.ppt-tools/
 路演PPT_才证/.python-tools/
+路演PPT_才证/.ppt_deps/
 /路演PPT_才证/*.pptx
 /路演PPT_才证/*.pdf
+/路演PPT_才证/archive/
+/路演PPT_才证/screenshots/
+/路演PPT_才证/rendered-final/
 
 # Intermediate training artifacts (reproducible from JSONL sources)
 training_data/teacher/vectors.npy

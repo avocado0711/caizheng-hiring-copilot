@@ -31,6 +31,7 @@ const GREEN = "248A5B";
 const AMBER = "A46511";
 const DARK = "111214";
 const LOGO = path.resolve(__dirname, "..", "public", "assets", "logo-mark.png");
+const SHOT_DIR = path.resolve(__dirname, "screenshots");
 
 const FONT = "Noto Sans SC";
 const MONO = "Source Code Pro";
@@ -114,7 +115,7 @@ function addFooter(slide, page, dark = false) {
     fontFace: MONO,
     charSpacing: 0.45,
   });
-  addText(slide, `${String(page).padStart(2, "0")} / 10`, W - M - 1.05, H - 0.35, 1.05, 0.18, 7.6, muted, {
+  addText(slide, `${String(page).padStart(2, "0")} / 14`, W - M - 1.05, H - 0.35, 1.05, 0.18, 7.6, muted, {
     fontFace: MONO,
     align: "right",
     charSpacing: 0.55,
@@ -208,7 +209,7 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
   });
 
   addNotes(s, `
-【0:00–0:10】
+【0:00–0:08】
 各位评委好，我们是才证。我们不把录用决定交给大模型，而是让 AI 为每一个招聘判断提供可核验的证据。
 `);
 }
@@ -269,7 +270,7 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
   });
   addFooter(s, 2);
   addNotes(s, `
-【0:10–0:35】
+【0:07–0:22】
 招聘每天收到大量简历，但真正的难点不只是看得慢。第一，标准容易漂移；第二，模型直接给结论时，HR 很难复核；第三，首轮沟通会不断消耗人力。100 份模拟简历会让这些问题被放大，但不会自动产生信任。
 `);
 }
@@ -308,7 +309,7 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
   });
   addFooter(s, 3);
   addNotes(s, `
-【0:35–0:55】
+【0:22–0:36】
 所以我们的核心转变，是把“让 AI 判断人”改成“让 AI 证明岗位匹配”。大模型只处理语义，计分、硬门槛和排序由确定性规则完成，最终决定仍然交给 HR。
 `);
 }
@@ -376,15 +377,107 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
   });
   addFooter(s, 4);
   addNotes(s, `
-【0:55–1:35】
+【0:36–0:52】
 完整链路从岗位评价卡开始。HR 确认评价项、权重和硬门槛之后，简历进入解析和结构化。100 份系统模拟简历用于验证流程和数据范围，不代表真实候选人效果。四个 Agent 分别完成结构化、匹配、审计和摘要，之后系统用固定规则计分排序。
 `);
 }
 
-// 05 — Evidence chain
+// 05 — RAG pipeline
 {
   const s = pptx.addSlide();
-  addHeader(s, "04 / EVIDENCE LINEAGE");
+  addHeader(s, "04 / RAG PIPELINE");
+  addTitle(s, "RAG 不是“搜一段资料”，\n而是装配一份可引用的上下文。", { y: 1.10, size: 32 });
+
+  addText(s, "01 / QUERY", 0.76, 2.53, 1.85, 0.22, 7.4, BLUE, {
+    fontFace: MONO,
+    bold: true,
+    charSpacing: 0.70,
+  });
+  addText(s, "岗位评价项\n简历实体\n证据缺口", 0.76, 2.92, 2.14, 1.13, 15.0, INK, {
+    bold: true,
+    lineSpacingMultiple: 1.30,
+  });
+  addText(s, "公司 / 团队 / 学校\n论文 / 专利 / 岗位标准", 0.76, 4.54, 2.30, 0.62, 9.4, MUTED, {
+    lineSpacingMultiple: 1.22,
+  });
+
+  connector(s, 3.12, 3.42, 3.46, 3.42, BLUE, 0.9, true);
+
+  addRect(s, 3.50, 2.66, 2.95, 0.58, "E4E3DE");
+  addText(s, "BM25 / 词法召回", 3.68, 2.78, 1.70, 0.22, 9.2, INK, { bold: true });
+  addText(s, "中文 bi-gram · 标题 / 实体加权", 5.10, 2.79, 1.20, 0.20, 6.9, MUTED, {
+    fontFace: MONO,
+    align: "right",
+  });
+  addRect(s, 3.50, 3.48, 2.95, 0.58, WHITE);
+  addRect(s, 3.50, 3.48, 0.06, 0.58, BLUE);
+  addText(s, "Dense / 语义召回", 3.68, 3.60, 1.70, 0.22, 9.2, INK, { bold: true });
+  addText(s, "BGE-M3 50% + LoRA 50%", 4.84, 3.61, 1.48, 0.20, 6.9, MUTED, {
+    fontFace: MONO,
+    align: "right",
+  });
+  connector(s, 6.45, 2.95, 6.76, 3.28, BLUE, 0.8);
+  connector(s, 6.45, 3.77, 6.76, 3.44, BLUE, 0.8);
+
+  addText(s, "02 / FUSION", 6.88, 2.53, 1.50, 0.22, 7.4, BLUE, {
+    fontFace: MONO,
+    bold: true,
+    charSpacing: 0.70,
+  });
+  addText(s, "RRF", 6.90, 2.95, 1.20, 0.44, 25, INK, { fontFace: MONO, bold: true });
+  addText(s, "去重融合 Top 30", 6.90, 3.50, 1.45, 0.50, 10.0, MUTED, {
+    lineSpacingMultiple: 1.2,
+  });
+  connector(s, 8.32, 3.34, 8.70, 3.34, BLUE, 0.9, true);
+
+  addText(s, "03 / RERANK", 8.76, 2.53, 1.50, 0.22, 7.4, BLUE, {
+    fontFace: MONO,
+    bold: true,
+    charSpacing: 0.70,
+  });
+  addText(s, "可选 Reranker", 8.78, 2.96, 1.58, 0.36, 15.0, INK, { bold: true });
+  addText(s, "BGE 交叉编码器\n权重 1.0", 8.78, 3.46, 1.55, 0.55, 9.4, MUTED, {
+    lineSpacingMultiple: 1.2,
+  });
+  connector(s, 10.44, 3.34, 10.78, 3.34, BLUE, 0.9, true);
+
+  addText(s, "04 / CONTEXT PACK", 10.84, 2.53, 1.70, 0.22, 7.0, BLUE, {
+    fontFace: MONO,
+    bold: true,
+    charSpacing: 0.55,
+  });
+  addText(s, "Top 5", 10.86, 2.92, 1.48, 0.42, 24, INK, { fontFace: MONO, bold: true });
+  addText(s, "带来源的可引用片段", 10.86, 3.50, 1.62, 0.48, 9.6, MUTED, {
+    lineSpacingMultiple: 1.2,
+  });
+
+  addRule(s, M, 5.02, W - M * 2, RULE, 0.7);
+  addText(s, "CONTEXT RECORD", M, 5.22, 1.72, 0.22, 7.4, MUTED, {
+    fontFace: MONO,
+    charSpacing: 0.7,
+  });
+  const fields = ["标题", "实体", "发布者", "时间", "授权", "置信度", "虚构标记"];
+  for (let i = 0; i < fields.length; i += 1) {
+    addPill(s, fields[i], 2.36 + i * 1.38, 5.17, 1.10, i === 5 ? GREEN : BLUE, { size: 7.1 });
+  }
+  addBody(s, "用法：岗位标准补充 · 组织 / 团队背景 · 论文 / 专利佐证 · 电话追问上下文", 0.76, 5.72, 10.90, 0.28, 10.4, INK, {
+    lineSpacingMultiple: 1.15,
+  });
+  addRect(s, 0.72, 6.25, 11.90, 0.46, BLUE_SOFT);
+  addText(s, "公开资料只能佐证组织或项目背景，不能直接证明个人贡献；知识库缺失不是负面结论。", 0.98, 6.36, 11.34, 0.22, 10.8, INK, {
+    align: "center",
+  });
+  addFooter(s, 5);
+  addNotes(s, `
+【0:52–1:10】
+RAG 在这里不是简单搜索一段公开资料。系统先根据岗位评价项、简历实体和证据缺口生成查询，再同时走中文 BM25 和融合向量召回；两路结果经过 RRF 融合出 Top 30，可选 Reranker 再提高排序质量，最后形成带标题、来源、日期、授权和置信度的 Top 5 上下文。公开资料只能帮助解释组织和项目背景，不能拿来证明个人贡献。
+`);
+}
+
+// 06 — Evidence chain
+{
+  const s = pptx.addSlide();
+  addHeader(s, "05 / EVIDENCE LINEAGE");
   addTitle(s, "一条证据，如何走到最终决策。", { y: 1.15, size: 34 });
 
   addText(s, "23", 0.72, 2.00, 1.17, 1.14, 58, "D8D7D1", {
@@ -433,17 +526,169 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
   addBody(s, "信息缺失不会被误判成负面事实。模型证据无法逐字定位时，\n不得进入评分；系统回退到透明、可重复的关键词基线。", 4.62, 5.92, 7.58, 0.73, 12.7, INK, {
     lineSpacingMultiple: 1.28,
   });
-  addFooter(s, 5);
+  addFooter(s, 6);
   addNotes(s, `
-【1:35–2:10】
+【1:10–1:25】
 这条链路的关键，是每条有效证据都能回到原文。比如岗位要求 RAG 能力，系统不会只给一个“匹配”，而是展示原文、行号、审计状态和置信度，再进入权重计算，最后记录 HR 的人工判断。我们还明确区分“未提及”和“明确不具备”。
 `);
 }
 
-// 06 — Innovation guardrails
+// 07 — Four-agent architecture
 {
   const s = pptx.addSlide();
-  addHeader(s, "05 / FOUR GUARDRAILS");
+  addHeader(s, "06 / AGENT PROTOCOL");
+  addTitle(s, "四个 Agent：职责明确，状态可校验。", { y: 1.15, size: 32 });
+
+  addRule(s, 1.10, 2.45, 10.92, INK, 1.0);
+  const agents = [
+    {
+      x: 0.75,
+      no: "01",
+      name: "简历结构化",
+      role: "把原文拆成事实，\n不做岗位匹配。",
+      input: "脱敏简历\n确定性解析信息",
+      output: "profile\nworkHistory\nnotes",
+      rule: "只读事实；不做匹配；\n不输出姓名或保护字段。",
+    },
+    {
+      x: 3.78,
+      no: "02",
+      name: "岗位证据匹配",
+      role: "逐项寻找岗位相关证据，\n并交出原文。",
+      input: "岗位评价卡\n简历原文 + profile",
+      output: "等级 / 置信度\n逐字引用\n匹配理由",
+      rule: "未提到 = none；\n非 none 必须有连续原文。",
+    },
+    {
+      x: 6.81,
+      no: "03",
+      name: "证据审计",
+      role: "检查引用、硬性缺口\n和字段冲突。",
+      input: "已校验的评价项\n规则解析 profile",
+      output: "status / issues\nverifiedCount\nrejectedCount",
+      rule: "确定性规则，不调用 LLM；\n丢弃无法定位的引用。",
+    },
+    {
+      x: 9.84,
+      no: "04",
+      name: "候选人摘要",
+      role: "只压缩已审计证据，\n辅助阅读。",
+      input: "仅已审计证据\n结构化 profile",
+      output: "≤180 字客观摘要",
+      rule: "不改证据、不重评分；\n无有效证据则跳过。",
+    },
+  ];
+  for (let index = 0; index < agents.length; index += 1) {
+    const agent = agents[index];
+    addCircle(s, agent.x + 0.10, 2.35, 0.20, index === 1 ? BLUE : WHITE, index === 1 ? BLUE : INK, 0.9);
+    addText(s, agent.no, agent.x, 2.03, 0.50, 0.20, 7.4, MUTED, {
+      fontFace: MONO,
+      bold: true,
+    });
+    addText(s, agent.name, agent.x, 2.82, 2.58, 0.40, 20.5, INK, { bold: true });
+    addBody(s, agent.role, agent.x, 3.22, 2.60, 0.48, 8.7, BLUE, {
+      bold: true,
+      lineSpacingMultiple: 1.16,
+    });
+    addText(s, "输入", agent.x, 3.83, 0.42, 0.18, 7.3, BLUE, { bold: true });
+    addBody(s, agent.input, agent.x + 0.44, 3.80, 2.13, 0.54, 8.8, MUTED, { lineSpacingMultiple: 1.15 });
+    addText(s, "产出", agent.x, 4.45, 0.44, 0.18, 7.3, BLUE, { bold: true });
+    addBody(s, agent.output, agent.x + 0.52, 4.41, 2.06, 0.64, 9.0, INK, {
+      bold: true,
+      lineSpacingMultiple: 1.14,
+    });
+    addText(s, "边界", agent.x, 5.20, 0.44, 0.18, 7.3, AMBER, { bold: true });
+    addBody(s, agent.rule, agent.x + 0.54, 5.16, 2.08, 0.58, 8.3, MUTED, { lineSpacingMultiple: 1.16 });
+    if (index < agents.length - 1) {
+      addRule(s, agent.x + 2.86, 2.85, 0, RULE, 0.55);
+      connector(s, agent.x + 2.65, 3.00, agent.x + 2.98, 3.00, BLUE, 0.65, true);
+    }
+  }
+
+  addRule(s, M, 5.90, W - M * 2, RULE, 0.7);
+  addText(s, "ORCHESTRATOR", M, 6.07, 1.55, 0.20, 7.2, MUTED, {
+    fontFace: MONO,
+    charSpacing: 0.70,
+  });
+  addText(s, "状态：queued → running → completed / failed / fallback", 2.20, 6.03, 5.60, 0.24, 9.2, INK, {
+    fontFace: MONO,
+    bold: true,
+  });
+  addText(s, "只有通过审计的证据才进入规则计分；失败状态与耗时全程写入 trace。", 7.93, 6.03, 4.28, 0.24, 9.2, MUTED, {
+    align: "right",
+  });
+  addText(s, "结构化失败 → 确定性 profile ｜ 匹配失败 → 关键词基线 ｜ 审计失败 → attention ｜ 摘要失败 → 空摘要", M, 6.51, 11.9, 0.24, 8.5, AMBER, {
+    fontFace: MONO,
+    align: "center",
+  });
+  addFooter(s, 7);
+  addNotes(s, `
+【1:25–1:47】
+四个 Agent 不是并列聊天，而是严格串行。结构化 Agent 只看脱敏简历；证据匹配 Agent 把每个评价项映射到逐字原文；证据审计是确定性规则，会丢弃无法机校的引用并检查硬性缺口；摘要 Agent 只能使用已审计证据。编排器记录每个阶段的状态、耗时和回退，只有通过审计的证据才进入计分。
+`);
+}
+
+// 08 — Real product modules
+{
+  const s = pptx.addSlide();
+  addHeader(s, "07 / PRODUCT PROOF");
+  addTitle(s, "真实工作台：标准、检索和证据，\n都已经可以被操作与复核。", { y: 1.08, size: 31 });
+
+  addText(s, "01 / ROLE SCORECARD", 0.75, 2.22, 2.10, 0.21, 7.3, BLUE, {
+    fontFace: MONO,
+    bold: true,
+    charSpacing: 0.62,
+  });
+  s.addImage({
+    path: path.join(SHOT_DIR, "01-job-scorecard-clean.png"),
+    x: 0.72, y: 2.54, w: 7.82, h: 2.69,
+  });
+  addRect(s, 0.72, 2.54, 7.82, 2.69, WHITE, { transparency: 100, line: RULE, lineWidth: 0.55 });
+
+  addText(s, "02 / SOURCE-GROUNDED RESULT", 9.02, 2.22, 3.12, 0.21, 7.0, BLUE, {
+    fontFace: MONO,
+    bold: true,
+    charSpacing: 0.58,
+  });
+  s.addImage({
+    path: path.join(SHOT_DIR, "03-knowledge-result-clean.png"),
+    x: 8.94, y: 2.54, w: 3.62, h: 0.79,
+  });
+  addRect(s, 8.94, 2.54, 3.62, 0.79, WHITE, { transparency: 100, line: RULE, lineWidth: 0.55 });
+
+  addText(s, "03 / VERIFIED EVIDENCE ITEM", 9.02, 3.61, 3.12, 0.21, 7.0, BLUE, {
+    fontFace: MONO,
+    bold: true,
+    charSpacing: 0.58,
+  });
+  s.addImage({
+    path: path.join(SHOT_DIR, "02-candidate-evidence-item-clean.png"),
+    x: 8.94, y: 3.94, w: 3.62, h: 2.15,
+  });
+  addRect(s, 8.94, 3.94, 3.62, 2.15, WHITE, { transparency: 100, line: RULE, lineWidth: 0.55 });
+
+  addBody(s, "评价卡先锁定标准；知识检索返回带来源的单条结果；\n候选人证据卡保留原文、行号和置信度。", 0.76, 5.48, 7.72, 0.69, 13.0, INK, {
+    lineSpacingMultiple: 1.28,
+  });
+  addPill(s, "LIVE WORKBENCH", 0.76, 6.35, 1.65, BLUE, {
+    fill: BLUE_SOFT,
+    size: 6.8,
+    h: 0.29,
+  });
+  addText(s, "左侧锁定规则，右侧拿回证据；三个模块都在当前版本中真实可操作。", 2.58, 6.38, 9.80, 0.22, 9.2, MUTED, {
+    fontFace: MONO,
+  });
+  addFooter(s, 8);
+  addNotes(s, `
+【1:47–2:05】
+这一页不是概念图，而是当前工作台里的真实模块。岗位评价卡锁定关键词、权重和硬门槛；知识检索返回一条带来源和虚构标记的结果；候选人证据卡保留逐字原文、行号和置信度。每一张截图只保留一个模块，方便评委看清产品已经在什么位置承接判断。
+`);
+}
+
+// 09 — Innovation guardrails
+{
+  const s = pptx.addSlide();
+  addHeader(s, "08 / FOUR GUARDRAILS");
   addTitle(s, "不是更会聊天，而是更会证明。", { y: 1.15, size: 38 });
 
   const rows = [
@@ -466,17 +711,17 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
     align: "center",
     charSpacing: 0.2,
   });
-  addFooter(s, 6);
+  addFooter(s, 9);
   addNotes(s, `
-【2:10–2:45】
+【2:05–2:18】
 这里有四道护栏。第一，证据绑定；第二，Agent 职责分离；第三，评分和排序由确定性代码完成；第四，所有人工覆盖和状态变化都有审计记录。所以我们的差异化不是更会聊天，而是让 AI 的输出更值得相信，并且在模型失败时还能回退。
 `);
 }
 
-// 07 — Hard problems
+// 10 — Hard problems
 {
   const s = pptx.addSlide();
-  addHeader(s, "06 / TECHNICAL MOAT");
+  addHeader(s, "09 / TECHNICAL MOAT");
   addTitle(s, "最难的不是调用模型，\n而是让模型输出值得相信。", { y: 1.13, size: 35 });
   addRule(s, 6.66, 3.0, 0, RULE, 0.7);
   addRule(s, M, 4.58, W - M * 2, RULE, 0.7);
@@ -513,17 +758,17 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
     align: "center",
     charSpacing: 0.55,
   });
-  addFooter(s, 7);
+  addFooter(s, 10);
   addNotes(s, `
-【2:45–3:10】
+【2:18–2:34】
 真正的工程难点，是引用幻觉、复杂文档、领域语义和隐私公平。我们的解法分别是逐字证据校验、多解析器与 OCR 质量门禁、LoRA 加混合检索，以及保护性字段拒绝、发送前脱敏和本地优先。
 `);
 }
 
-// 08 — Proof and data
+// 11 — Proof and data
 {
   const s = pptx.addSlide();
-  addHeader(s, "07 / VERIFICATION", true);
+  addHeader(s, "10 / VERIFICATION", true);
   addTitle(s, "用可重复证据，\n证明这条链路真的能跑。", {
     y: 1.09, size: 36, color: WHITE,
   });
@@ -580,17 +825,17 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
   addText(s, "以上为合成数据与工程回归结果，不代表真实招聘效果。下一步补充真实脱敏样本与 HR 盲评。", 0.76, 6.22, 11.65, 0.26, 8.8, "8095AD", {
     fontFace: MONO,
   });
-  addFooter(s, 8, true);
+  addFooter(s, 11, true);
   addNotes(s, `
-【3:10–3:40】
+【2:34–2:56】
 目前项目已经通过 27 项自动化测试；合成 PDF 的 OCR 字符准确率是 98.44%；领域 Dense Recall@5 从 0.450 提升到 0.526。100 份系统模拟简历用于扩充场景与知识测试，不是真实候选人效果。端到端 Recall@5 也从 0.552 提升到 0.557。下一步会做真实脱敏样本和 HR 盲评。
 `);
 }
 
-// 09 — Value and path
+// 12 — Value and path
 {
   const s = pptx.addSlide();
-  addHeader(s, "08 / VALUE & PATH");
+  addHeader(s, "11 / VALUE & PATH");
   addTitle(s, "从筛选工具，\n走向可审计的招聘基础设施。", { y: 1.13, size: 35 });
 
   addRule(s, 1.24, 3.17, 10.86, INK, 1.0);
@@ -621,14 +866,102 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
     align: "center",
     lineSpacingMultiple: 1.0,
   });
-  addFooter(s, 9);
+  addFooter(s, 12);
   addNotes(s, `
-【3:40–4:00】
+【2:56–3:15】
 才证的价值不是替 HR 做决定，而是让标准更一致、依据更透明、AI 使用更安全。我们最终想做的是招聘基础设施：让每一个判断，都值得相信。谢谢各位。
 `);
 }
 
-// 10 — Submission appendix
+// 13 — Outlook
+{
+  const s = pptx.addSlide();
+  addHeader(s, "12 / OUTLOOK");
+  addTitle(s, "如果产品真正落地，\n下一步不是加更多 AI，而是补信任基础设施。", { y: 1.10, size: 31 });
+
+  addRule(s, 1.05, 2.47, 11.24, INK, 1.0);
+  const priorities = [
+    {
+      x: 0.75,
+      no: "01",
+      eyebrow: "EFFECTIVENESS",
+      title: "真实效果验证",
+      body: "引入真实脱敏样本与 HR 盲评；\n持续复盘误报、漏报和评分校准。",
+    },
+    {
+      x: 3.78,
+      no: "02",
+      eyebrow: "KNOWLEDGE",
+      title: "知识与数据体系",
+      body: "用 100 份模拟简历扩展场景；\n完善来源、版本、增量索引与隔离。",
+    },
+    {
+      x: 6.81,
+      no: "03",
+      eyebrow: "ENTERPRISE",
+      title: "企业级接入",
+      body: "对接 ATS / HR SaaS；\n补齐角色权限、数据保留、\n可观测性与 SLA。",
+    },
+    {
+      x: 9.84,
+      no: "04",
+      eyebrow: "VOICE + PRODUCT LOOP",
+      title: "真实电话闭环",
+      body: "调用实时语音 API 拨号 / 接听；\n流式转写 → 摘要 → 证据回写。",
+    },
+  ];
+  for (let index = 0; index < priorities.length; index += 1) {
+    const item = priorities[index];
+    addText(s, item.no, item.x, 2.13, 0.46, 0.20, 7.3, BLUE, {
+      fontFace: MONO,
+      bold: true,
+    });
+    addText(s, item.eyebrow, item.x + 0.50, 2.12, 1.95, 0.20, 7.0, MUTED, {
+      fontFace: MONO,
+      charSpacing: 0.62,
+    });
+    addCircle(s, item.x + 0.10, 2.98, 0.18, index === 0 ? BLUE : WHITE, index === 0 ? BLUE : INK, 0.85);
+    addText(s, item.title, item.x, 3.36, 2.60, 0.38, 19.5, INK, { bold: true });
+    addBody(s, item.body, item.x, 4.02, 2.58, 0.86, 11.4, MUTED, {
+      lineSpacingMultiple: 1.25,
+    });
+    if (index < priorities.length - 1) addRule(s, item.x + 2.86, 2.88, 0, RULE, 0.60);
+  }
+
+  addRule(s, M, 5.12, W - M * 2, RULE, 0.65);
+  addText(s, "LANDING PATH", M, 5.31, 1.55, 0.20, 7.2, MUTED, {
+    fontFace: MONO,
+    charSpacing: 0.70,
+  });
+  const stages = [
+    { x: 2.30, name: "POC", note: "单一岗位 + 基线与盲评" },
+    { x: 5.85, name: "PILOT", note: "ATS 接入 + HR 真实流程" },
+    { x: 9.40, name: "PRODUCTION", note: "权限隔离 + 稳定性与治理" },
+  ];
+  connector(s, 2.70, 5.46, 10.62, 5.46, BLUE, 0.8, true);
+  for (const stage of stages) {
+    addCircle(s, stage.x, 5.37, 0.18, WHITE, BLUE, 0.8);
+    addText(s, stage.name, stage.x - 0.10, 5.73, 1.45, 0.28, 12.0, INK, {
+      fontFace: MONO,
+      bold: true,
+    });
+    addText(s, stage.note, stage.x - 0.10, 6.07, 2.50, 0.22, 8.5, MUTED, {
+      fontFace: MONO,
+    });
+  }
+
+  addText(s, "从“可解释”走向“可验证”，最终成为可规模化复制的招聘决策基础设施。", M, 6.56, 11.90, 0.32, 15.5, BLUE, {
+    bold: true,
+    align: "center",
+  });
+  addFooter(s, 13);
+  addNotes(s, `
+【3:15–4:00】
+如果才证真正进入企业，下一步不是继续堆模型，而是补信任基础设施：用真实脱敏样本和 HR 盲评验证效果；把 100 份模拟简历继续扩展成更完整的数据与知识体系；对接 ATS、HR SaaS，并补齐权限、保留和 SLA；最后接入实时语音 API，让 AI 真正能够拨号和接听，通过流式转写、通话摘要和证据回写形成完整闭环。我们的目标是让才证从“可解释”走向“可验证”，最终成为可规模化复制的招聘决策基础设施。谢谢各位。
+`);
+}
+
+// 14 — Submission appendix
 {
   const s = pptx.addSlide();
   addHeader(s, "APPENDIX / SUBMISSION");
@@ -644,7 +977,7 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
     ["20 字内简介", "把岗位标准变成可验证的招聘证据链。"],
     ["团队成员", "[请填写]"],
     ["参赛赛道", "TTC｜AI 赋能招聘与人才挖掘 [请复核]"],
-    ["第三方代码 / 工具库", "Node.js · BAAI/bge-m3 · PyTorch · Transformers · Sentence-Transformers · PEFT/LoRA · NumPy · PDFium · RapidOCR/ONNX Runtime · Web Speech API"],
+    ["第三方代码 / 工具库", "Node.js · BAAI/bge-m3 · PyTorch · Transformers · Sentence-Transformers · PEFT/LoRA · NumPy · PDFium · RapidOCR/ONNX Runtime · Web Speech API · 实时语音 API（部署时选型）"],
     ["开赛前已有内容", "对应 commit：[请根据仓库历史填写，不得杜撰]"],
     ["三行进化说明", "比较指标：[请填写] ｜ 学到的：[请填写] ｜ 回退方式：[请填写]"],
   ];
@@ -683,7 +1016,7 @@ function connector(slide, x1, y1, x2, y2, color = BLUE, width = 0.8, arrow = fal
   addText(s, "演示仅使用虚构候选人 / 企业 / 合成数据；真实数据必须取得授权并完成脱敏。项目仍在迭代，最终功能与指标以提交版本为准。", 1.72, 6.14, 10.50, 0.46, 8.6, MUTED, {
     lineSpacingMultiple: 1.2,
   });
-  addFooter(s, 10);
+  addFooter(s, 14);
   addNotes(s, "附录说明：此页供正式提交与问答使用，不进入 4 分钟主路演。团队成员、参赛赛道与赛前 commit 需由项目成员核对后填写。");
 }
 
