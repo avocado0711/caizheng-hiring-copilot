@@ -256,7 +256,7 @@ node --test
 npm.cmd run eval:screening
 ```
 
-报告写入 `evaluation/screening-results.json`，覆盖排序、硬门槛、原文定位和敏感属性不变性。当前基准为人工设计的合成场景，仅用于回归，不代表真实招聘效果。
+报告写入 `evaluation/screening-results.json`，覆盖排序、硬门槛、原文定位和敏感属性不变性。当前基准包含 8 个合成场景、32 位候选人：Top-1 准确率 87.5%（7/8）、Pairwise 排序准确率 97.9%（47/48）、硬门槛准确率 93.8%（30/32）、证据可定位率 100%（72/72）。该结果仅用于工程回归，不代表真实招聘效果。
 
 OCR 工程评估：
 

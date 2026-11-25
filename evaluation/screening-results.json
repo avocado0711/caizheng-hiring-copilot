@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T03:27:58.044Z",
+  "generatedAt": "2026-11-25T04:01:06.672Z",
   "dataset": "内置虚构职位与简历场景 v2，仅用于工程回归，不代表真实招聘效果",
   "datasetVersion": "2026-11-synthetic-v2",
   "generatedBy": "scripts/evaluate_screening.js",
