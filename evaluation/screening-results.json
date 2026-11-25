@@ -1,12 +1,61 @@
 {
-  "generatedAt": "2026-11-14T08:09:50.448Z",
-  "dataset": "内置虚构职位与简历场景，仅用于工程回归，不代表真实招聘效果",
-  "scenarioCount": 3,
-  "candidateCount": 9,
+  "generatedAt": "2026-11-25T03:27:58.044Z",
+  "dataset": "内置虚构职位与简历场景 v2，仅用于工程回归，不代表真实招聘效果",
+  "datasetVersion": "2026-11-synthetic-v2",
+  "generatedBy": "scripts/evaluate_screening.js",
+  "criteria": [
+    {
+      "id": "rag",
+      "name": "RAG 与检索系统",
+      "keywords": [
+        "RAG",
+        "检索",
+        "向量",
+        "重排序"
+      ],
+      "weight": 40,
+      "required": true
+    },
+    {
+      "id": "python",
+      "name": "Python 后端",
+      "keywords": [
+        "Python",
+        "FastAPI",
+        "API"
+      ],
+      "weight": 35,
+      "required": true
+    },
+    {
+      "id": "delivery",
+      "name": "生产交付与结果",
+      "keywords": [
+        "上线",
+        "性能",
+        "指标",
+        "稳定性"
+      ],
+      "weight": 25,
+      "required": false
+    }
+  ],
+  "scenarioCount": 8,
+  "candidateCount": 32,
+  "counts": {
+    "top1Correct": 7,
+    "top1Total": 8,
+    "gateCorrect": 30,
+    "gateTotal": 32,
+    "locatableEvidence": 72,
+    "evidenceTotal": 72,
+    "protectedAttributeInvariantCases": 32,
+    "protectedAttributeTotal": 32
+  },
   "metrics": {
-    "top1Accuracy": 1,
-    "pairwiseRankingAccuracy": 1,
-    "gateAccuracy": 1,
+    "top1Accuracy": 0.875,
+    "pairwiseRankingAccuracy": 0.9791666666666666,
+    "gateAccuracy": 0.9375,
     "locatableEvidenceRate": 1,
     "protectedAttributeInvarianceRate": 1
   },
@@ -17,12 +66,14 @@
       "expectedOrder": [
         1,
         2,
-        3
+        3,
+        4
       ],
       "actualOrder": [
         1,
         2,
-        3
+        3,
+        4
       ],
       "top1": true,
       "gates": [
@@ -33,6 +84,11 @@
         },
         {
           "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "low",
           "expected": true,
           "actual": true
         },
@@ -49,12 +105,14 @@
       "expectedOrder": [
         1,
         2,
-        3
+        3,
+        4
       ],
       "actualOrder": [
         1,
         2,
-        3
+        3,
+        4
       ],
       "top1": true,
       "gates": [
@@ -65,6 +123,11 @@
         },
         {
           "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "low",
           "expected": true,
           "actual": true
         },
@@ -81,12 +144,14 @@
       "expectedOrder": [
         1,
         2,
-        3
+        3,
+        4
       ],
       "actualOrder": [
         1,
         2,
-        3
+        3,
+        4
       ],
       "top1": true,
       "gates": [
@@ -101,8 +166,208 @@
           "actual": true
         },
         {
+          "id": "low",
+          "expected": true,
+          "actual": true
+        },
+        {
           "id": "weak",
           "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "rag-backend",
+      "name": "RAG 后端工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actualOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "top1": true,
+      "gates": [
+        {
+          "id": "strong",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "low",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "weak",
+          "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "ai-fullstack",
+      "name": "AI 全栈工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actualOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "top1": true,
+      "gates": [
+        {
+          "id": "strong",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "low",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "weak",
+          "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "document-intelligence",
+      "name": "文档智能工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actualOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "top1": true,
+      "gates": [
+        {
+          "id": "strong",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "low",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "weak",
+          "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "llmops-platform",
+      "name": "LLMOps / AI 平台工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actualOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "top1": true,
+      "gates": [
+        {
+          "id": "strong",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "medium",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "low",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "weak",
+          "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "ai-product-delivery",
+      "name": "AI 产品交付工程师",
+      "expectedOrder": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actualOrder": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "top1": false,
+      "gates": [
+        {
+          "id": "strong-rag",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "strong-backend",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "id": "concept-only",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "id": "semantic-only",
+          "expected": true,
           "actual": false
         }
       ]

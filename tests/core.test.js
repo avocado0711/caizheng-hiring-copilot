@@ -12,6 +12,7 @@ const {
   rankCandidates,
   splitKeywords,
 } = require("../lib/screening");
+const { SCENARIOS, runEvaluation } = require("../scripts/evaluate_screening");
 const { verifyInterviewAnalysis } = require("../lib/interview-analysis");
 const {
   assessOcrQuality,
@@ -906,6 +907,50 @@ test("a second server cannot open the same data directory", async (context) => {
     () => startServer({ port: 0, dataDir: tempDir, llmClient: null }),
     (error) => error.code === "HIREPROOF_ALREADY_RUNNING" && error.url === first.url,
   );
+});
+
+test("screening evaluation covers 8 scenarios and 32 candidates", () => {
+  const candidateCount = SCENARIOS.reduce(
+    (sum, scenario) => sum + scenario.candidates.length,
+    0,
+  );
+  assert.equal(SCENARIOS.length, 8);
+  assert.equal(candidateCount, 32);
+  assert.ok(SCENARIOS.every((scenario) => scenario.candidates.length === 4));
+  assert.deepEqual(
+    SCENARIOS.map((scenario) => scenario.id),
+    [
+      "ai-platform",
+      "data-platform",
+      "agent-engineering",
+      "rag-backend",
+      "ai-fullstack",
+      "document-intelligence",
+      "llmops-platform",
+      "ai-product-delivery",
+    ],
+  );
+});
+
+test("screening evaluation exposes reproducible metric denominators", () => {
+  const report = runEvaluation();
+  assert.equal(report.scenarioCount, 8);
+  assert.equal(report.candidateCount, 32);
+  assert.deepEqual(report.counts, {
+    top1Correct: 7,
+    top1Total: 8,
+    gateCorrect: 30,
+    gateTotal: 32,
+    locatableEvidence: 72,
+    evidenceTotal: 72,
+    protectedAttributeInvariantCases: 32,
+    protectedAttributeTotal: 32,
+  });
+  assert.equal(report.metrics.top1Accuracy, 7 / 8);
+  assert.equal(report.metrics.gateAccuracy, 30 / 32);
+  assert.equal(report.metrics.locatableEvidenceRate, 72 / 72);
+  assert.equal(report.metrics.protectedAttributeInvarianceRate, 32 / 32);
+  assert.ok(Math.abs(report.metrics.pairwiseRankingAccuracy - 47 / 48) < 1e-9);
 });
 
 test("demo reset restores the standard presentation dataset", async (context) => {
